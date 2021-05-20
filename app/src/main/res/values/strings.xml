@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">DatePicker</string>
+    <string name="insira_seu_nome">Insira seu nome</string>ng>
+    <string name="insira_o_que_gostaria">Insira o que gostaria de \n ganhar no seu aniversário</string>
+    <string name="hello">Olá !</string>
+    <string name="calcular_dias">Quantos dias faltam para o \n seu próximo aniversário?</string>
+    <string name="enter_date">Insira a data do seu próximo aniversário Ex: 16/12/2021</string>
+    <string name="get_date">ENVIAR</string>
+</resources>
