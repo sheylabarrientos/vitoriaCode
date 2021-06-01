@@ -1,8 +1,19 @@
-<h1>ELEVADOR</h1>
+<h1>Elevador</h1>
 
-Crie uma aplicação Android semelhante com a UI proposta:
-Os valores de quantidade de andares bem como capacidade de elevador podem ser definidos via código.
+<h3>Descrição do projeto</h3>
+
+Aplicação que simula o funcionamento de um elevador.
+
+Na tela, são exibidas as opções para que o usuário escolha o andar desejado e se o passageiro irá entrar ou deixar o elevador.
+
+<h3>Funcionalidades</h3>
+
+✔️ Exibição em tela do andar atual durante a simulação de subida/descida dos andares.
+✔️ Exibição de aviso por Toast para que o usuário respeite a capacidade máxima de lotação (5 pessoas).
+✔️ Exibição de mensagen de erro para evitar que o usuário insira algum andar inválido (Intervalo possível: 0 a 7).
 
 
-Uma pessoa pode entrar em um elevador, o mesmo pode subir e descer em um andar definido ao usuário e a pessoa sair.
-A ideia é apenas incrementar e decrementar a entrada e saída de pessoas.
+Status do Projeto: Concluído ✔️
+
+
+<img src="elevador.png"></img>
