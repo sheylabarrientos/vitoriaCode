@@ -16,4 +16,4 @@ Na tela, são exibidas as opções para que o usuário escolha o andar desejado 
 Status do Projeto: Concluído ✔️
 
 
-<img src="elevador.png"></img>
+<img src="elevador.png" width="500"></img>
