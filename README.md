@@ -1,6 +1,8 @@
 <h1>Vitória Code</h1>
 
-<h3>Repositório de aulas do Vitória Code, projeto de formação feminina em Android feito pelo Picpay em parceria com o Elas Programam e Se Candidate, Mulher!</h3>
+<h3>Repositório de aulas do Vitória Code, projeto de formação feminina<br/>
+  em Android feito pelo Picpay em parceria com o <br/>
+  Elas Programam e Se Candidate, Mulher!</h3><br/>
 
 <h2>Conteúdo</h2>
 <br/>
