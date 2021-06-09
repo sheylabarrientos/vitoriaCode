@@ -4,17 +4,17 @@
 
 <h2>Conteúdo</h2>
 <br/>
-Módulo 1 ✅<br/>
+Módulo 1 ✅<br/><br/>
 <p>Introdução a Android e configuração de ambiente<br/>
 Tipos de variáveis<br/>
 Null-safety, estruturas de decisão, estruturas de repetição<br/>
 Kotlin collections</p>
 <br/>
-Módulo 2 ✅<br/>
+Módulo 2 ✅<br/><br/>
 <p>Git e github
 Programação orietada a objetos: objetos, data classes, encapsulamento, herança, sealed classes, classes abstratas e interfaces</p>
 <br/>
-Módulo 3 ✅<br/>
+Módulo 3 ✅<br/><br/>
 <p>Layouts: ConstraintLayout<br/>
 Activity, intents, lifecycle<br/>
 Recyclerview e Exceptions<br/>
@@ -26,7 +26,7 @@ Testes automatizados - JUnit e pirâmide de testes<br/>
 Ferramentas de Mock e TDD<br/>
 Testes de UI - Espresso</p>
 <br/>
-Módulo 4 ✅<br/>
+Módulo 4 ✅<br/><br/>
 <p>Firebase<br/>
 Notificações<br/>
 Crashlytics<br/>
