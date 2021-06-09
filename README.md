@@ -2,7 +2,7 @@
 
 <h3>Repositório de aulas do Vitória Code, projeto de formação feminina em Android feito pelo Picpay em parceria com o Elas Programam e Se Candidate, Mulher!</h3>
 
-<h2>Conteúdo
+<h2>Conteúdo</h2>
 
 Módulo 1 ✅
 Introdução a Android e configuração de ambiente
