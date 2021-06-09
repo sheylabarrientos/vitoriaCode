@@ -3,18 +3,18 @@
 <h3>Repositório de aulas do Vitória Code, projeto de formação feminina em Android feito pelo Picpay em parceria com o Elas Programam e Se Candidate, Mulher!</h3>
 
 <h2>Conteúdo</h2>
-
-Módulo 1 ✅
+</br>
+Módulo 1 ✅</br>
 Introdução a Android e configuração de ambiente
 Tipos de variáveis
 Null-safety, estruturas de decisão, estruturas de repetição
 Kotlin collections
-
-Módulo 2 ✅
+</br>
+Módulo 2 ✅</br>
 Git e github
 Programação orietada a objetos: objetos, data classes, encapsulamento, herança, sealed classes, classes abstratas e interfaces
-
-Módulo 3 ✅
+</br>
+Módulo 3 ✅</br>
 Layouts: ConstraintLayout
 Activity, intents, lifecycle
 Recyclerview e Exceptions
@@ -25,8 +25,8 @@ Criação de módulos e injeção de dependências
 Testes automatizados - JUnit e pirâmide de testes
 Ferramentas de Mock e TDD
 Testes de UI - Espresso
-
-Módulo 4 ✅
+</br>
+Módulo 4 ✅</br>
 Firebase
 Notificações
 Crashlytics
