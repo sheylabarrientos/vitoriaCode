@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Elevador</string>
+    <string name="pessoas_no_elevador">pessoas no elevador</string>
+    <string name="entrar">entrar</string>
+    <string name="andar_selecionado">IR PARA O ANDAR SELECIONADO</string>
+    <string name="sair">sair</string>
+    <string name="voce_esta_no">Você está no...</string>
+    <string name="alguem_ira">Alguem irá...</string>
+    <string name="digite_um_andar">Digite um andar</string>
+    <string name="quinto">5º</string>
+    <string name="nomeAndar">andar</string>
+    <string name="pessoas_no_nelevador">pessoas no\nelevador</string>
+    <string name="_2_5">2/5</string>
+</resources>

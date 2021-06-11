@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Aula07</string>
+    <string name="nome_completo">Nome completo</string>
+    <string name="credencial">Credencial</string>
+    <string name="a_que_setor_pertence">A que setor pertence?</string>
+    <string name="tecnologia">Tecnologia</string>
+    <string name="recursos_humanos">Recursos Humanos</string>
+    <string name="comercial">Comercial</string>
+    <string name="cadastrar_funcion_rio">Cadastrar funcionário</string>
+    <string name="pesquise_por_credencial">Pesquise por credencial...</string>
+    <string name="pesquisar">Pesquisar</string>
+</resources>
