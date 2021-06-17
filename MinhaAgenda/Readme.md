@@ -1,9 +1,9 @@
 
 <h1>Minha Agenda</h1>
 
-<h3>Descrição do projeto</h3>
+<h3>Descrição do projeto</h3><br>
 
-<p>Aplicação Android de agenda, nela, você insere o nome da pessoa, o celular e marca as seguintes opções: <br>
+<p>Aplicação Android de agenda, nela, você insere o nome da pessoa, o celular e marca as seguintes opções:
 
 Se for um contato de trabalho, deverá incluir o e-mail.<br>
 Se for um contato pessoal, deverá ter um campo para identificar aonde conheceu essa pessoa.</p>
