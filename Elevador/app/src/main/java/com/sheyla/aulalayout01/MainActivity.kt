@@ -49,7 +49,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         btnSair.setOnClickListener { //Ao clicar no botão "sair", executar o que segue.
-            var excluir = elevador.excluirPessoa() //Aqui se colocou o RESULTADO da função (e não a função em si) "excluirPessoa()" da classe "Elevador" dentro de uma variável.
+            val excluir = elevador.excluirPessoa() //Aqui se colocou o RESULTADO da função (e não a função em si) "excluirPessoa()" da classe "Elevador" dentro de uma variável.
             if (excluir != -1) { //Aqui se está dizendo "se a função "excluirPessoa()" (da classe "Elevador") for diferente do erro que ela gera (aqui representado por "-1", que é qualquer coisa abaixo do número mínimo de pessoas ("1")), então..."
                 status.setText(excluir.toString() + "/5") //"Colocar dentro da caixa de texto "pessoasNoElevador" o resultado da função "excluirPessoa()" (transformada em string) e adicionar o texto subsequente.
             } else {
@@ -63,21 +63,7 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-
-
-
-
-
-
-    fun pegaValorAndar(): Int {
-        val andar = digitarAndar.text.toString()
-        return andar.toInt()
-    }
-
     fun subirElevador(andar: Int) {
-//        for (i in 0..andar) {
-//            andarAtual.text = i.toString()
-//        }
         val recebeAndar = digitarAndar.text.toString()
         when (recebeAndar.toIntOrNull()) { //"Quando algo for digitado em "andar"..."
             in 1..12 -> {
