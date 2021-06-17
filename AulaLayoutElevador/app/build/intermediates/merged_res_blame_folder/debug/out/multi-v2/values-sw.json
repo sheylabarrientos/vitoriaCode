@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\She\\AndroidStudioProjects\\AulaLayoutElevador\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sw\\values-sw.xml",
+            "outputFile": "C:\\Users\\She\\AndroidStudioProjects\\vitoriaCode\\AulaLayoutElevador\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sw\\values-sw.xml",
             "map": [
                 {
                     "source": "C:\\Users\\She\\.gradle\\caches\\transforms-2\\files-2.1\\811102451931207f871e92538b595a2c\\material-1.3.0\\res\\values-sw\\values-sw.xml",

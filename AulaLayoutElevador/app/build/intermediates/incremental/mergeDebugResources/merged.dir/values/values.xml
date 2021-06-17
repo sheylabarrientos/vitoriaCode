@@ -667,6 +667,7 @@
     <dimen name="item_touch_helper_max_drag_scroll_per_frame">20dp</dimen>
     <dimen name="item_touch_helper_swipe_escape_max_velocity">800dp</dimen>
     <dimen name="item_touch_helper_swipe_escape_velocity">120dp</dimen>
+    <dimen name="margin_16">16dp</dimen>
     <dimen name="material_clock_display_padding">24dp</dimen>
     <dimen name="material_clock_face_margin_top">44dp</dimen>
     <dimen name="material_clock_hand_center_dot_radius">4dp</dimen>
@@ -1059,6 +1060,7 @@
     <string name="abc_shareactionprovider_share_with_application">Share with <ns1:g example="Mail" id="application_name">%s</ns1:g></string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
     <string name="alguem_ira">Alguem irá...</string>
+    <string name="andar_invalido">Andar Inválido!</string>
     <string name="andar_selecionado">IR PARA O ANDAR SELECIONADO</string>
     <string name="app_name">Elevador</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior</string>
@@ -1070,6 +1072,8 @@
     <string name="chip_text">Chip text</string>
     <string name="clear_text_end_icon_content_description">Clear text</string>
     <string name="digite_um_andar">Digite um andar</string>
+    <string name="elevador_lotado">Não cabem mais pessoas no elevador!</string>
+    <string name="elevador_vazio">Não tem mais ninguém no elevador!</string>
     <string name="entrar">entrar</string>
     <string name="error_icon_content_description">Error</string>
     <string name="exposed_dropdown_menu_content_description">Show dropdown menu</string>
@@ -1139,6 +1143,8 @@
     <string name="quinto">5º</string>
     <string name="sair">sair</string>
     <string name="search_menu_title">Search</string>
+    <string name="simbolo_grau_elevador">%sº</string>
+    <string name="status_andar">%s/5</string>
     <string name="status_bar_notification_info_overflow">999+</string>
     <string name="voce_esta_no">Você está no...</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>

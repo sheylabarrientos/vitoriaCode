@@ -1319,6 +1319,7 @@ dimen hint_pressed_alpha_material_light
 dimen item_touch_helper_max_drag_scroll_per_frame
 dimen item_touch_helper_swipe_escape_max_velocity
 dimen item_touch_helper_swipe_escape_velocity
+dimen margin_16
 dimen material_clock_display_padding
 dimen material_clock_face_margin_top
 dimen material_clock_hand_center_dot_radius
@@ -2303,6 +2304,7 @@ string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
 string alguem_ira
+string andar_invalido
 string andar_selecionado
 string app_name
 string appbar_scrolling_view_behavior
@@ -2314,6 +2316,8 @@ string character_counter_pattern
 string chip_text
 string clear_text_end_icon_content_description
 string digite_um_andar
+string elevador_lotado
+string elevador_vazio
 string entrar
 string error_icon_content_description
 string exposed_dropdown_menu_content_description
@@ -2383,6 +2387,8 @@ string pessoas_no_elevador
 string quinto
 string sair
 string search_menu_title
+string simbolo_grau_elevador
+string status_andar
 string status_bar_notification_info_overflow
 string voce_esta_no
 style AlertDialog_AppCompat
