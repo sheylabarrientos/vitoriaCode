@@ -19,4 +19,3 @@ Status do Projeto: Concluído ✔️<br><br>
 
 
 <img src="agenda.png" width="300px"></img>
-<img src="agenda-pg2.png" width="300px"></img>
