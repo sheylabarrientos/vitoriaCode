@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/fundo"
+        android:scrollbarStyle="insideOverlay"
+        tools:context=".SecondActivity">
+
+        <EditText
+            android:id="@+id/campoPesquisar"
+            style="@style/EditTextTelaPrincipal"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="32dp"
+            android:autofillHints="no"
+            android:hint="@string/pesquisar"
+            android:inputType="textCapWords"
+            app:layout_constraintEnd_toStartOf="@+id/btnPesquisar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/btnPesquisar"
+            android:contentDescription="@android:string/ok"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="16dp"
+            android:backgroundTint="@color/translucent_grey"
+            android:src="@drawable/lupa1"
+            app:layout_constraintBottom_toBottomOf="@+id/campoPesquisar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/campoPesquisar"
+            app:layout_constraintTop_toTopOf="@+id/campoPesquisar" />
+
+        <!--        style="?attr/materialButtonOutlinedStyle"    -->
+
+
+        <Button
+            android:id="@+id/btnExibirTodos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/BotoesTelaPrincipal"
+            android:text="@string/exibir_todos"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/campoPesquisar" />
+
+        <TextView
+            android:id="@+id/listaContatos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/TextViewTelaPrincipal"
+            android:background="@color/translucent_grey"
+            android:backgroundTint="@color/translucent_grey"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnExibirTodos" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

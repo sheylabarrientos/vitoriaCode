@@ -1,0 +1,2 @@
+com/sheyla/aulalayout01/BuildConfig.java
+ com.sheyla.aulalayout01.BuildConfig
