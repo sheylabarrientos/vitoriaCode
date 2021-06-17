@@ -5,8 +5,8 @@
 
 <p>Aplicação Android de agenda, nela, você insere o nome da pessoa, o celular e marca as seguintes opções:
 
-Se for um contato de trabalho, deverá incluir o e-mail.<br>
-Se for um contato pessoal, deverá ter um campo para identificar aonde conheceu essa pessoa.</p>
+:small_blue_diamond: Se for um contato de trabalho, deverá incluir o e-mail.<br>
+:small_blue_diamond: Se for um contato pessoal, deverá ter um campo para identificar aonde conheceu essa pessoa.</p>
 
 <h3>Funcionalidades :triangular_flag_on_post:</h3><br>
 
