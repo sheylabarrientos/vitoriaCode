@@ -11,4 +11,10 @@
     <string name="nomeAndar">andar</string>
     <string name="_2_5">2/5</string>
     <string name="pesoas_no_n_elevador">pesoas no \n elevador</string>
+    <string name="simbolo_grau_elevador">%s º</string>
+    <string name="andar_invalido">Andar Inválido!</string>
+    <string name="status_andar">%s /5</string>
+    <string name="elevador_lotado">Não cabem mais pessoas no elevador!</string>
+    <string name="elevador_vazio">Não tem mais ninguém no elevador!</string>
+
 </resources>

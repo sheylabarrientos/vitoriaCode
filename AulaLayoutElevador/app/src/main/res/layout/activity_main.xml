@@ -51,9 +51,7 @@
                 android:layout_gravity="center"
                 android:layout_marginStart="8dp"
                 android:text="@string/nomeAndar" />
-
         </LinearLayout>
-
 
         <TextView
             android:id="@+id/ocupacao"
@@ -75,7 +73,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/ocupacao" />
-
 
         <EditText
             android:id="@+id/digitarAndar"
@@ -105,7 +102,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/digitarAndar" />
 
-
         <TextView
             android:id="@+id/alguem_ira"
             style="@style/TituloTelaPrincipal"
@@ -114,7 +110,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btnAndar" />
-
 
         <Button
             android:id="@+id/btnEntrar"
@@ -141,7 +136,5 @@
             app:layout_constraintStart_toEndOf="@id/btnEntrar"
             app:layout_constraintTop_toBottomOf="@id/alguem_ira" />
 
-
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </ScrollView>
