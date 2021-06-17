@@ -34,26 +34,26 @@ class MainActivity : AppCompatActivity() {
             subirElevador(pegaValorAndar())
         }
 
-        val elevador = Elevador() //Aqui se está chamando a classe "Elevador"
+        val elevador = Elevador() //Chamando a classe "Elevador"
 
-        btnEntrar.setOnClickListener { //Ao clicar no botão "entrar", executar o que segue.
-            val adicionar = elevador.adicionarPessoa() //Aqui se colocou o RESULTADO da função (e não a função em si) "adicionarPessoa()" da classe "Elevador" dentro de uma variável.
-            if (adicionar != -1) { //Aqui se está dizendo "se a função "adicionarPessoa()" (da classe "Elevador") for diferente do erro que ela gera (aqui representado por "-1", que é qualquer coisa acima do número máximo de pessoas ("5")), então..."
-                status.setText(adicionar.toString() + "/5") //"Colocar dentro da caixa de texto "pessoasNoElevador" o resultado da função "adicionarPessoa()" (transformada em string) e adicionar o texto subsequente.
+        btnEntrar.setOnClickListener { //Botao Entrar
+            val adicionar = elevador.adicionarPessoa() 
+            if (adicionar != -1) { 
+                status.setText(adicionar.toString() + "/5")te.
             } else {
-                Toast.makeText( //Aqui se criou um popup para avisar que o elevador está cheio, caso a condicional do "if" não ocorra.
+                Toast.makeText(
                     this,
                     "Não cabem mais pessoas no elevador!",
                     Toast.LENGTH_SHORT).show()
             }
         }
 
-        btnSair.setOnClickListener { //Ao clicar no botão "sair", executar o que segue.
-            val excluir = elevador.excluirPessoa() //Aqui se colocou o RESULTADO da função (e não a função em si) "excluirPessoa()" da classe "Elevador" dentro de uma variável.
-            if (excluir != -1) { //Aqui se está dizendo "se a função "excluirPessoa()" (da classe "Elevador") for diferente do erro que ela gera (aqui representado por "-1", que é qualquer coisa abaixo do número mínimo de pessoas ("1")), então..."
-                status.setText(excluir.toString() + "/5") //"Colocar dentro da caixa de texto "pessoasNoElevador" o resultado da função "excluirPessoa()" (transformada em string) e adicionar o texto subsequente.
+        btnSair.setOnClickListener { //Botao Sair
+            val excluir = elevador.excluirPessoa() 
+            if (excluir != -1) {
+                status.setText(excluir.toString() + "/5") 
             } else {
-                Toast.makeText( //Aqui se criou um popup para avisar que o elevador está vazio, caso a condicional do "if" não ocorra.
+                Toast.makeText(
                     this,
                     "Não tem mais ninguém no elevador!",
                     Toast.LENGTH_SHORT).show()
@@ -63,17 +63,16 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    fun subirElevador(andar: Int) {
+    fun subirElevador(andar: Int) { //Subir Andares
         val recebeAndar = digitarAndar.text.toString()
-        when (recebeAndar.toIntOrNull()) { //"Quando algo for digitado em "andar"..."
+        when (recebeAndar.toIntOrNull()) { 
             in 1..12 -> {
                 andarAtual.text =
-                    recebeAndar + "˚" //"Se o número for entre "1" e "12" (considerando aqui que se determinou um prédiod e 12 andares), colocar o andar digitado dentro da caixa de texto "andarAtual", junto com o texto subsequente. andarAtual.text = null
-                digitarAndar.text = null //Esse comando limpa a caixa de texto do andar.
+                    recebeAndar + "˚" 
             }
-            else -> { //"Em caso diferente..."
+            else -> { 
                 digitarAndar.error =
-                    "Andar inválido!" //"Criar um erro na caixa de texto "digitarAndar" informando que o andar é inválido.
+                    "Andar inválido!" 
             }
             // return andar.toInt()
         }
