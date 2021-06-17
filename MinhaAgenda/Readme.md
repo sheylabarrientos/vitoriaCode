@@ -18,4 +18,4 @@ Se for um contato pessoal, deverá ter um campo para identificar aonde conheceu 
 Status do Projeto: Concluído ✔️<br><br>
 
 
-<img src="agenda.png" width="300px"></img>
+<img src="agenda.png" width="500px"></img>
