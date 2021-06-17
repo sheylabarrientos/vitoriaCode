@@ -1,5 +1,5 @@
 
-<h1>Minha Agenda :notebook:</h1>
+<h1>Minha Agenda</h1>
 
 <h3>Descrição do projeto :iphone:</h3><br>
 
