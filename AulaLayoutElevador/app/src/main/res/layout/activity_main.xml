@@ -7,131 +7,141 @@
     android:layout_height="match_parent"
     android:fillViewport="true">
 
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@drawable/elevator"
-    tools:context=".MainActivity" >
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_marginTop="16dp"
-        android:text="@string/voce_esta_no"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        style="@style/TituloTelaPrincipal"/>
-
-
-    <TextView
-        android:id="@+id/andarAtual"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="8dp"
-        android:gravity="right"
-        tools:text="@string/quinto"
-        app:layout_constraintEnd_toStartOf="@+id/textView3"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        style="@style/TituloAndar" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_marginEnd="48dp"
-        android:text="@string/nomeAndar"
-        app:layout_constraintBottom_toBottomOf="@+id/andarAtual"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/andarAtual"
-        app:layout_constraintTop_toTopOf="@+id/andarAtual"
-        style="@style/TituloAndar" />
-
-    <TextView
-        android:id="@+id/ocupacao"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/background"
-        android:gravity="center"
-        android:paddingTop="60dp"
-        android:text="pesoas no\n elevador"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/andarAtual"
-        style="@style/TituloTelaPrincipal" />
-
-    <TextView
-        android:id="@+id/status"
-        android:layout_marginTop="8dp"
-        android:text="@string/_2_5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/ocupacao"
-        style="@style/statusElevador"/>
-
-
-    <EditText
-        android:id="@+id/digitarAndar"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="24dp"
-        android:padding="10dp"
-        android:hint="@string/digite_um_andar"
-        android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ocupacao"
-        style="@style/DigiteUmAndar"/>
-
-    <Button
-        android:id="@+id/btnAndar"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="24dp"
-        android:backgroundTint="#5A7DFD"
-        android:text="@string/andar_selecionado"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/digitarAndar"
-        style="@style/Botoes" />
+        android:layout_height="wrap_content"
+        android:background="@drawable/elevator"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:id="@+id/textView"
+            style="@style/TituloTelaPrincipal"
+            android:layout_marginTop="24dp"
+            android:text="@string/voce_esta_no"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/layoutAndar"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:layout_marginTop="@dimen/margin_16"
+            android:background="@drawable/display"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView">
+
+            <TextView
+                android:id="@+id/andarAtual"
+                style="@style/TituloAndar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="8dp"
+                tools:text="@string/quinto" />
+
+            <TextView
+                android:id="@+id/textView3"
+                style="@style/TituloAndar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="8dp"
+                android:text="@string/nomeAndar" />
+
+        </LinearLayout>
 
 
-    <TextView
-        android:id="@+id/alguem_ira"
-        android:layout_marginTop="8dp"
-        android:text="@string/alguem_ira"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnAndar"
-        style="@style/TituloTelaPrincipal"/>
+        <TextView
+            android:id="@+id/ocupacao"
+            style="@style/TituloTelaPrincipal"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/background"
+            android:gravity="center"
+            android:paddingTop="60dp"
+            android:text="@string/pesoas_no_n_elevador"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layoutAndar" />
+
+        <TextView
+            android:id="@+id/status"
+            style="@style/statusElevador"
+            android:layout_marginTop="8dp"
+            android:text="@string/_2_5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/ocupacao" />
 
 
-    <Button
-        android:id="@+id/btnEntrar"
-        android:layout_width="0dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="16dp"
-        android:backgroundTint="#3E9538"
-        android:text="@string/entrar"
-        app:layout_constraintEnd_toStartOf="@id/btnSair"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/alguem_ira"
-        style="@style/Botoes"/>
+        <EditText
+            android:id="@+id/digitarAndar"
+            style="@style/DigiteUmAndar"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="@dimen/margin_16"
+            android:layout_marginEnd="24dp"
+            android:autofillHints="no"
+            android:hint="@string/digite_um_andar"
+            android:inputType="number"
+            android:padding="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ocupacao" />
 
-    <Button
-        android:id="@+id/btnSair"
-        android:layout_width="0dp"
-        android:layout_height="60dp"
-        android:layout_marginEnd="24dp"
-        android:backgroundTint="#C33131"
-        android:text="@string/sair"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/btnEntrar"
-        app:layout_constraintTop_toBottomOf="@id/alguem_ira"
-        style="@style/Botoes"/>
+        <Button
+            android:id="@+id/btnAndar"
+            style="@style/Botoes"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:backgroundTint="#5A7DFD"
+            android:text="@string/andar_selecionado"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/digitarAndar" />
 
 
+        <TextView
+            android:id="@+id/alguem_ira"
+            style="@style/TituloTelaPrincipal"
+            android:layout_marginTop="8dp"
+            android:text="@string/alguem_ira"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnAndar" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/btnEntrar"
+            style="@style/Botoes"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="@dimen/margin_16"
+            android:backgroundTint="#3E9538"
+            android:text="@string/entrar"
+            app:layout_constraintEnd_toStartOf="@id/btnSair"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/alguem_ira" />
+
+        <Button
+            android:id="@+id/btnSair"
+            style="@style/Botoes"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="24dp"
+            android:backgroundTint="#C33131"
+            android:text="@string/sair"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btnEntrar"
+            app:layout_constraintTop_toBottomOf="@id/alguem_ira" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>

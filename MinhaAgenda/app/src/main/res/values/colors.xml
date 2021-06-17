@@ -10,4 +10,7 @@
     <color name="gray">#FFCDCBCB</color>
     <color name="gray2">#555555</color>
     <color name="translucent_grey">#88cccccc</color>
+    <color name="colorSecondary">#006978</color>
+    <color name="colorOnSecondary">#0097a7</color>
+    <color name="colorOnSurface">#56c8d8</color>
 </resources>
