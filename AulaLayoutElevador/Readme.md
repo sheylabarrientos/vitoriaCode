@@ -11,6 +11,6 @@ Na tela, são exibidas as opções para que o usuário escolha o andar <br> dese
 ✔️ Exibição de aviso por Toast para que o usuário respeite a capacidade máxima de lotação (5 pessoas).<br>
 ✔️ Exibição de mensagem de erro para evitar que o usuário insira algum andar inválido (Intervalo possível: 0 a 7).<br><br>
   
-Status do Projeto: Concluído ✔️<br>
+Status do Projeto: Concluído ✔️<br><br>
 
-<img src="elevador.png" width="500px"></img>
+<img src="elevador.png" width="300px"></img>
