@@ -1,10 +1,15 @@
 package com.sheyla.minhaagenda
 
 import android.content.Intent
+import android.icu.lang.UCharacter
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.*
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MainActivity : AppCompatActivity() {
@@ -16,13 +21,10 @@ class MainActivity : AppCompatActivity() {
     lateinit var rdTrabalho: RadioButton
     lateinit var campoReferencia: EditText
     //lateinit var btnSalvar: Button
-
     lateinit var navegar: FloatingActionButton
-
-
-
+    private lateinit var rvContatos: RecyclerView
+    private lateinit var contatosAdapter: ContatosAdapter
     var contatos: MutableList<Pessoa> = mutableListOf()
-
     lateinit var contatosCadastrados: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,13 +38,10 @@ class MainActivity : AppCompatActivity() {
         rdTrabalho = findViewById(R.id.rdTrabalho)
         campoReferencia = findViewById(R.id.campoReferencia)
         //btnSalvar = findViewById(R.id.btnSalvar)
-
         contatosCadastrados = findViewById(R.id.contatosCadastrados)
-
-
         navegar = findViewById(R.id.navegar)
 
-        navegar.setOnClickListener{
+        navegar.setOnClickListener {
 
             if (campoNome.text.isEmpty()) {
                 campoNome.error = "Digite um nome."
@@ -50,7 +49,7 @@ class MainActivity : AppCompatActivity() {
                 campoCelular.error = "Digite um número de telefone."
             } else if (campoReferencia.text.isEmpty()) {
                 campoReferencia.error = "Digite uma referência."
-            }else {
+            } else {
 
                 val nomeDigitado = campoNome.text.toString()
                 val numeroCelular = campoCelular.text.toString()
@@ -66,9 +65,33 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent)
             }
 
+            rvContatos = findViewById(R.id.rvContatos)
+            rvContatos.adapter
+            rvContatos.layoutManager
 
+            val lista = mutableListOf<Contato>(
+                Contato("Rachel", "Moça da Calopsita"),
+                Contato("Monique", "Moça do Fone Rosa"),
+                Contato("Iolanda", "Moça da Bateria em casa"),
+                Contato("Samyra", "Moça da uva congelada"),
+                Contato("Luiza", "Moça do algoritimo")
+            )
+
+            rvContatos.adapter = ContatosAdapter(dataSet = lista)
+            rvContatos.adapter = contatosAdapter
+
+            // 1.LinearLayoutManager = lita unidimensional (unica coluna) que pode ser horizontal ou vertical (padrão)
+            // 1. HORIZONTAL    === Alterar para wrap_content
+            rvContatos.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+            // 2. GRID    ===
+            //rvContatos.layoutManager = GridLayoutManager(this, 2)
+            // 3. STAGGERED GRID === lista multidimensional com várias colunas que varia o tamanho de sua altura e largura
+            //rvContatos.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
         }
 
+        fun filtrar() {
+            //contatosAdapter.atualizarLista()
+        }
     }
 
 //     fun bindViews() {
@@ -97,7 +120,6 @@ class MainActivity : AppCompatActivity() {
 //
 //
 //    }
-
 
     fun cadastrarContato(nome: String, telefone: String, referencia: String) {
         contatos.add(

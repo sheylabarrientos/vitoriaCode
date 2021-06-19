@@ -15,7 +15,7 @@ class SecondActivity : AppCompatActivity() {
 
     lateinit var listaContatos: TextView
 
-//    lateinit var rvContatos : RecyclerView
+
 
     var contatos: MutableList<Pessoa> = mutableListOf()
 
@@ -24,15 +24,6 @@ class SecondActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second)
         bindViews()
-
-//      rvContatos = findViewById(R.id.rvContatos)
-//        rvContatos.adapter
-//        rvContatos.layoutManager
-
- //       val lista = mutableListOf<Contato>(
- //           Contato("Rachel", "Moça da Calopsita") Contato("Monique", "Moça do Fone Rosa")
- //       )
-
 
         val nomeRecebido = intent.getStringExtra("salvar")
 
