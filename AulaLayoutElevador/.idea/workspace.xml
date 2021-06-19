@@ -42,10 +42,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ce0bc662-af4f-44ed-b320-8633b912fbdd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/sheyla/aulalayout01/Elevador.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/sheyla/aulalayout01/Elevador.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/sheyla/aulalayout01/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/sheyla/aulalayout01/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +79,7 @@
     <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-06-08T19:23:38.206002500Z" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/values" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../MinhaAgenda" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
@@ -208,10 +204,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="909" y="355" key="AndroidCreateXmlResourceDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1623957678044" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1623942882669">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1624047777423">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1623942882669" />
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1624047777423" />
     <state width="745" height="162" key="GridCell.Tab.0.bottom" timestamp="1623455488136">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
