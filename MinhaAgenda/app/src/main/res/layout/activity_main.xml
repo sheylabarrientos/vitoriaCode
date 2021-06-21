@@ -16,8 +16,8 @@
         <EditText
             android:id="@+id/campoNome"
             style="@style/EditTextTelaPrincipal"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginTop="@dimen/margin_32"
+            android:layout_marginEnd="@dimen/margin_16"
             android:autofillHints="no"
             android:hint="@string/nome"
             android:inputType="textCapWords"
@@ -28,8 +28,8 @@
         <EditText
             android:id="@+id/campoCelular"
             style="@style/EditTextTelaPrincipal"
-            android:layout_marginTop="16sp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginTop="@dimen/margin_16"
+            android:layout_marginEnd="@dimen/margin_16"
             android:autofillHints="no"
             android:hint="@string/celular"
             android:inputType="phone"
@@ -51,7 +51,7 @@
                 android:id="@+id/rdReferencia"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp">
+                android:layout_marginTop="@dimen/margin_16">
 
 
                 <RadioButton
@@ -60,6 +60,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/hint_referencia"
+                    android:onClick="onRadioButtonClicked"
                     android:text="@string/pessoal" />
 
                 <RadioButton
@@ -68,6 +69,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/e_mail"
+                    android:onClick="onRadioButtonClicked"
                     android:text="@string/trabalho" />
 
             </RadioGroup>
@@ -77,8 +79,8 @@
         <EditText
             android:id="@+id/campoReferencia"
             style="@style/EditTextTelaPrincipal"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginTop="@dimen/margin_16"
+            android:layout_marginEnd="@dimen/margin_16"
             android:autofillHints="no"
             android:hint="@string/refer_ncia"
             android:inputType="textEmailAddress"
@@ -86,16 +88,16 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
-<!--        <Button-->
-<!--            android:id="@+id/btnSalvar"-->
-<!--            style="@style/BotoesTelaPrincipal"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:clickable="true"-->
-<!--            android:text="@string/salvar"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/campoReferencia" />-->
+        <!--        <Button-->
+        <!--            android:id="@+id/btnSalvar"-->
+        <!--            style="@style/BotoesTelaPrincipal"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:clickable="true"-->
+        <!--            android:text="@string/salvar"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toBottomOf="@+id/campoReferencia" />-->
 
         <TextView
             android:id="@+id/contatosCadastrados"
@@ -109,19 +111,20 @@
             app:layout_constraintTop_toBottomOf="@+id/campoReferencia" />
 
         <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="bottom"
             android:orientation="vertical">
-
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/navegar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
-                android:layout_marginRight="16dp"
-                android:layout_marginBottom="16dp"
+                android:layout_marginEnd="@dimen/margin_16"
+                android:layout_marginBottom="@dimen/margin_16"
+                android:contentDescription="@string/fab_content_desc"
                 android:scaleType="center"
                 android:src="@drawable/ic_baseline_add_24"
                 android:visibility="visible"

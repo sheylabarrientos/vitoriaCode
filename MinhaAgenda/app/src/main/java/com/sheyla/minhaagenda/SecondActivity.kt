@@ -8,71 +8,35 @@ import androidx.recyclerview.widget.RecyclerView
 
 class SecondActivity : AppCompatActivity() {
 
-
-     lateinit var campoPesquisa: EditText
-     lateinit var btnPesquisar: ImageButton
-     lateinit var btnExibirTodos: Button
-
-    lateinit var listaContatos: TextView
-
-
-
-    var contatos: MutableList<Pessoa> = mutableListOf()
-
+    private lateinit var campoPesquisa: EditText
+    private lateinit var btnPesquisar: ImageButton
+    private lateinit var btnExibirTodos: Button
+    private lateinit var listaContatos: TextView
+    private lateinit var contatosListaRecyclerView: RecyclerView
+    private var contatos: MutableList<Pessoa> = mutableListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second)
         bindViews()
 
-        val nomeRecebido = intent.getStringExtra("salvar")
+        val listaContatosRecebida = intent.extras?.get("contatos")
 
-        Toast.makeText(this, "Contato: $nomeRecebido",
-          Toast.LENGTH_LONG).show()
+        listaContatos.text = listaContatosRecebida as CharSequence?
 
-    }
-
-    fun bindViews() {
-        campoPesquisa = findViewById(R.id.campoPesquisar)
-        btnPesquisar = findViewById(R.id.btnPesquisar)
-        btnExibirTodos = findViewById(R.id.btnExibirTodos)
-
-
-        listaContatos = findViewById(R.id.listaContatos)
-
-
-        btnPesquisar.setOnClickListener() {
-            val pesquisa = campoPesquisa.text.toString()
-
-            val resultado = contatos.find { pessoa ->
-                pessoa.getNome() == pesquisa
-            }
-
-            if (resultado != null) {
-                Toast.makeText(
-                    this,
-                    resultado.exibirTodos(),
-                    Toast.LENGTH_SHORT
-                ).show()
-            } else {
-                Toast.makeText(
-                    this,
-                    "Não foi possível encontrar um contato",
-                    Toast.LENGTH_SHORT
-                ).show()
-            }
-
+        btnPesquisar.setOnClickListener {
+            pesquisarContato()
         }
-
         btnExibirTodos.setOnClickListener {
-            contatos.exibirLista()
-            listaContatos.text
+            exibirLista()
         }
-
-
+        Toast.makeText(
+            this, "Contato Recebido",
+            Toast.LENGTH_LONG
+        ).show()
     }
 
-    open fun MutableList<Pessoa>.exibirLista() {
+    private fun exibirLista() {
         contatos.sortBy { it.getNome() }
         listaContatos.visibility = View.VISIBLE
         var message = ""
@@ -82,9 +46,37 @@ class SecondActivity : AppCompatActivity() {
         listaContatos.text = message
     }
 
-        override fun onResume() {
-        super.onResume()
-//        Log.d("MeuAplicativo", "Ciclo de vida onResumo")
- }
+    private fun bindViews() {
+        campoPesquisa = findViewById(R.id.campoPesquisar)
+        btnPesquisar = findViewById(R.id.btnPesquisar)
+        btnExibirTodos = findViewById(R.id.btnExibirTodos)
+        contatosListaRecyclerView = findViewById(R.id.recyclerViewContatos)
+        listaContatos = findViewById(R.id.listaContatos)
+    }
+
+    private fun pesquisarContato() {
+        val pesquisa = campoPesquisa.text.toString()
+        val resultado = contatos.find { pessoa ->
+            pessoa.getNome() == pesquisa
+        }
+        if (resultado != null) {
+            Toast.makeText(
+                this,
+                resultado.exibirTodos(),
+                Toast.LENGTH_SHORT
+            ).show()
+        } else {
+            Toast.makeText(
+                this,
+                "Não foi possível encontrar um contato",
+                Toast.LENGTH_SHORT
+            ).show()
+        }
+
+    }
+
+companion object {
+    //val myContacts: ContatoLista = ContatoLista()
+}
 
 }

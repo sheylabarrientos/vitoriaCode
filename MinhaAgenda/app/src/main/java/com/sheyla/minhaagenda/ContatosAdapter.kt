@@ -7,7 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 //Classe de Adapter: vínculo entre dataset e viewholder (item) // Lista de Filmes TMDB
-class ContatosAdapter(var dataSet: MutableList<Contato>) :
+class ContatosAdapter(var dataSet: MutableList<Contato>, private val listener : OnItemClickListener) :
     RecyclerView.Adapter<ContatosAdapter.ContatosViewHolder>() {
 
     // ============= VIEWHOLDER ===============
@@ -15,7 +15,13 @@ class ContatosAdapter(var dataSet: MutableList<Contato>) :
     // referência entre os componentes e o código (ex. findViewById)
     class ContatosViewHolder(view: View) : RecyclerView.ViewHolder(view) { // qual item vou reciclar
         val nome = view.findViewById<TextView>(R.id.itemNome)
-        val descricao = view.findViewById<TextView>(R.id.itemDescricao)
+        val telefone = view.findViewById<TextView>(R.id.itemTelefone)
+        val descricao = view.findViewById<TextView>(R.id.itemReferencia)
+        val btnExcluir = view.findViewById<TextView>(R.id.btnExcluir)
+    }
+
+    interface OnItemClickListener {
+        fun onBtnDeleteClick (position: Int)
     }
 
     // ============== ADAPTER ==================
@@ -31,14 +37,16 @@ class ContatosAdapter(var dataSet: MutableList<Contato>) :
     // Substituir os itens do layout pelos itens do meu DATASET
     override fun onBindViewHolder(holder: ContatosViewHolder, position: Int) {
         holder.nome.text = dataSet[position].nome
-        holder.descricao.text = dataSet[position].descricao
+        holder.telefone.text = dataSet[position].telefone
+        holder.descricao.text = dataSet[position].referencia
+        holder.btnExcluir
     }
 
     // Tamanho do DATASET / Tamnho dos itens da lista
     override fun getItemCount(): Int = dataSet.size
 
     fun atualizarLista(listaFiltrada: MutableList<Contato>){
-        dataSet = listaFiltrada
+        //dataSet = clear()
         notifyDataSetChanged()
         // notifyItemChanged() modificar um item
     }

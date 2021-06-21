@@ -1,17 +1,19 @@
 package com.sheyla.minhaagenda
 
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
 
-open class Pessoa(open val nome: String,
-                       private var telefone: String,
-                       open var referencia: String){
-
+@Parcelize
+data class Pessoa( val nome: String, val telefone: String, val referencia: String
+): Parcelable {
 
     @JvmName("getNome1")
     fun getNome() = nome
     fun getNumber() = telefone
     fun getRef() = referencia
 
-    open fun exibirTodos(): String {
+    fun exibirTodos(): String {
         return "$nome - $telefone, $referencia"
     }
+
 }
