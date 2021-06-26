@@ -15,8 +15,6 @@ class MainActivity : AppCompatActivity() {
     lateinit var rdPessoal: RadioButton
     lateinit var rdTrabalho: RadioButton
     lateinit var campoReferencia: EditText
-    lateinit var btnSalvar: Button
-
     lateinit var navegar: FloatingActionButton
 
 
@@ -35,11 +33,7 @@ class MainActivity : AppCompatActivity() {
         rdPessoal = findViewById(R.id.rdPessoal)
         rdTrabalho = findViewById(R.id.rdTrabalho)
         campoReferencia = findViewById(R.id.campoReferencia)
-        btnSalvar = findViewById(R.id.btnSalvar)
-
         contatosCadastrados = findViewById(R.id.contatosCadastrados)
-
-
         navegar = findViewById(R.id.navegar)
 
         navegar.setOnClickListener{

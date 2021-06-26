@@ -17,10 +17,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var campoReferencia: EditText
     lateinit var navegar: FloatingActionButton
 
-    //private lateinit var recyclerViewContatos: RecyclerView
-    //private lateinit var contatosAdapter: ContatosAdapter
-
-    var contatos: MutableList<Pessoa> = mutableListOf()
+    var contatos = arrayListOf<Pessoa>() //lista de contatos declaração
     lateinit var contatosCadastrados: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,13 +26,14 @@ class MainActivity : AppCompatActivity() {
         bindViews()
 
         navegar.setOnClickListener {
-            irParaSecondActivity()
+        irParaSecondActivity()
         }
-    }
+ }
 
     private fun irParaSecondActivity() {
+        salvarContato() //função salvar contato
         val intent = Intent(this, SecondActivity::class.java)
-        salvarContato()
+        intent.putParcelableArrayListExtra("CONTATOS", contatos)
         startActivity(intent)
     }
 
@@ -50,7 +48,7 @@ class MainActivity : AppCompatActivity() {
         navegar = findViewById(R.id.navegar)
     }
 
-    private fun salvarContato() {
+    private fun salvarContato(): List<Pessoa> {
 
         if (campoNome.text.isEmpty()) {
             campoNome.error = "Digite um nome."
@@ -59,79 +57,21 @@ class MainActivity : AppCompatActivity() {
         } else if (campoReferencia.text.isEmpty()) {
             campoReferencia.error = "Digite uma referência."
         } else {
-
             val nomeDigitado = campoNome.text.toString()
             val numeroCelular = campoCelular.text.toString()
             val campoReferencia = campoReferencia.text.toString()
             val referenciaSelecionada = rdGroup.checkedRadioButtonId
-
-            referenciaSelecionada.let {
-                cadastrarContato(nomeDigitado, numeroCelular, campoReferencia)
-            }
-
-            val intent = Intent(this, SecondActivity::class.java)
-            intent.putExtra(CONTATO, "contato")
-
-
-//            recyclerViewContatos = findViewById(R.id.recyclerViewContatos)
-//            recyclerViewContatos.adapter
-//            recyclerViewContatos.layoutManager
-//
-//            val lista = mutableListOf<Contato>(
-//                Contato("Rachel", "11 920062323", "Academia"),
-//                Contato("Monique", "11 920062323", "Curso"),
-//                Contato("Iolanda", "11 920062323", "Trabalho"),
-//                Contato("Samyra", "11 920062323", "Curso"),
-//                Contato("Luiza", "11 920062323", "Curso")
-//            )
-//
-//            recyclerViewContatos.adapter = ContatosAdapter(dataSet = lista)
-//            recyclerViewContatos.adapter = contatosAdapter
-//
-//            // 1.LinearLayoutManager = lita unidimensional (unica coluna) que pode ser horizontal ou vertical (padrão)
-//            // 1. HORIZONTAL    === Alterar para wrap_content
-//            recyclerViewContatos.layoutManager =
-//                LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-            // 2. GRID    ===
-            //rvContatos.layoutManager = GridLayoutManager(this, 2)
-            // 3. STAGGERED GRID === lista multidimensional com várias colunas que varia o tamanho de sua altura e largura
-            //rvContatos.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+//            referenciaSelecionada.let {
+//                cadastrarContato(nomeDigitado, numeroCelular, campoReferencia)
+//            }
+            contatos.add(Pessoa(nomeDigitado, numeroCelular, campoReferencia))
         }
-
-//        fun filtrar() {
-//            //contatosAdapter.atualizarLista()
-//        }
-
-//        Toast.makeText(
-//            this,
-//            contatos.last().exibirTodos(),
-//            Toast.LENGTH_SHORT
-//        ).show()
-//    }
-
-//    fun MutableList<Pessoa>.exibirContatos() {
-//        contatos.sortBy { it.getNome() }
-//        contatosCadastrados.visibility = View.VISIBLE
-//        var message = ""
-//        for (contact in contatos) {
-//            message += "${contact.getNome()} ${contact.getNumber()}, ${contact.getRef()}\n\n"
-//        }
-//        contatosCadastrados.text = message
-//    }
-
-//    override fun onResume() {
-////        super.onResume()
-////        Log.d("MeuAplicativo", "Ciclo de vida onResumo")
-// }
-
-
+        return contatos
     }
 
-    fun cadastrarContato(nome: String, telefone: String, referencia: String) {
-        contatos.add(
-            Pessoa(nome = nome, telefone = telefone, referencia = referencia)
-        )
-    }
+//    fun cadastrarContato(nome: String, telefone: String, referencia: String): Pessoa{
+//        (Pessoa(nome = nome, telefone = telefone, referencia = referencia))
+//    }
 
     fun onRadioButtonClicked(view: View) {
         if (view is RadioButton) {
@@ -152,9 +92,10 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    companion object {
-        val CONTATO = "contato"
-    }
+//    override fun setOnDeleteListener() {
+//        Toast.makeText(this, "Item deletado", Toast.LENGTH_LONG).show()
+//    }
+
 }
 
 

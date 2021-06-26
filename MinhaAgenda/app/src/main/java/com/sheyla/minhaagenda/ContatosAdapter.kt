@@ -7,7 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 //Classe de Adapter: vínculo entre dataset e viewholder (item) // Lista de Filmes TMDB
-class ContatosAdapter(var dataSet: MutableList<Contato>, private val listener : OnItemClickListener) :
+class ContatosAdapter(var dataSet: List<Pessoa>) :
     RecyclerView.Adapter<ContatosAdapter.ContatosViewHolder>() {
 
     // ============= VIEWHOLDER ===============
@@ -17,12 +17,18 @@ class ContatosAdapter(var dataSet: MutableList<Contato>, private val listener : 
         val nome = view.findViewById<TextView>(R.id.itemNome)
         val telefone = view.findViewById<TextView>(R.id.itemTelefone)
         val descricao = view.findViewById<TextView>(R.id.itemReferencia)
-        val btnExcluir = view.findViewById<TextView>(R.id.btnExcluir)
+        //val btnExcluir = view.findViewById<TextView>(R.id.btnExcluir)
+
+        fun bindContato(pessoa: Pessoa){
+            nome.text = pessoa.nome
+            telefone.text = pessoa.telefone
+            descricao.text = pessoa.referencia
+        }
     }
 
-    interface OnItemClickListener {
-        fun onBtnDeleteClick (position: Int)
-    }
+//    interface OnItemClickListener {
+//        fun onBtnDeleteClick (position: Int)
+//    }
 
     // ============== ADAPTER ==================
     //Ciclo de vida vulgo método que cria o viewholder ## INFLA SUA APLICAÇÃO
@@ -36,18 +42,22 @@ class ContatosAdapter(var dataSet: MutableList<Contato>, private val listener : 
     // Vìnculo entre dataset x item (layout)
     // Substituir os itens do layout pelos itens do meu DATASET
     override fun onBindViewHolder(holder: ContatosViewHolder, position: Int) {
-        holder.nome.text = dataSet[position].nome
-        holder.telefone.text = dataSet[position].telefone
-        holder.descricao.text = dataSet[position].referencia
-        holder.btnExcluir
-    }
+        holder.bindContato(dataSet[position])
+//        holder.nome.text = dataSet[position].nome
+//        holder.telefone.text = dataSet[position].telefone
+//        holder.descricao.text = dataSet[position].referencia
+//        holder.btnExcluir.setOnClickListener {
+////            listener?.let{
+////                it.setOnDeleteListener()
+////            }
+        }
 
     // Tamanho do DATASET / Tamnho dos itens da lista
     override fun getItemCount(): Int = dataSet.size
 
-    fun atualizarLista(listaFiltrada: MutableList<Contato>){
-        //dataSet = clear()
-        notifyDataSetChanged()
-        // notifyItemChanged() modificar um item
-    }
+//    fun atualizarLista(listaFiltrada: MutableList<Pessoa>){
+//        //dataSet = listaFiltrada
+//        notifyDataSetChanged()
+//        // notifyItemChanged() modificar um item
+//    }
 }

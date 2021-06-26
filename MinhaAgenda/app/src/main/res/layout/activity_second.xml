@@ -38,9 +38,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/campoPesquisar"
             app:layout_constraintTop_toTopOf="@+id/campoPesquisar" />
-
         <!--        style="?attr/materialButtonOutlinedStyle"    -->
-
 
         <Button
             android:id="@+id/btnExibirTodos"
@@ -72,7 +70,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/listaContatos" />
-
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

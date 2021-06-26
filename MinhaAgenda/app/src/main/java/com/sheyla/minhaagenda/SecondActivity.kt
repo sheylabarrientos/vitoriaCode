@@ -2,8 +2,8 @@ package com.sheyla.minhaagenda
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.*
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class SecondActivity : AppCompatActivity() {
@@ -13,37 +13,40 @@ class SecondActivity : AppCompatActivity() {
     private lateinit var btnExibirTodos: Button
     private lateinit var listaContatos: TextView
     private lateinit var contatosListaRecyclerView: RecyclerView
-    private var contatos: MutableList<Pessoa> = mutableListOf()
+    private lateinit var adapter: ContatosAdapter
+    //private var contatos = arrayListOf<Pessoa>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second)
+
         bindViews()
 
-        val listaContatosRecebida = intent.extras?.get("contatos")
+        val extras = intent.extras
+        val contatos = extras?.getParcelableArrayList<Pessoa>("CONTATOS")
 
-        listaContatos.text = listaContatosRecebida as CharSequence?
 
         btnPesquisar.setOnClickListener {
-            pesquisarContato()
+            //pesquisarContato()
         }
         btnExibirTodos.setOnClickListener {
-            exibirLista()
+            contatos?.let { it1 -> exibirLista(it1) }
         }
-        Toast.makeText(
-            this, "Contato Recebido",
-            Toast.LENGTH_LONG
-        ).show()
+
     }
 
-    private fun exibirLista() {
-        contatos.sortBy { it.getNome() }
-        listaContatos.visibility = View.VISIBLE
-        var message = ""
-        for (contact in contatos) {
-            message += "${contact.getNome()} ${contact.getNumber()}, ${contact.getRef()}\n\n"
-        }
-        listaContatos.text = message
+    private fun exibirLista(contatos: ArrayList<Pessoa>) {
+        adapter = ContatosAdapter(contatos)
+        contatosListaRecyclerView.adapter = adapter
+        contatosListaRecyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+
+//        contatos.sortBy { it.getNome() }
+//        listaContatos.visibility = View.VISIBLE
+//        var message = ""
+//        for (contact in contatos) {
+//            message += "${contact.getNome()} ${contact.getNumber()}, ${contact.getRef()}\n\n"
+//        }
+//        listaContatos.text = message
     }
 
     private fun bindViews() {
@@ -54,29 +57,24 @@ class SecondActivity : AppCompatActivity() {
         listaContatos = findViewById(R.id.listaContatos)
     }
 
-    private fun pesquisarContato() {
-        val pesquisa = campoPesquisa.text.toString()
-        val resultado = contatos.find { pessoa ->
-            pessoa.getNome() == pesquisa
-        }
-        if (resultado != null) {
-            Toast.makeText(
-                this,
-                resultado.exibirTodos(),
-                Toast.LENGTH_SHORT
-            ).show()
-        } else {
-            Toast.makeText(
-                this,
-                "Não foi possível encontrar um contato",
-                Toast.LENGTH_SHORT
-            ).show()
-        }
-
-    }
-
-companion object {
-    //val myContacts: ContatoLista = ContatoLista()
-}
-
+//    private fun pesquisarContato() {
+//        val pesquisa = campoPesquisa.text.toString()
+//        val resultado = contatos.find { pessoa ->
+//            pessoa.getNome() == pesquisa
+//        }
+//        if (resultado != null) {
+//            Toast.makeText(
+//                this,
+//                resultado.exibirTodos(),
+//                Toast.LENGTH_SHORT
+//            ).show()
+//        } else {
+//            Toast.makeText(
+//                this,
+//                "Não foi possível encontrar um contato",
+//                Toast.LENGTH_SHORT
+//            ).show()
+//        }
+//
+//    }
 }
