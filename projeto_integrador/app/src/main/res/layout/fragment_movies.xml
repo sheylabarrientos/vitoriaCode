@@ -17,9 +17,10 @@
 
     <TextView
         android:id="@+id/title_movie"
+        style="@style/Title_Detail_Movie"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginEnd="@dimen/margin_16"
         android:text="@string/title_movie"
         android:textAppearance="?attr/textAppearanceListItem"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -31,6 +32,7 @@
         android:id="@+id/favorite_heart_empty"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_8"
         android:background="@drawable/ic_baseline_favorite_border_24"
         android:contentDescription="@string/favorite_movie"
         app:layout_constraintBottom_toBottomOf="@+id/title_movie"
@@ -52,6 +54,7 @@
         android:id="@+id/percent_likes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_8"
         android:text="@string/_81_percent"
         android:textAppearance="?attr/textAppearanceListItem"
         app:layout_constraintBottom_toBottomOf="@+id/star_percent_likes"
