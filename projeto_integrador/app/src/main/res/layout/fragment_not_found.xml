@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".not_found">
+    android:orientation="horizontal"
+    android:layout_gravity="center_horizontal">
 
     <ImageView
         android:layout_width="wrap_content"
@@ -14,22 +14,19 @@
 
     <TextView
         android:id="@+id/title_not_found"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="@dimen/margin_32"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:textSize="@dimen/text_size_22"
-        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_16"
+        android:layout_gravity="center"
         android:text="@string/not_found_movie"
         style="@style/Title_Detail_Movie" />
 
     <TextView
         android:id="@+id/message_not_found"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="@dimen/margin_32"
-        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_16"
+        android:layout_gravity="center"
         android:text="@string/message_not_found_search_again"
         style="@style/Text_Detail_Movie" />
 

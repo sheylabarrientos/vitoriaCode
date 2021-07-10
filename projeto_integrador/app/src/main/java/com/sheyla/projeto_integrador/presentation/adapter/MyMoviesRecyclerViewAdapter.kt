@@ -1,8 +1,7 @@
-package com.sheyla.projeto_integrador
+package com.sheyla.projeto_integrador.presentation.adapter
 
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 

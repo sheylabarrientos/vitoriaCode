@@ -1,4 +1,4 @@
-package com.sheyla.projeto_integrador
+package com.sheyla.projeto_integrador.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
+import com.sheyla.projeto_integrador.R
 
 lateinit var viewPager: ViewPager2
 lateinit var tabLayout: TabLayout
