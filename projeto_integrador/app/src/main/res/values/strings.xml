@@ -16,4 +16,7 @@
     <string name="favorite_movie">favorite_movie</string>
     <string name="not_found_movie">Esse filme não existe</string>
     <string name="message_not_found_search_again">Não conseguimos encontrar o filme que você procura. \n Por favor, refaça sua busca.</string>
+    <string name="system_fail_try_again">Por algum motivo, não foi possível processar com essa \n solicitação. Por favor, tente novamente.</string>
+    <string name="system_fail">O sistema falhou</string>
+    <string name="tente_novamente">Tente novamente</string>
 </resources>
