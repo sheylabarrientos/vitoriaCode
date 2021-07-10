@@ -17,6 +17,7 @@
     <style name="Subtitle_Detail_Movie">
         <item name="android:textColor">@color/black</item>
         <item name="android:textSize">@dimen/text_size_18</item>
+        <item name="android:textStyle">bold</item>
         <item name="android:layout_marginStart">@dimen/margin_16</item>
         <item name="android:fontFamily">"@font/lato"</item>
     </style>
@@ -25,4 +26,14 @@
         <item name="android:layout_marginStart">@dimen/margin_16</item>
         <item name="android:fontFamily">"@font/lato"</item>
     </style>
+    <style name="Text_Category_Detail_Movie">
+        <item name="android:textAlignment">center</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">"@font/lato"</item>
+    </style>
+    <style name="Text_Fragment_Detail_Movie">
+        <item name="android:textSize">@dimen/text_size_14</item>
+        <item name="android:fontFamily">"@font/lato"</item>
+    </style>
+
 </resources>

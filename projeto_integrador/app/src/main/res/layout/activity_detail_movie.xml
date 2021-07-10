@@ -11,21 +11,22 @@
     <ImageView
         android:id="@+id/cover_movie"
         android:layout_width="415sp"
-        android:layout_height="270sp"
+        android:layout_height="280dp"
+        android:background="@drawable/john_wick_chapter_three_ver2"
         android:contentDescription="@string/app_name"
         android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintCircleRadius="32sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="@drawable/john_wick_chapter_three_ver2"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/back_button"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_16"
-        android:layout_marginTop="@dimen/margin_16"
+        android:layout_marginTop="32dp"
         android:background="@drawable/ic_baseline_arrow_back_ios_24"
         android:contentDescription="@string/app_name"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,22 +35,22 @@
 
     <TextView
         android:id="@+id/title_movie_detail_movie"
+        style="@style/Title_Detail_Movie"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_16"
-        android:layout_marginTop="@dimen/margin_40"
-        android:layout_marginEnd="@dimen/margin_32"
+        android:layout_marginTop="56dp"
         android:text="@string/title_movie"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cover_movie"
-        style="@style/Title_Detail_Movie"/>
+        app:layout_constraintTop_toBottomOf="@+id/cover_movie" />
 
     <ImageButton
         android:id="@+id/favorite_button_detail_movie"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="150dp"
         android:background="@drawable/ic_baseline_favorite_border_24"
         android:contentDescription="@string/app_name"
         app:layout_constraintBottom_toBottomOf="@+id/title_movie_detail_movie"
@@ -57,67 +58,76 @@
         app:layout_constraintStart_toEndOf="@+id/title_movie_detail_movie"
         app:layout_constraintTop_toTopOf="@+id/title_movie_detail_movie" />
 
-    <TextView
+
+        <TextView
         android:id="@+id/year_movie"
+        style="@style/Text_Detail_Movie"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_16"
         android:text="@string/year_time"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/favorite_button_detail_movie"
-        style="@style/Text_Detail_Movie" />
+        app:layout_constraintTop_toBottomOf="@+id/favorite_button_detail_movie" />
 
 
-    <ImageView
+    <TextView
         android:id="@+id/categories_details_movie"
+        style="Text_Category_Detail_Movie"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_16"
         android:layout_marginTop="@dimen/margin_16"
         android:background="@drawable/rectangle_4_empty"
         android:contentDescription="@string/app_name"
+        android:gravity="center"
+        android:text="@string/acao"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/year_movie" />
 
-    <ImageView
+    <TextView
         android:id="@+id/categories_details_movie1"
+        style="Text_Category_Detail_Movie"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_16"
         android:layout_marginTop="@dimen/margin_16"
         android:background="@drawable/rectangle_4_empty"
         android:contentDescription="@string/app_name"
+        android:gravity="center"
+        android:text="@string/biografia"
         app:layout_constraintStart_toEndOf="@+id/categories_details_movie"
         app:layout_constraintTop_toBottomOf="@+id/year_movie" />
 
-    <ImageView
+    <TextView
         android:id="@+id/categories_details_movie2"
+        style="Text_Category_Detail_Movie"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_16"
         android:layout_marginTop="@dimen/margin_16"
         android:background="@drawable/rectangle_4_empty"
         android:contentDescription="@string/app_name"
+        android:gravity="center"
+        android:text="@string/drama"
         app:layout_constraintStart_toEndOf="@+id/categories_details_movie1"
         app:layout_constraintTop_toBottomOf="@+id/year_movie" />
 
     <TextView
         android:id="@+id/sinopse_detail_movie"
+        style="@style/Subtitle_Detail_Movie"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_16"
         android:layout_marginTop="@dimen/margin_16"
         android:text="@string/sinopse"
-        android:textSize="18sp"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/categories_details_movie"
-        style="@style/Subtitle_Detail_Movie" />
+        app:layout_constraintTop_toBottomOf="@+id/categories_details_movie" />
 
     <TextView
         android:id="@+id/description_sinopse"
+        style="@style/Text_Detail_Movie"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_16"
@@ -125,11 +135,11 @@
         android:text="@string/american_car_designer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sinopse_detail_movie"
-        style="@style/Text_Detail_Movie" />
+        app:layout_constraintTop_toBottomOf="@+id/sinopse_detail_movie" />
 
     <TextView
         android:id="@+id/elenco_detail_movie"
+        style="@style/Subtitle_Detail_Movie"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_16"
@@ -139,8 +149,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/description_sinopse"
-        style="@style/Subtitle_Detail_Movie" />
+        app:layout_constraintTop_toBottomOf="@+id/description_sinopse" />
 
 
     <androidx.recyclerview.widget.RecyclerView
@@ -154,10 +163,12 @@
         tools:listitem="@layout/item_image_actor" />
 
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="167dp"
         android:layout_height="90dp"
-        android:layout_marginTop="180dp"
+        android:layout_marginTop="140dp"
         android:background="@drawable/rectangle_8_assessment_user"
+        android:elevation="10dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/back_button">
@@ -166,26 +177,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_16"
-            android:layout_marginTop="@dimen/margin_16"
+            android:layout_marginTop="@dimen/margin_32"
             android:background="@drawable/ic_vectoric_baseline_star_24"
             android:contentDescription="@string/app_name" />
 
         <TextView
             android:id="@+id/percent_likes_detail_movies"
+            style="@style/Text_Detail_Movie"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_16"
-            android:text="@string/_81_percent"
-            style="@style/Text_Detail_Movie" />
+            android:text="@string/_81_percent" />
 
-
-        <TextView
-            android:id="@+id/user_evaluation"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_32"
-            android:text="@string/avaliacao_dos_usuarios"
-            style="@style/Text_Detail_Movie" />
 
     </LinearLayout>
 
