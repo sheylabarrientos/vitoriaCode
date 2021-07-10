@@ -43,7 +43,8 @@
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cover_movie" />
+        app:layout_constraintTop_toBottomOf="@+id/cover_movie"
+        style="@style/Title_Detail_Movie"/>
 
     <ImageButton
         android:id="@+id/favorite_button_detail_movie"
@@ -64,11 +65,12 @@
         android:text="@string/year_time"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/favorite_button_detail_movie" />
+        app:layout_constraintTop_toBottomOf="@+id/favorite_button_detail_movie"
+        style="@style/Text_Detail_Movie" />
 
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/categories_details_movie"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_16"
@@ -79,25 +81,25 @@
         app:layout_constraintTop_toBottomOf="@+id/year_movie" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/categories_details_movie1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_16"
         android:layout_marginTop="@dimen/margin_16"
         android:background="@drawable/rectangle_4_empty"
         android:contentDescription="@string/app_name"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toEndOf="@+id/categories_details_movie"
         app:layout_constraintTop_toBottomOf="@+id/year_movie" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/categories_details_movie2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_16"
         android:layout_marginTop="@dimen/margin_16"
         android:background="@drawable/rectangle_4_empty"
         android:contentDescription="@string/app_name"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintStart_toEndOf="@+id/categories_details_movie1"
         app:layout_constraintTop_toBottomOf="@+id/year_movie" />
 
     <TextView
@@ -111,7 +113,8 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/categories_details_movie"
+        style="@style/Subtitle_Detail_Movie" />
 
     <TextView
         android:id="@+id/description_sinopse"
@@ -120,10 +123,10 @@
         android:layout_marginStart="@dimen/margin_16"
         android:layout_marginTop="@dimen/margin_16"
         android:text="@string/american_car_designer"
-        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sinopse_detail_movie" />
+        app:layout_constraintTop_toBottomOf="@+id/sinopse_detail_movie"
+        style="@style/Text_Detail_Movie" />
 
     <TextView
         android:id="@+id/elenco_detail_movie"
@@ -136,7 +139,8 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/description_sinopse" />
+        app:layout_constraintTop_toBottomOf="@+id/description_sinopse"
+        style="@style/Subtitle_Detail_Movie" />
 
 
     <androidx.recyclerview.widget.RecyclerView
@@ -170,10 +174,9 @@
             android:id="@+id/percent_likes_detail_movies"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_16"
             android:layout_marginTop="@dimen/margin_16"
             android:text="@string/_81_percent"
-            android:textStyle="bold" />
+            style="@style/Text_Detail_Movie" />
 
 
         <TextView
@@ -181,7 +184,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_32"
-            android:text="@string/avaliacao_dos_usuarios" />
+            android:text="@string/avaliacao_dos_usuarios"
+            style="@style/Text_Detail_Movie" />
 
     </LinearLayout>
 

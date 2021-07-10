@@ -21,7 +21,8 @@
         android:text="@string/james_mangold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/image_actor_detail_movie" />
+        app:layout_constraintTop_toBottomOf="@+id/image_actor_detail_movie"
+        style="@style/Text_Detail_Movie" />
 
     <TextView
         android:id="@+id/type_cast"
@@ -30,6 +31,7 @@
         android:text="@string/diretor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name_cast"  />
+        app:layout_constraintTop_toBottomOf="@+id/name_cast"
+        style="@style/Text_Detail_Movie" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
