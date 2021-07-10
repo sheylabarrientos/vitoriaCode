@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">projeto_integrador</string>
+    <string name="pesquisar_por_filme">Pesquisar por filme...</string>
+    <string name="acao">Ação</string>
+    <string name="todos_os_filmes">Todos os Filmes</string>
+    <string name="title_movie">Titulo do Filme</string>
+    <string name="james_mangold">James /n Mangold</string>
+    <string name="diretor">Diretor</string>
+    <string name="elenco">Elenco</string>
+    <string name="american_car_designer">American car designer...</string>
+    <string name="sinopse">Sinopse</string>
+    <string name="year_time">2021 PG-13 2h 33min</string>
+    <string name="avaliacao_dos_usuarios">Avaliação /n dos Usuários</string>
+    <string name="_81_percent">81%</string>
+    <string name="cover_movie">cover_movie</string>
+    <string name="favorite_movie">favorite_movie</string>
+</resources>

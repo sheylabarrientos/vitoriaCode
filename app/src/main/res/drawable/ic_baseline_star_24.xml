@@ -1,0 +1,48 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="16.63dp"
+    android:height="15.84dp"
+    android:tint="@color/star"
+    android:viewportWidth="16.63"
+    android:viewportHeight="15.84" >
+    <path
+        android:fillColor="@android:color/white"
+        android:pathData="M12,17.27L18.18,21l-1.64,-7.03L22,9.24l-7.19,-0.61L12,2 9.19,8.63 2,9.24l5.46,4.73L5.82,21z" />
+</vector>
+
+<!--    ####### Vector ###### FIGMA PROJETO -->
+<!--<View-->
+<!--android:id="@+id/vector"-->
+<!--android:layout_width="0dp"-->
+<!--android:layout_height="0dp"-->
+<!--android:layout_alignParentLeft="true"-->
+<!--android:layout_alignParentRight="true"-->
+<!--android:layout_alignParentTop="true"-->
+<!--android:layout_alignParentBottom="true"-->
+<!--android:background="@drawable/vector"-->
+<!--    />-->
+
+
+<!--    &lt;!&ndash; drawable/vector.xml &ndash;&gt;-->
+<!--<vector-->
+<!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--xmlns:aapt="http://schemas.android.com/aapt"-->
+<!--android:width="16.63dp"-->
+<!--android:height="15.84dp"-->
+<!--android:viewportWidth="16.63"-->
+<!--android:viewportHeight="15.84"-->
+<!--    >-->
+
+<!--<group>-->
+
+<!--    <clip-path-->
+<!--        android:pathData="M0 0H16.6311V15.8408H0V0Z"-->
+<!--        />-->
+
+<!--    <path-->
+<!--        android:pathData="M0 0V15.8408H16.6311V0"-->
+<!--        android:fillColor="#FCC419"-->
+<!--        />-->
+
+<!--</group>-->
+
+<!--</vector>-->
