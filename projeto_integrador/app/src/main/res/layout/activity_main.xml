@@ -84,7 +84,7 @@
             android:scrollIndicators="none"
             app:tabIndicatorFullWidth="false"
             app:tabSelectedTextColor="@color/movieTitleColor"
-            app:tabIconTint="@color/textBlack"
+            app:tabIconTint="@color/movieTitleColor"
             app:tabRippleColor="@color/button_category_selecionado"
             style="@style/CustomTabTextLayout"
             app:tabTextColor="@color/button_category" >

@@ -44,7 +44,7 @@
     <style name="CustomTabTextLayout" parent="TextAppearance.Design.Tab">
         <item name="android:textAllCaps">false</item>
         <item name="textAllCaps">false</item>
-        <item name="android:textColor">@color/textBlack</item>
+        <item name="android:textColor">@color/movieTitleColor</item>
         <item name="android:textSize">@dimen/text_size_18</item>
     </style>
 

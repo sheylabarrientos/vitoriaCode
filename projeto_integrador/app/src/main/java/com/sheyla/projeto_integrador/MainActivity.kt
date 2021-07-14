@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.tabs.TabLayout
-import com.sheyla.projeto_integrador.presentation.adapter.MoviesCategories
+import com.sheyla.projeto_integrador.presentation.adapter.MoviesCategoriesAdapter
 import com.sheyla.projeto_integrador.presentation.adapter.MyMoviesAdapter
 
 
@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         val fragmentAdapter = MyMoviesAdapter(supportFragmentManager)
         viewPager.adapter = fragmentAdapter
 
-        val fragmentAdapterCategories = MoviesCategories(supportFragmentManager)
+        val fragmentAdapterCategories = MoviesCategoriesAdapter(supportFragmentManager)
         viewPagerCategories.adapter = fragmentAdapterCategories
 
         viewPager.adapter = fragmentAdapter
@@ -35,6 +35,23 @@ class MainActivity : AppCompatActivity() {
         tabLayout = findViewById(R.id.tab_layout)
         tabLayoutCategories = findViewById(R.id.tab_layout_categories)
         viewPagerCategories = findViewById(R.id.view_Pager_Categories)
+    }
+
+
+    fun searchMovies() {
+
+    }
+
+    fun allMovies() {
+
+    }
+
+    fun favoriteMovies() {
+
+    }
+
+    fun moviesForCategories() {
+
     }
 
 //        class MyMoviesFragment : Fragment() {
