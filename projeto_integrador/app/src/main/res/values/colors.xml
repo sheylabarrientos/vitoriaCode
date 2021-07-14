@@ -9,8 +9,11 @@
     <color name="white">#FFFFFFFF</color>
     <color name="background_app">#E5E5E5</color>
     <color name="star">#FCC419</color>
+    <color name="greenPrimaryColor">#11C76F</color>
     <color name="favorito_coracao">#11C76F</color>
     <color name="search">#223334</color>
+    <color name="movieTitleColor">#223334</color>
+    <color name="textBlack">#223334</color>
     <color name="button_category">#CFCFD1</color>
     <color name="button_category_selecionado">#28303D</color>
 </resources>

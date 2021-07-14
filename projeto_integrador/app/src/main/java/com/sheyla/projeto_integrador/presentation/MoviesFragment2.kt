@@ -11,12 +11,12 @@ import com.sheyla.projeto_integrador.R
  * A fragment representing a list of Items.
  */
 
-class MoviesFragment : Fragment() {
+class MoviesFragment2 : Fragment() {
     @Override
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_movies, container, false)
+        return inflater.inflate(R.layout.fragment_movies2, container, false)
     }
 }
