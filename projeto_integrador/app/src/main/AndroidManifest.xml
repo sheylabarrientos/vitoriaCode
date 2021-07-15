@@ -9,11 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Projeto_integrador">
-        <activity android:name=".presentation.FailSystemActivity"></activity>
+        <activity android:name=".presentation.FailSystemActivity" />
         <activity android:name=".presentation.DetailMovieActivity" />
-        <activity android:name=".MoviesInfoActivity" />
-        <activity android:name=".MovieDescrkActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".presentation.home.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

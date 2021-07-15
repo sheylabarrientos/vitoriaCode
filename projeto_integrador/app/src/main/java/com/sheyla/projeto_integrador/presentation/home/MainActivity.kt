@@ -1,9 +1,10 @@
-package com.sheyla.projeto_integrador
+package com.sheyla.projeto_integrador.presentation.home
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.tabs.TabLayout
+import com.sheyla.projeto_integrador.R
 import com.sheyla.projeto_integrador.presentation.adapter.MoviesCategoriesAdapter
 import com.sheyla.projeto_integrador.presentation.adapter.MyMoviesAdapter
 
@@ -19,13 +20,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         bindViews()
 
-        val fragmentAdapter = MyMoviesAdapter(supportFragmentManager)
-        viewPager.adapter = fragmentAdapter
+//        val fragmentAdapter = MyMoviesAdapter(supportFragmentManager)
+//        viewPager.adapter = fragmentAdapter
 
         val fragmentAdapterCategories = MoviesCategoriesAdapter(supportFragmentManager)
         viewPagerCategories.adapter = fragmentAdapterCategories
 
-        viewPager.adapter = fragmentAdapter
+//        viewPager.adapter = fragmentAdapter
         tabLayout.setupWithViewPager(viewPager)
         tabLayoutCategories.setupWithViewPager(viewPagerCategories)
     }

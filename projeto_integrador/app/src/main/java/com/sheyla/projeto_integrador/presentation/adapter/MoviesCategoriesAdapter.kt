@@ -5,8 +5,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import com.sheyla.projeto_integrador.presentation.MoviesFragment
-import com.sheyla.projeto_integrador.presentation.MoviesFragment2
-import com.sheyla.projeto_integrador.presentation.MoviesFragment3
 
 
 class MoviesCategoriesAdapter (fm: FragmentManager) : FragmentPagerAdapter (fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
@@ -16,10 +14,10 @@ class MoviesCategoriesAdapter (fm: FragmentManager) : FragmentPagerAdapter (fm, 
                 MoviesFragment()
             }
             1 -> {
-                MoviesFragment2()
+                MoviesFragment()
             }
             else -> {
-                return MoviesFragment3()
+                return MoviesFragment()
             }
         }
     }

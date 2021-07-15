@@ -1,14 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.recyclerview.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/list_movies"
-    android:name="com.sheyla.projeto_integrador.MoviesFragment"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginLeft="16dp"
-    android:layout_marginRight="16dp"
-    app:layoutManager="LinearLayoutManager"
-    tools:context=".presentation.MoviesFragment"
-    tools:listitem="@layout/fragment_movies" />
+    android:id="@+id/linearLayout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/john_wick_chapter_three_ver2john_wick"
+        android:contentDescription="@string/cover_movie"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/title_movie"
+        style="@style/Title_Detail_Movie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_16"
+        android:layout_marginTop="@dimen/margin_32"
+        android:text="@string/title_movie"
+        android:textAppearance="?attr/textAppearanceListItem"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+
+    <ImageButton
+        android:id="@+id/favorite_heart_empty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_8"
+        android:background="@drawable/ic_baseline_favorite_border_24"
+        android:contentDescription="@string/favorite_movie"
+        app:layout_constraintBottom_toBottomOf="@+id/title_movie"
+        app:layout_constraintStart_toEndOf="@+id/title_movie"
+        app:layout_constraintTop_toTopOf="@+id/title_movie" />
+
+    <ImageButton
+        android:id="@+id/star_percent_likes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_16"
+        android:background="@drawable/ic_vectoric_baseline_star_24"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_movie" />
+
+    <TextView
+        android:id="@+id/percent_likes"
+        style="@style/Text_Fragment_Detail_Movie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_8"
+        android:layout_marginTop="@dimen/margin_16"
+        android:text="@string/_81"
+        android:textAppearance="?attr/textAppearanceListItem"
+        app:layout_constraintBottom_toBottomOf="@+id/star_percent_likes"
+        app:layout_constraintStart_toEndOf="@+id/star_percent_likes"
+        app:layout_constraintTop_toBottomOf="@+id/title_movie" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
 

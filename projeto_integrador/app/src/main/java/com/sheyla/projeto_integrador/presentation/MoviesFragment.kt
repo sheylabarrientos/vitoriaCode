@@ -5,18 +5,19 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import com.sheyla.projeto_integrador.R
 
-/**
- * A fragment representing a list of Items.
- */
+//lateinit var listMovies: TextView
+//lateinit var movies: MutableList<Movie> = mutableListOf()
 
 class MoviesFragment : Fragment() {
     @Override
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_movies, container, false)
+        savedInstanceState: Bundle?): View? {
+
+       return inflater.inflate(R.layout.fragment_movies, container, false)
     }
+
 }
