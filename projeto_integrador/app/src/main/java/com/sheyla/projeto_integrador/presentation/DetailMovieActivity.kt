@@ -29,6 +29,10 @@ class DetailMovieActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_movie)
         bindViews()
+//
+//        val extras = intent.extras
+//        val contatos = extras?.getParcelableArrayList<Movie>("MOVIES")
+//        contatos?.let()
     }
 
 private fun bindViews() {

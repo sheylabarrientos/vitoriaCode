@@ -1,12 +1,16 @@
 package com.sheyla.projeto_integrador.presentation.home
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.tabs.TabLayout
 import com.sheyla.projeto_integrador.R
+import com.sheyla.projeto_integrador.presentation.Movie
+import com.sheyla.projeto_integrador.presentation.MoviesFragment
+import com.sheyla.projeto_integrador.presentation.adapter.Adapter
 import com.sheyla.projeto_integrador.presentation.adapter.MoviesCategoriesAdapter
-import com.sheyla.projeto_integrador.presentation.adapter.MyMoviesAdapter
 
 
 lateinit var viewPager: ViewPager
@@ -14,21 +18,21 @@ lateinit var tabLayout: TabLayout
 lateinit var tabLayoutCategories: TabLayout
 lateinit var viewPagerCategories: ViewPager
 
+
 class MainActivity : AppCompatActivity() {
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         bindViews()
 
-//        val fragmentAdapter = MyMoviesAdapter(supportFragmentManager)
-//        viewPager.adapter = fragmentAdapter
-
         val fragmentAdapterCategories = MoviesCategoriesAdapter(supportFragmentManager)
         viewPagerCategories.adapter = fragmentAdapterCategories
 
-//        viewPager.adapter = fragmentAdapter
         tabLayout.setupWithViewPager(viewPager)
         tabLayoutCategories.setupWithViewPager(viewPagerCategories)
+
     }
 
     private fun bindViews() {
@@ -36,7 +40,15 @@ class MainActivity : AppCompatActivity() {
         tabLayout = findViewById(R.id.tab_layout)
         tabLayoutCategories = findViewById(R.id.tab_layout_categories)
         viewPagerCategories = findViewById(R.id.view_Pager_Categories)
+
+
     }
+
+//    private fun showFragmentMovie() {
+//        val intent = Intent(this, MoviesFragment::class.java)
+//        intent.putStringArrayListExtra("MOVIES", movies)
+//        startActivity(intent)
+//    }
 
 
     fun searchMovies() {
