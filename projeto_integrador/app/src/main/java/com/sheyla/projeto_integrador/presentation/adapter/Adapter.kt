@@ -31,8 +31,8 @@ class Adapter(val context: Context, var dataset: MutableList<Movie> = mutableLis
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.nome.text = dataset[position].nome
-        holder.likes.text = dataset[position].likes
+//        holder.nome.text = dataset[position].list
+//        holder.likes.text = dataset[position].list
     }
 
     override fun getItemCount() = dataset.size

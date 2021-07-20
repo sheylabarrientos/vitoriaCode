@@ -27,15 +27,14 @@
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tab_layout"
+            style="@style/CustomTabLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:tabIndicator="@drawable/rectangle_3"
-            app:tabIndicatorColor="@color/greenPrimaryColor"
+            android:clickable="true"
+            android:focusable="true"
             app:tabIndicatorFullWidth="false"
-            app:tabIndicatorHeight="8dp"
             app:tabSelectedTextColor="@color/movieTitleColor"
-            app:tabTextAppearance="@style/CustomTabTextLayout"
-            app:tabTextColor="#2A12153D">
+            app:tabTextColor="@color/button_category" >
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
@@ -58,11 +57,10 @@
 
         </com.google.android.material.tabs.TabLayout>
 
-        <androidx.viewpager.widget.ViewPager
+        <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/nav_all_favorites_search"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="72dp"
             android:layout_weight="1"
             android:gravity="center" />
 
@@ -79,16 +77,15 @@
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tab_layout_categories"
+            style="@style/CustomTabLayoutCategory"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_8"
-            android:scrollIndicators="none"
+            android:clickable="true"
+            android:focusable="true"
             app:tabIndicatorFullWidth="false"
             app:tabSelectedTextColor="@color/movieTitleColor"
-            app:tabIconTint="@color/movieTitleColor"
-            app:tabRippleColor="@color/button_category_selecionado"
-            style="@style/CustomTabTextLayout"
-            app:tabTextColor="@color/button_category" >
+            app:tabTextColor="@color/button_category_selecionado">
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
@@ -112,10 +109,12 @@
 
         </com.google.android.material.tabs.TabLayout>
 
-        <androidx.viewpager.widget.ViewPager
+        <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/view_Pager_Categories"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"  />
 
     </LinearLayout>
 

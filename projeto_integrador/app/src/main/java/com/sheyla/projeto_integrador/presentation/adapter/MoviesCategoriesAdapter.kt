@@ -2,45 +2,21 @@ package com.sheyla.projeto_integrador.presentation.adapter
 
 
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentPagerAdapter
+import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.sheyla.projeto_integrador.presentation.MoviesFragment
+import com.sheyla.projeto_integrador.presentation.home.MainActivity
 
 
-class MoviesCategoriesAdapter (fm: FragmentManager) : FragmentPagerAdapter (fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
-    override fun getItem(position: Int): Fragment {
+class MoviesCategoriesAdapter (fa: MainActivity) : FragmentStateAdapter(fa) {
+    override fun getItemCount(): Int = 3
+
+    override fun createFragment(position: Int): Fragment {
         return when (position) {
-            0 -> {
-                MoviesFragment()
-            }
-            1 -> {
-                MoviesFragment()
-            }
-            else -> {
-                return MoviesFragment()
-            }
+            0 -> MoviesFragment()
+            1 -> MoviesFragment()
+            else -> MoviesFragment()
         }
     }
 
-    override fun getCount(): Int {
-        return 3
-    }
-
-    override fun getPageTitle(position: Int): CharSequence {
-        return when (position) {
-            0 -> {
-                "Ação"
-            }
-            1 -> {
-                "Anime"
-            }
-            2 -> {
-                "Comédia"
-            }
-            else -> {
-                "Drama"
-            }
-        }
-    }
 }
 

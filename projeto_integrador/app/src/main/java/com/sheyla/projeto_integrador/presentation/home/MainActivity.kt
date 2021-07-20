@@ -3,35 +3,37 @@ package com.sheyla.projeto_integrador.presentation.home
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.viewpager.widget.ViewPager
+import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayoutMediator
 import com.sheyla.projeto_integrador.R
-import com.sheyla.projeto_integrador.presentation.Movie
-import com.sheyla.projeto_integrador.presentation.MoviesFragment
-import com.sheyla.projeto_integrador.presentation.adapter.Adapter
 import com.sheyla.projeto_integrador.presentation.adapter.MoviesCategoriesAdapter
 
 
-lateinit var viewPager: ViewPager
+lateinit var viewPager: ViewPager2
 lateinit var tabLayout: TabLayout
 lateinit var tabLayoutCategories: TabLayout
-lateinit var viewPagerCategories: ViewPager
+lateinit var viewPagerCategories: ViewPager2
 
 
 class MainActivity : AppCompatActivity() {
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         bindViews()
 
-        val fragmentAdapterCategories = MoviesCategoriesAdapter(supportFragmentManager)
-        viewPagerCategories.adapter = fragmentAdapterCategories
+        val viewpager = findViewById<ViewPager2>(R.id.view_Pager_Categories)
+        viewpager.adapter = MoviesCategoriesAdapter(this)
 
-        tabLayout.setupWithViewPager(viewPager)
-        tabLayoutCategories.setupWithViewPager(viewPagerCategories)
+        val tablayout = findViewById<TabLayout>(R.id.tab_layout)
+        TabLayoutMediator(tablayout, viewpager) { tab, position ->
+            tab.text = getTabTitle(position)
+        }.attach()
+        viewpager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+            override fun onPageSelected(position: Int) {
+            }
+        })
 
     }
 
@@ -44,11 +46,13 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-//    private fun showFragmentMovie() {
-//        val intent = Intent(this, MoviesFragment::class.java)
-//        intent.putStringArrayListExtra("MOVIES", movies)
-//        startActivity(intent)
-//    }
+    private fun getTabTitle(position: Int): String {
+        return when (position) {
+            0 -> "Todos os filmes"
+            1 -> "Favoritos"
+            else -> "Modo Pesquisa"
+        }
+    }
 
 
     fun searchMovies() {
@@ -74,4 +78,5 @@ class MainActivity : AppCompatActivity() {
 //            }.attach()
 //        }
 //    }
+
 }
