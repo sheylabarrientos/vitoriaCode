@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.sheyla.projeto_integrador">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,9 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Projeto_integrador">
-        <activity android:name=".presentation.FailSystemActivity" />
-        <activity android:name=".presentation.DetailMovieActivity" />
-        <activity android:name=".presentation.home.MainActivity">
+        <activity android:name="com.sheyla.projeto_integrador.presentation.FailSystemActivity" />
+        <activity android:name="com.sheyla.projeto_integrador.presentation.DetailMovieActivity" />
+        <activity android:name=".presentation.home.view.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

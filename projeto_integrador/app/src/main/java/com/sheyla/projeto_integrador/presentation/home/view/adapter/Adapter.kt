@@ -1,16 +1,14 @@
-package com.sheyla.projeto_integrador.presentation.adapter
+package com.sheyla.projeto_integrador.presentation.home.view.adapter
 
-
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.sheyla.projeto_integrador.R
-import com.sheyla.projeto_integrador.data.model.Movies
+import com.sheyla.projeto_integrador.data.modelresponse.Movie
 
-class Adapter(val context: Context, var dataset: MutableList<Movies> = mutableListOf()) :
+class Adapter(var dataset: MutableList<Movie> = mutableListOf()) :
     RecyclerView.Adapter<Adapter.ViewHolder>() {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -36,6 +34,12 @@ class Adapter(val context: Context, var dataset: MutableList<Movies> = mutableLi
     }
 
     override fun getItemCount() = dataset.size
+
+    fun updateList(newList : MutableList<Movie>){
+        this.dataset.removeAll(dataset)
+        this.dataset = newList
+        notifyDataSetChanged()
+    }
 }
 
 

@@ -2,13 +2,11 @@ package com.sheyla.projeto_integrador.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.sheyla.projeto_integrador.R
-import kotlin.concurrent.fixedRateTimer
 
 
 lateinit var btnBack: ImageButton

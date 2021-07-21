@@ -1,10 +1,10 @@
-package com.sheyla.projeto_integrador.presentation.adapter
+package com.sheyla.projeto_integrador.presentation.home.view.adapter
 
 
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.sheyla.projeto_integrador.presentation.home.MoviesFragment
-import com.sheyla.projeto_integrador.presentation.home.MainActivity
+import com.sheyla.projeto_integrador.presentation.home.view.MoviesFragment
+import com.sheyla.projeto_integrador.presentation.home.view.MainActivity
 
 
 class MoviesCategoriesAdapter (fa: MainActivity) : FragmentStateAdapter(fa) {

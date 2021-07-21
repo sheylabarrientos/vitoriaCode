@@ -1,4 +1,4 @@
-package com.sheyla.projeto_integrador.presentation
+package com.sheyla.projeto_integrador.presentation.home.view
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

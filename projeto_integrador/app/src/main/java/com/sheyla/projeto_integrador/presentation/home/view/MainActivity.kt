@@ -1,13 +1,12 @@
-package com.sheyla.projeto_integrador.presentation.home
+package com.sheyla.projeto_integrador.presentation.home.view
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.sheyla.projeto_integrador.R
-import com.sheyla.projeto_integrador.presentation.adapter.MoviesCategoriesAdapter
+import com.sheyla.projeto_integrador.presentation.home.view.adapter.MoviesCategoriesAdapter
 
 
 lateinit var viewPager: ViewPager2
