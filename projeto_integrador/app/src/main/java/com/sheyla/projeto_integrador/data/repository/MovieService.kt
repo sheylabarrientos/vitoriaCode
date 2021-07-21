@@ -9,7 +9,7 @@ import retrofit2.http.Path
 
 
 interface MoviesService {
-    @GET("movie/{popular}")
+    @GET("movie/popular")
     fun getMovies(): Observable<MovieResponse>
 
     @GET("movie/{movie_id}")
