@@ -6,7 +6,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 
-object NetworkRetrofit {
+object Network {
 
     fun getService(): MoviesService {
         val logging = HttpLoggingInterceptor() //Isso se refere ao logging-interceptor, apenas para ver no logcat tudo relacionado à API.
