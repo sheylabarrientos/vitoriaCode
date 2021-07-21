@@ -1,4 +1,4 @@
-package com.sheyla.projeto_integrador.presentation
+package com.sheyla.projeto_integrador.presentation.home
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.sheyla.projeto_integrador.R
+import com.sheyla.projeto_integrador.data.model.Movies
 import com.sheyla.projeto_integrador.presentation.adapter.Adapter
 import com.sheyla.projeto_integrador.presentation.adapter.RecyclerViewAdapter
 
@@ -35,7 +36,7 @@ class MoviesFragment : Fragment() {
         recyclerMovies = view.findViewById(R.id.list_movies)
         listAdapter = RecyclerViewAdapter(context = view.context)
 
-        val moviesList: MutableList<Movie> = mutableListOf()
+        val moviesList: MutableList<Movies> = mutableListOf()
         val rvMovies = view.findViewById<RecyclerView>(R.id.list_movies)
 
         moviesAdapter = Adapter(context = view.context, dataset = moviesList)

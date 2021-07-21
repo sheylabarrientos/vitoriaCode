@@ -14,7 +14,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         app:layoutManager="LinearLayoutManager"
-        tools:context=".presentation.MoviesFragment"
+        tools:context=".presentation.home.MoviesFragment"
         tools:listitem="@layout/recycler_movies_list" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

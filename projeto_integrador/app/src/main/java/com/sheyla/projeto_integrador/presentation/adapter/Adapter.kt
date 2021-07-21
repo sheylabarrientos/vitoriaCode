@@ -8,9 +8,9 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.sheyla.projeto_integrador.R
-import com.sheyla.projeto_integrador.presentation.Movie
+import com.sheyla.projeto_integrador.data.model.Movies
 
-class Adapter(val context: Context, var dataset: MutableList<Movie> = mutableListOf()) :
+class Adapter(val context: Context, var dataset: MutableList<Movies> = mutableListOf()) :
     RecyclerView.Adapter<Adapter.ViewHolder>() {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {

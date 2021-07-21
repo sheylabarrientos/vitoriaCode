@@ -3,7 +3,7 @@ package com.sheyla.projeto_integrador.presentation.adapter
 
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.sheyla.projeto_integrador.presentation.MoviesFragment
+import com.sheyla.projeto_integrador.presentation.home.MoviesFragment
 import com.sheyla.projeto_integrador.presentation.home.MainActivity
 
 

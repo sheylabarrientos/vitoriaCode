@@ -1,4 +1,4 @@
-package com.sheyla.projeto_integrador.presentation
+package com.sheyla.projeto_integrador.data.model
 
 data class Details(val id: Int,
                    val vote_average : Number,
