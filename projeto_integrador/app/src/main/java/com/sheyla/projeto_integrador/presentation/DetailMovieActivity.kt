@@ -31,6 +31,16 @@ class DetailMovieActivity : AppCompatActivity() {
 //        val extras = intent.extras
 //        val contatos = extras?.getParcelableArrayList<Movie>("MOVIES")
 //        contatos?.let()
+
+//        val movieId: Int = intent.getIntExtra("id", 1)
+//
+//        val apiService: TheMovieDBInterface = TheMovieDBClient.getClient()
+//        movieRepository = MovieDetailsRepository(apiService)
+//
+//        viewModel = getViewModel(movieId)
+//        viewModel.movieDetails.observe(this, Observer {
+//            bindUI(it)
+//        })
     }
 
 private fun bindViews() {
@@ -47,4 +57,28 @@ private fun bindViews() {
     imageActor = findViewById(R.id.image_actor)
 
     }
+
+//    fun bindUI( it: MovieDetails){
+//
+//        movieTitle.text = it.title
+//        movieYear.text = it.release_date
+//        ageRestriction.text = it.adult.toString()
+//        movieDuration.text = it.runtime.toString() + " minutes"
+//        movieSynopsis.text = it.overview
+//        ratingMovieInfoAct.text = it.popularity.toString()
+//
+//        val moviePosterURL: String = POSTER_BASE_URL + it.poster_path
+//        Glide.with(this)
+//            .load(moviePosterURL)
+//            .into(posterMovie);
+//
+//    }
+//
+//    private fun getViewModel(movieId:Int): SingleMovieViewModel {
+//        return ViewModelProvider(this, object: ViewModelProvider.Factory {
+//            override fun<T : ViewModel?> create(modelClass: Class<T>): T {
+//                return SingleMovieViewModel(movieRepository,movieId) as T
+//            }
+//        })[SingleMovieViewModel::class.java]
+//    }
 }

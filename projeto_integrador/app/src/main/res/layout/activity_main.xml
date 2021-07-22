@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.home.MainActivity">
+    tools:context=".presentation.home.view.MainActivity">
 
     <SearchView
         android:id="@+id/search_movie"
@@ -80,7 +80,6 @@
             style="@style/CustomTabLayoutCategory"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_8"
             android:clickable="true"
             android:focusable="true"
             app:tabIndicatorFullWidth="false"
