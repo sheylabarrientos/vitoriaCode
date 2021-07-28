@@ -32,3 +32,60 @@ data class Movie(
     @SerializedName("vote_count")
     val vote_count: Int = 0
 )
+
+data class ReleaseDatesResponse (
+    @SerializedName ("id")
+    val id : Int,
+    @SerializedName ("results")
+    val results: List<GuidanceResponse>) {
+
+    data class GuidanceResponse(
+        @SerializedName("iso")
+        val iso_3166_1: String,
+        @SerializedName("release_dates")
+        val release_dates: List<ReleaseDate>
+    )
+
+    data class ReleaseDate(
+        @SerializedName("certification")
+        val certification: String,
+        @SerializedName("type")
+        val type: Int
+    )
+
+    data class ReleaseInfo(val certification: ReleaseInfo)
+
+    override fun toString(): String {
+        var certIso = ""
+        for (i in results) {
+            if (i.iso_3166_1 == "BR") {
+                certIso += i.release_dates[0].certification
+            }
+        }
+        return certIso
+    }
+}
+
+data class Runtime (
+                    @SerializedName ("id")
+                    val id: Int,
+                    @SerializedName ("runtime")
+                    val runtime : Int?)
+
+//A classe a seguir sé para implementação dos detalhes do "cast".
+
+data class InfosCast(
+                     @SerializedName ("profile_path")
+                     val profile_path : String?,
+                     @SerializedName ("name")
+                     val name : String,
+                     @SerializedName ("character")
+                     val character : String)
+
+//A classe a seguir é para implementação dos gêneros de filmes.
+
+data class AllMoviesGenres (
+                            @SerializedName ("id")
+                            val id : Int,
+                            @SerializedName ("name")
+                            val name : String)

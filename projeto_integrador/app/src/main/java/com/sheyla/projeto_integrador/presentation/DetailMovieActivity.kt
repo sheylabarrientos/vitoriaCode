@@ -5,9 +5,15 @@ import android.os.Bundle
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.sheyla.projeto_integrador.R
+import com.sheyla.projeto_integrador.presentation.home.view.adapter.CastAdapter
 
+private val viewModel = DetailsViewModel()
+
+lateinit var castAdapter: CastAdapter
+lateinit var containerCast: RecyclerView
 
 lateinit var btnBack: ImageButton
 lateinit var imgMovie: ImageView
@@ -41,6 +47,13 @@ class DetailMovieActivity : AppCompatActivity() {
 //        viewModel.movieDetails.observe(this, Observer {
 //            bindUI(it)
 //        })
+
+        //Chamada da Recyclerview do CastAdapter.
+        containerCast = findViewById(R.id.image_actor)
+        castAdapter = CastAdapter(context = this)
+        containerCast.adapter = castAdapter
+        containerCast.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+
     }
 
 private fun bindViews() {

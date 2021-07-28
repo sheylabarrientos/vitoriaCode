@@ -7,3 +7,4 @@ data class Details(val id: Int,
                    val category: List<Category>,
                    val overview: String
                    )
+
