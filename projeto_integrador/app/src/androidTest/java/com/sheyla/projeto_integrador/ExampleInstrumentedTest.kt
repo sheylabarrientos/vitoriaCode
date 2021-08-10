@@ -26,7 +26,7 @@ class ExampleInstrumentedTest {
 
     @Test
     fun testIds() {
-        val searchTextIdExpected:Int = R.id.search_movie
+        val searchTextIdExpected:Int = R.id.searchMovie
         assertEquals(searchTextIdExpected,Tools.searchID)
     }
 
