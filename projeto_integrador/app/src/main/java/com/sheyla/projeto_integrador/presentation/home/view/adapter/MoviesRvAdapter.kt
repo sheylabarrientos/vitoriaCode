@@ -12,7 +12,6 @@ import com.sheyla.projeto_integrador.R
 import com.bumptech.glide.Glide
 import com.sheyla.projeto_integrador.data.base.Constants
 import com.sheyla.projeto_integrador.domain.Movie
-import com.sheyla.projeto_integrador.domain.Tools
 import com.sheyla.projeto_integrador.presentation.MovieListener
 
 class MoviesRvAdapter(
@@ -39,6 +38,7 @@ class MoviesRvAdapter(
         if(dataSet[position].imgHome !== ""){
             holder.imageMovie?.let { Glide.with(context).load(Constants.BASE_URL_IMAGE.value + dataSet[position].imgHome).into(it) }
         }
+        holder.movieTitle?.text = dataSet[position].title
         holder.rating?.text = dataSet[position].rating
 
         holder.imageMovie?.setOnClickListener {
