@@ -1,133 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.home.view.MainActivity">
+    android:fillViewport="true">
 
-    <SearchView
-        android:id="@+id/search_movie"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:iconifiedByDefault="false"
-        android:queryHint="@string/pesquisar_por_filme"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:background="@color/background_app"
+        tools:context=".presentation.HomeActivity">
 
-    <LinearLayout
-        android:id="@+id/nav_movies"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="64dp"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        <ImageButton
+            android:id="@+id/submitSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_24"
+            android:layout_marginTop="@dimen/margin_24"
+            android:backgroundTint="@color/background_app"
+            android:contentDescription="@string/search_button_description"
+            android:src="@drawable/ic_baseline_search_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/searchMovie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_8"
+            android:backgroundTint="@color/movieInfoTextColor"
+            android:ems="15"
+            android:fontFamily="@font/lato_regular"
+            android:hint="@string/pesquisar_por_filme"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:privateImeOptions="@color/black"
+            android:textColor="@color/movieTitleColor"
+            android:textColorHint="@color/movieInfoTextColor"
+            android:textSize="@dimen/text_size_16"
+            android:autofillHints="@string/pesquisar_por_filme"
+            app:layout_constraintBottom_toBottomOf="@+id/submitSearch"
+            app:layout_constraintStart_toEndOf="@+id/submitSearch"
+            app:layout_constraintTop_toTopOf="@+id/submitSearch" />
 
         <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tab_layout"
-            style="@style/CustomTabLayout"
+            android:id="@+id/tabLytOptions"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:clickable="true"
-            android:focusable="true"
+            android:layout_marginTop="@dimen/margin_24"
+            android:background="@android:color/transparent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/searchMovie"
+            app:tabIndicator="@drawable/rectangle_3"
+            app:tabIndicatorColor="@color/greenPrimaryColor"
             app:tabIndicatorFullWidth="false"
             app:tabSelectedTextColor="@color/movieTitleColor"
-            app:tabTextColor="@color/button_category" >
+            app:tabTextAppearance="@style/CustomTabTextLayout"
+            app:tabTextColor="#2A12153D" />
 
-            <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/todos_os_filmes"
-                app:tabIndicatorGravity="bottom" />
+        <ImageView
+            android:id="@+id/greenIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_16"
+            android:src="@drawable/rectangle_3"
+            android:visibility="gone"
+            android:contentDescription="@string/page_indicator"
+            app:layout_constraintStart_toStartOf="@+id/submitSearch"
+            app:layout_constraintTop_toBottomOf="@+id/submitSearch" />
 
-            <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/button_category_shape"
-                android:text="@string/favoritos"
-                app:tabIndicatorGravity="bottom" />
+        <TextView
+            android:id="@+id/searchModeTxt"
+            style="@style/movieTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/modo_pesquisa"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@+id/greenIcon"
+            app:layout_constraintTop_toBottomOf="@+id/greenIcon" />
 
-            <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/modo_pesquisa"
-                app:tabIndicatorGravity="top" />
+        <TextView
+            android:id="@+id/backToHomeBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/lato_regular"
+            android:text="@string/voltar_ao_inicio"
+            android:textColor="@color/greenPrimaryColor"
+            android:textSize="@dimen/text_size_16"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@+id/searchModeTxt"
+            app:layout_constraintTop_toBottomOf="@+id/searchModeTxt" />
 
-        </com.google.android.material.tabs.TabLayout>
+        <FrameLayout
+            android:id="@+id/searchFragmentContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/backToHomeBtn" />
+
 
         <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/nav_all_favorites_search"
+            android:id="@+id/viewPager"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tabLytOptions" />
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/nav_categories"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="112dp"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tab_layout_categories"
-            style="@style/CustomTabLayoutCategory"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:clickable="true"
-            android:focusable="true"
-            app:tabIndicatorFullWidth="false"
-            app:tabSelectedTextColor="@color/movieTitleColor"
-            app:tabTextColor="@color/button_category_selecionado">
-
-            <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/acao" />
-
-            <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/anime" />
-
-            <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/comedia" />
-
-            <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/drama" />
-
-        </com.google.android.material.tabs.TabLayout>
-
-        <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/view_Pager_Categories"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"  />
-
-    </LinearLayout>
-
-    <FrameLayout
-        android:id="@+id/frmContainer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_32"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/nav_categories"
-        tools:listitem="@layout/fragment_movies">
-
-    </FrameLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

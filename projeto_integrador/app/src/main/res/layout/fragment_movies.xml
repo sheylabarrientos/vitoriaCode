@@ -16,7 +16,7 @@
         android:layout_marginRight="16dp"
         android:orientation="horizontal"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:context=".presentation.home.view.MoviesFragment"
+        tools:context=".presentation.AllMoviesFragment"
         tools:ignore="MissingConstraints"
         tools:listitem="@layout/recycler_movies_list" />
 

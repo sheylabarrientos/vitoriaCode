@@ -8,10 +8,12 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="background_app">#E5E5E5</color>
+    <color name="movieInfoTextColor">#9A9BB2</color>
     <color name="star">#FCC419</color>
     <color name="greenPrimaryColor">#11C76F</color>
     <color name="favorito_coracao">#11C76F</color>
-    <color name="search">#223334</color>
+    <color name="searchColor">#000000</color>
+    <color name="buttonGenreUnchecked">#C5C5C5</color>
     <color name="textTab">#B7B7A4</color>
     <color name="movieTitleColor">#223334</color>
     <color name="button_category">#CFCFD1</color>

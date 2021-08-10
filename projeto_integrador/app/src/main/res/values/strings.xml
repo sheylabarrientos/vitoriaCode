@@ -1,30 +1,30 @@
 <resources>
     <string name="app_name">projeto_integrador</string>
-    <string name="pesquisar_por_filme">Pesquisar por filme...</string>
-    <string name="todos_os_filmes">Todos os Filmes</string>
+    <string name="pesquisar_por_filme">Pesquisar por filme…</string>
+    <string name="modo_pesquisa">Modo Pesquisa</string>
     <string name="title_movie">Titulo do Filme</string>
     <string name="james_mangold">James \n Mangold</string>
     <string name="diretor">Diretor</string>
     <string name="elenco">Elenco</string>
-    <string name="american_car_designer">American car designer...</string>
     <string name="sinopse">Sinopse</string>
-    <string name="year_time">2021   PG-13   2h 33min</string>
-    <string name="_81_percent">81% \nAvaliação \ndos Usuários</string>
+    <string name="year_time">2021</string>
+    <string name="txt_page">PG-</string>
+    <string name="txt_movie_length">2h 33min</string>
+    <string name="_81_percent">%</string>
     <string name="cover_movie">cover_movie</string>
     <string name="favorite_movie">favorite_movie</string>
     <string name="not_found_movie">Esse filme não existe</string>
-    <string name="message_not_found_search_again">Não conseguimos encontrar o filme que você procura. \n Por favor, refaça sua busca.</string>
+    <string name="message_not_found_search_again">Não conseguimos encontrar o filme que você procura. Por favor, refaça sua busca.</string>
     <string name="system_fail_try_again">Por algum motivo, não foi possível processar com essa \n solicitação. Por favor, tente novamente.</string>
     <string name="system_fail">O sistema falhou</string>
     <string name="tente_novamente">Tente novamente</string>
     <string name="biografia">Biografia</string>
-    <string name="_81">81%</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="favoritos">Favoritos</string>
-    <string name="modo_pesquisa">Modo Pesquisa</string>
-    <string name="comedia">COMÉDIA</string>
-    <string name="anime">ANIME</string>
-    <string name="drama">DRAMA</string>
-    <string name="acao">AÇÃO</string>
+    <string name="movie_title">movie_title</string>
+    <string name="star_avaliacao_usuario">Avaliação do Usuário</string>
+    <string name="genre">Genre</string>
+    <string name="search_button_description">search_button_description</string>
+    <string name="search_button">search button</string>
+    <string name="page_indicator">Page Indicator</string>
+    <string name="voltar_ao_inicio">Voltar ao início</string>
+    <string name="star_icon">star icon</string>
 </resources>
