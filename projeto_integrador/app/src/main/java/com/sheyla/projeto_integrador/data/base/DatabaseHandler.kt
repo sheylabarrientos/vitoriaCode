@@ -1,8 +1,9 @@
-package com.sheyla.projeto_integrador.domain
+package com.sheyla.projeto_integrador.data.base
 
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
+import com.sheyla.projeto_integrador.domain.Movie
 import com.sheyla.projeto_integrador.domain.usecase.FavoriteMovie
 import java.util.ArrayList
 

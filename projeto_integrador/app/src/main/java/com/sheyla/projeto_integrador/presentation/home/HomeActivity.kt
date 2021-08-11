@@ -1,4 +1,4 @@
-package com.sheyla.projeto_integrador.presentation
+package com.sheyla.projeto_integrador.presentation.home
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -12,9 +12,10 @@ import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.sheyla.projeto_integrador.R
-import com.sheyla.projeto_integrador.domain.DatabaseHandler
+import com.sheyla.projeto_integrador.data.base.DatabaseHandler
 import com.sheyla.projeto_integrador.domain.Tools
-import com.sheyla.projeto_integrador.presentation.home.view.adapter.ViewPagerAdapter
+import com.sheyla.projeto_integrador.presentation.SearchMoviesFragment
+import com.sheyla.projeto_integrador.presentation.home.adapter.ViewPagerAdapter
 
 class HomeActivity : AppCompatActivity() {
 

@@ -1,4 +1,4 @@
-package com.sheyla.projeto_integrador.presentation
+package com.sheyla.projeto_integrador.presentation.home
 
 import android.content.Intent
 import android.os.Bundle
@@ -16,10 +16,14 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.textview.MaterialTextView
 import com.sheyla.projeto_integrador.R
-import com.sheyla.projeto_integrador.domain.DatabaseHandler
+import com.sheyla.projeto_integrador.data.base.DatabaseHandler
 import com.sheyla.projeto_integrador.domain.Movie
-import com.sheyla.projeto_integrador.presentation.home.view.adapter.GenresRvAdapter
-import com.sheyla.projeto_integrador.presentation.home.view.adapter.MoviesRvAdapter
+import com.sheyla.projeto_integrador.presentation.FailSystemActivity
+import com.sheyla.projeto_integrador.presentation.details.MovieDetailsActivity
+import com.sheyla.projeto_integrador.presentation.MovieListener
+import com.sheyla.projeto_integrador.presentation.model.MoviesViewModel
+import com.sheyla.projeto_integrador.presentation.home.adapter.GenresRvAdapter
+import com.sheyla.projeto_integrador.presentation.home.adapter.MoviesRvAdapter
 import com.sheyla.projeto_integrador.presentation.model.ViewState
 
 class AllMoviesFragment : Fragment(), MovieListener {

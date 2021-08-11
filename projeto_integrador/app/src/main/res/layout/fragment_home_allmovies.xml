@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_app"
-    tools:context=".presentation.AllMoviesFragment">
+    tools:context=".presentation.home.AllMoviesFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcvAllMoviesTypes"

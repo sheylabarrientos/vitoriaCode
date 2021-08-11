@@ -10,12 +10,13 @@ import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.core.net.toUri
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.sheyla.projeto_integrador.R
 import com.sheyla.projeto_integrador.domain.Movie
-import com.sheyla.projeto_integrador.presentation.home.view.adapter.GenresRvAdapter
-import com.sheyla.projeto_integrador.presentation.home.view.adapter.MoviesRvAdapter
+import com.sheyla.projeto_integrador.presentation.details.MovieDetailsActivity
+import com.sheyla.projeto_integrador.presentation.home.adapter.GenresRvAdapter
+import com.sheyla.projeto_integrador.presentation.home.adapter.MoviesRvAdapter
+import com.sheyla.projeto_integrador.presentation.model.MoviesViewModel
 import com.sheyla.projeto_integrador.presentation.model.ViewState
 
 class SearchMoviesFragment : Fragment(), MovieListener {

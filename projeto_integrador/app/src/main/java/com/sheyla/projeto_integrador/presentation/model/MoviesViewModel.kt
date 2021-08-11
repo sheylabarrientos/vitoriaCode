@@ -1,4 +1,4 @@
-package com.sheyla.projeto_integrador.presentation
+package com.sheyla.projeto_integrador.presentation.model
 
 import android.net.Uri
 import android.util.Log
@@ -12,7 +12,6 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
-import com.sheyla.projeto_integrador.presentation.model.ViewState
 
 class MoviesViewModel() : ViewModel() {
 

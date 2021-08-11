@@ -1,4 +1,4 @@
-package com.sheyla.projeto_integrador.presentation
+package com.sheyla.projeto_integrador.presentation.details
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.ToggleButton
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.google.android.material.imageview.ShapeableImageView
@@ -14,8 +13,9 @@ import com.sheyla.projeto_integrador.R
 import com.sheyla.projeto_integrador.data.base.Constants
 import com.sheyla.projeto_integrador.domain.MovieDetail
 import com.sheyla.projeto_integrador.domain.Tools
-import com.sheyla.projeto_integrador.presentation.home.view.adapter.CastRvAdapter
-import com.sheyla.projeto_integrador.presentation.home.view.adapter.MovieDetailsGenresRvAdapter
+import com.sheyla.projeto_integrador.presentation.home.HomeActivity
+import com.sheyla.projeto_integrador.presentation.home.adapter.CastRvAdapter
+import com.sheyla.projeto_integrador.presentation.details.adapter.MovieDetailsGenresRvAdapter
 import kotlinx.android.synthetic.main.activity_detail_movie.*
 
 class MovieDetailsActivity : AppCompatActivity() {

@@ -13,8 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Projeto_integrador">
         <activity android:name="com.sheyla.projeto_integrador.presentation.FailSystemActivity" android:theme="@style/Theme.Projeto_integrador.NoActionBar"/>
-        <activity android:name="com.sheyla.projeto_integrador.presentation.MovieDetailsActivity" android:theme="@style/Theme.Projeto_integrador.NoActionBar"/>
-        <activity android:name=".presentation.HomeActivity" android:theme="@style/Theme.Projeto_integrador.NoActionBar">
+        <activity android:name="com.sheyla.projeto_integrador.presentation.details.MovieDetailsActivity" android:theme="@style/Theme.Projeto_integrador.NoActionBar"/>
+        <activity android:name=".presentation.home.HomeActivity" android:theme="@style/Theme.Projeto_integrador.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
