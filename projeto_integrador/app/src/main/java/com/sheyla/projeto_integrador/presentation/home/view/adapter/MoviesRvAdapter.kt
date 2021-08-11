@@ -25,6 +25,7 @@ class MoviesRvAdapter(
         var movieTitle: TextView? = view.findViewById(R.id.title_movie)
         var rating: TextView? = view.findViewById(R.id.percent_likes)
         var favBtn: ToggleButton? = view.findViewById(R.id.favorite_heart_empty)
+        var movieId: TextView? = view.findViewById(R.id.movie_id)
     }
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
@@ -41,6 +42,7 @@ class MoviesRvAdapter(
         holder.movieTitle?.text = dataSet[position].title
         holder.rating?.text = dataSet[position].rating
 
+
         holder.imageMovie?.setOnClickListener {
             listener?.openMovieDetails(dataSet[position].id)
         }
@@ -49,6 +51,8 @@ class MoviesRvAdapter(
         holder.favBtn?.setOnClickListener {
             listener?.onFavoriteClickedListener(dataSet[position], !dataSet[position].isFavorite)
         }
+
+        holder.movieId?.text = dataSet[position].id.toString()
     }
 
     override fun getItemCount() = dataSet.size

@@ -2,17 +2,19 @@ package com.sheyla.projeto_integrador.presentation
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.CountDownTimer
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ProgressBar
-import android.widget.TextView
 import android.widget.Toast
+import androidx.annotation.NonNull
+import androidx.appcompat.widget.AppCompatToggleButton
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.textview.MaterialTextView
 import com.sheyla.projeto_integrador.R
 import com.sheyla.projeto_integrador.domain.DatabaseHandler
 import com.sheyla.projeto_integrador.domain.Movie
@@ -27,10 +29,6 @@ class AllMoviesFragment : Fragment(), MovieListener {
     private lateinit var progressBar: ProgressBar
     private lateinit var moviesViewModel: MoviesViewModel
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -44,6 +42,7 @@ class AllMoviesFragment : Fragment(), MovieListener {
 
         val rvMovies = view.findViewById<RecyclerView>(R.id.rcvContainer)
         val rvGenres = view.findViewById<RecyclerView>(R.id.rcvAllMoviesTypes)
+
 
         genresAdapter = GenresRvAdapter(context = view.context, listener = this)
         listAdapter = MoviesRvAdapter(context = view.context, listener = this)
@@ -61,44 +60,26 @@ class AllMoviesFragment : Fragment(), MovieListener {
 
         //val rvMovies = view.findViewById<RecyclerView>(R.id.rcvContainer)
 
+        rvMovies.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrolled(@NonNull recyclerView: RecyclerView, dx: Int, dy: Int): Unit {
+                var layout =
+                    (rvMovies.layoutManager as LinearLayoutManager).findViewByPosition((rvMovies.layoutManager as LinearLayoutManager).findFirstVisibleItemPosition())
 
-        val timer = object : CountDownTimer(5000, 1000) {
+                val indexOfToggleButton = 2
+                val indexOfId = 5
 
-            override fun onTick(millisUntilFinished: Long) {
+                if (layout is ConstraintLayout) {
+                    if (layout.getChildAt(indexOfId) is MaterialTextView) {
+                        val movieIdString =
+                            (layout.getChildAt(indexOfId) as MaterialTextView).text.toString()
+                        val movieId = Integer.parseInt(movieIdString)
 
-            }
-
-            override fun onFinish() {
-
-                var i = 0
-                var j = 0
-                var k = 0
-                var indexOfToggleButton: Int = 0
-                var movieTitle: String = ""
-                var counter = 0
-
-
-                println("Temos " + rvMovies.childCount + " childs")
-
-                while (i < rvMovies.childCount) {
-                    while (j < (rvMovies.getChildAt(i) as ConstraintLayout).childCount) {
-                        if ((rvMovies.getChildAt(i) as ConstraintLayout).getChildAt(j) is TextView) {
-                            //procurar o toggle button, comparar os textos e setar o toggle button
-                            println("counter " + counter)
-                            counter++
-                        }
-
-                        j++
+                        (layout.getChildAt(indexOfToggleButton) as AppCompatToggleButton).isChecked =
+                            DatabaseHandler.movieIdIsFavorite(movieId) == true
                     }
-                    i++
                 }
-
-                this.start()
-
             }
-        }.start()
-
-
+        })
     }
 
     override fun onResume() {
@@ -129,11 +110,15 @@ class AllMoviesFragment : Fragment(), MovieListener {
         })
     }
 
-    private fun observeViewState(){
+    private fun observeViewState() {
         moviesViewModel.viewStateLiveData.observe(viewLifecycleOwner, { result ->
-            when(result){
+            when (result) {
                 ViewState.GeneralError -> {
-                    Toast.makeText(requireContext(), "General error all movies fragment", Toast.LENGTH_LONG).show()
+                    Toast.makeText(
+                        requireContext(),
+                        "General error all movies fragment",
+                        Toast.LENGTH_LONG
+                    ).show()
                     val intent = Intent(requireContext(), FailSystemActivity::class.java)
                     startActivity(intent)
                 }
@@ -150,10 +135,7 @@ class AllMoviesFragment : Fragment(), MovieListener {
     override fun loadMoviesWithGenre(genreIds: List<Int>) {
         moviesViewModel.getMoviesByGenre(genreIds)
         println("Carregou")
-
-
     }
-
 
     override fun onFavoriteClickedListener(movie: Movie, isChecked: Boolean) {
         if (isChecked) {

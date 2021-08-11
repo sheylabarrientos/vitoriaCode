@@ -23,10 +23,6 @@ class FavoriteMoviesFragment : Fragment(), MovieListener { /*se for utilizar a i
     private lateinit var rvMovies: RecyclerView
     private lateinit var viewModelFavorites: MoviesViewModel
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -53,6 +49,7 @@ class FavoriteMoviesFragment : Fragment(), MovieListener { /*se for utilizar a i
         observeGenres()
         viewModelFavorites.getFavoriteMovies()
         observeFavoriteMovies()
+
     }
 
     private fun observeGenres() {
