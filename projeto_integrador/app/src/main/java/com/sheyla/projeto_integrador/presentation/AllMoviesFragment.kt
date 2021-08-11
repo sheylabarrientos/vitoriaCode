@@ -58,8 +58,6 @@ class AllMoviesFragment : Fragment(), MovieListener {
         setupObserveList()
         observeViewState()
 
-        //val rvMovies = view.findViewById<RecyclerView>(R.id.rcvContainer)
-
         rvMovies.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrolled(@NonNull recyclerView: RecyclerView, dx: Int, dy: Int): Unit {
                 var layout =
