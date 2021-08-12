@@ -98,7 +98,6 @@
         android:fontFamily="@font/lato_regular"
         android:layout_marginStart="@dimen/margin_8"
         android:visibility="invisible"
-        android:text="@string/_81_percent"
         android:textColor="@color/movieTitleColor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/star_percent_likes"
