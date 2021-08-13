@@ -14,14 +14,19 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 
-class MovieDetailsViewModel : ViewModel() {private val getMovieDetailsUseCase = GetMovieDetailsUseCase()
+class MovieDetailsViewModel : ViewModel() {
+
+    private val getMovieDetailsUseCase = GetMovieDetailsUseCase()
 
     private val _movieLiveData = MutableLiveData<MovieDetail>()
     val movieLiveData: LiveData<MovieDetail> = _movieLiveData
+
     private val _castLiveData = MutableLiveData<List<Cast>>()
     val castLiveData: LiveData<List<Cast>> = _castLiveData
+
     private val _certificationLiveData = MutableLiveData<List<Certification>>()
     val certificationLiveData: LiveData<List<Certification>> = _certificationLiveData
+
     private val _favoriteMoviesLiveData = MutableLiveData<List<Movie>>(mutableListOf())
     val favoriteMoviesLiveData : LiveData<List<Movie>> = _favoriteMoviesLiveData
 

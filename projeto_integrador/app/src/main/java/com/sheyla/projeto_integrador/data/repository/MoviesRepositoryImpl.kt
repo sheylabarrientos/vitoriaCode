@@ -1,6 +1,5 @@
 package com.sheyla.projeto_integrador.data.repository
 
-import android.net.Network
 import android.net.Uri
 import com.sheyla.projeto_integrador.data.localsource.MovieLocalDataSourceImpl
 import com.sheyla.projeto_integrador.data.mappers.*

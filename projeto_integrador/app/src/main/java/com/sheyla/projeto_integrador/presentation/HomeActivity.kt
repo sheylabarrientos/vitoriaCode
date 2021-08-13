@@ -1,4 +1,4 @@
-package com.sheyla.projeto_integrador.presentation.home
+package com.sheyla.projeto_integrador.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -12,10 +12,12 @@ import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.sheyla.projeto_integrador.R
-import com.sheyla.projeto_integrador.data.base.DatabaseHandler
-import com.sheyla.projeto_integrador.domain.Tools
-import com.sheyla.projeto_integrador.presentation.SearchMoviesFragment
-import com.sheyla.projeto_integrador.presentation.home.adapter.ViewPagerAdapter
+import com.sheyla.projeto_integrador.domain.MovieDetail
+import com.sheyla.projeto_integrador.presentation.adpater.ViewPagerAdapter
+import com.sheyla.projeto_integrador.presentation.adpater.ViewPagerAdapter.Companion.ALL_MOVIES_POSITION
+import com.sheyla.projeto_integrador.presentation.adpater.ViewPagerAdapter.Companion.FAVORITE_MOVIES_POSITION
+import com.sheyla.projeto_integrador.presentation.model.MoviesViewModel
+import com.sheyla.projeto_integrador.presentation.searchmovies.SearchMoviesFragment
 
 class HomeActivity : AppCompatActivity() {
 
@@ -35,15 +37,13 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        DatabaseHandler.readDataBase()
-
+        MoviesViewModel.readDataBase()
         bindViews()
-
     }
 
     private fun bindViews(){
         searchEdtTxt = findViewById(R.id.searchMovie)
-        Tools.searchID = (searchEdtTxt as EditText).id
+        MovieDetail.searchID = (searchEdtTxt as EditText).id
 
         searchBtn = findViewById(R.id.submitSearch)
         tbLytOptions = findViewById(R.id.tabLytOptions)
@@ -84,46 +84,50 @@ class HomeActivity : AppCompatActivity() {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) { }
 
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                tbLytOptions.visibility = View.GONE
-                viewPager.visibility = View.GONE
-                greenIcon.visibility = View.VISIBLE
-                searchModeTxt.visibility = View.VISIBLE
-                backToHomeBtn.visibility = View.VISIBLE
-                fragmentContainer.visibility = View.VISIBLE
+                visibilitySearchMode()
             }
 
             override fun afterTextChanged(s: Editable?) {
                 if (s != null) {
                     if (s.isEmpty()) {
-                        tbLytOptions.visibility = View.VISIBLE
-                        viewPager.visibility = View.VISIBLE
-                        fragmentContainer.visibility = View.GONE
-                        greenIcon.visibility = View.GONE
-                        searchModeTxt.visibility = View.GONE
-                        backToHomeBtn.visibility = View.GONE
+                        viewPager.setCurrentItem(ALL_MOVIES_POSITION, false)
+                        visibilityNotSearchMode()
                     }
                 }
             }
         })
 
         backToHomeBtn.setOnClickListener {
-            tbLytOptions.visibility = View.VISIBLE
-            viewPager.visibility = View.VISIBLE
-            fragmentContainer.visibility = View.GONE
-            greenIcon.visibility = View.GONE
-            searchModeTxt.visibility = View.GONE
-            backToHomeBtn.visibility = View.GONE
+            visibilityNotSearchMode()
             searchEdtTxt?.text?.clear()
         }
     }
 
     private fun getTabTitle(position: Int): String {
         return when (position) {
-            0 -> "Todos os Filmes"
-            else -> "Favoritos"
+            ALL_MOVIES_POSITION -> "Todos os Filmes"
+            FAVORITE_MOVIES_POSITION -> "Favoritos"
+            else -> ""
         }
     }
 
+    private fun visibilitySearchMode(){
+        tbLytOptions.visibility = View.GONE
+        viewPager.visibility = View.GONE
+        greenIcon.visibility = View.VISIBLE
+        searchModeTxt.visibility = View.VISIBLE
+        backToHomeBtn.visibility = View.VISIBLE
+        fragmentContainer.visibility = View.VISIBLE
+    }
+
+    private fun visibilityNotSearchMode(){
+        tbLytOptions.visibility = View.VISIBLE
+        viewPager.visibility = View.VISIBLE
+        fragmentContainer.visibility = View.GONE
+        greenIcon.visibility = View.GONE
+        searchModeTxt.visibility = View.GONE
+        backToHomeBtn.visibility = View.GONE
+    }
 
 
 }

@@ -1,4 +1,4 @@
-package com.sheyla.projeto_integrador.presentation.home
+package com.sheyla.projeto_integrador.presentation.allmovies
 
 import android.content.Intent
 import android.os.Bundle
@@ -16,14 +16,14 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.textview.MaterialTextView
 import com.sheyla.projeto_integrador.R
-import com.sheyla.projeto_integrador.data.base.DatabaseHandler
 import com.sheyla.projeto_integrador.domain.Movie
 import com.sheyla.projeto_integrador.presentation.FailSystemActivity
 import com.sheyla.projeto_integrador.presentation.details.MovieDetailsActivity
 import com.sheyla.projeto_integrador.presentation.MovieListener
 import com.sheyla.projeto_integrador.presentation.model.MoviesViewModel
-import com.sheyla.projeto_integrador.presentation.home.adapter.GenresRvAdapter
-import com.sheyla.projeto_integrador.presentation.home.adapter.MoviesRvAdapter
+import com.sheyla.projeto_integrador.presentation.adpater.GenresRvAdapter
+import com.sheyla.projeto_integrador.presentation.adpater.MoviesRvAdapter
+import com.sheyla.projeto_integrador.presentation.details.MovieDetailsActivity.Companion.MOVIE_ID
 import com.sheyla.projeto_integrador.presentation.model.ViewState
 
 class AllMoviesFragment : Fragment(), MovieListener {
@@ -58,8 +58,8 @@ class AllMoviesFragment : Fragment(), MovieListener {
         moviesViewModel.getGenres()
         progressBar = view.findViewById(R.id.loading)
 
-        setupGenresObserveList()
-        setupObserveList()
+        observeGenres()
+        observeListMovies()
         observeViewState()
 
         rvMovies.addOnScrollListener(object : RecyclerView.OnScrollListener() {
@@ -77,7 +77,7 @@ class AllMoviesFragment : Fragment(), MovieListener {
                         val movieId = Integer.parseInt(movieIdString)
 
                         (layout.getChildAt(indexOfToggleButton) as AppCompatToggleButton).isChecked =
-                            DatabaseHandler.movieIdIsFavorite(movieId) == true
+                            MoviesViewModel.movieIdIsFavorite(movieId) == true
                     }
                 }
             }
@@ -91,7 +91,7 @@ class AllMoviesFragment : Fragment(), MovieListener {
 
 
     //Aqui se está dizendo "observe a viewmodel e quando algo acontecer a ela, a atrele ao adapter.
-    private fun setupObserveList() {
+    private fun observeListMovies() {
         moviesViewModel.movieListLiveData.observe(viewLifecycleOwner, { response ->
             response?.let {
                 listAdapter.dataSet.clear()
@@ -103,7 +103,7 @@ class AllMoviesFragment : Fragment(), MovieListener {
     }
 
     //Aqui se está dizendo "observe a viewmodel e quando algo acontecer a ela a atrele ao adapter".
-    private fun setupGenresObserveList() {
+    private fun observeGenres() {
         moviesViewModel.genreListLiveData.observe(viewLifecycleOwner, { response ->
             response?.let {
                 genresAdapter.dataset.addAll(it)
@@ -114,40 +114,32 @@ class AllMoviesFragment : Fragment(), MovieListener {
 
     private fun observeViewState() {
         moviesViewModel.viewStateLiveData.observe(viewLifecycleOwner, { result ->
-            when (result) {
-                ViewState.GeneralError -> {
-                    Toast.makeText(
-                        requireContext(),
-                        "General error all movies fragment",
-                        Toast.LENGTH_LONG
-                    ).show()
-                    val intent = Intent(requireContext(), FailSystemActivity::class.java)
-                    startActivity(intent)
-                }
+            if (result == ViewState.GeneralError) {
+                val intent = Intent(requireContext(), FailSystemActivity::class.java)
+                startActivity(intent)
             }
         })
     }
 
     override fun openMovieDetails(movieId: Int) {
         val intent = Intent(requireContext(), MovieDetailsActivity::class.java)
-        intent.putExtra("MOVIE_ID", movieId)
+        intent.putExtra(MOVIE_ID, movieId)
         startActivity(intent)
     }
 
     override fun loadMoviesWithGenre(genreIds: List<Int>) {
         moviesViewModel.getMoviesByGenre(genreIds)
-        println("Carregou")
     }
 
     override fun onFavoriteClickedListener(movie: Movie, isChecked: Boolean) {
         if (isChecked) {
             movie.isFavorite = true
             moviesViewModel.favoriteMovie(movie)
-            DatabaseHandler.writeFavoriteMovie(movie)
+            MoviesViewModel.writeFavoriteMovie(movie)
         } else {
             movie.isFavorite = false
             moviesViewModel.unfavoriteMovie(movie)
-            DatabaseHandler.deleteFavoriteMovie(movie)
+            MoviesViewModel.deleteFavoriteMovie(movie)
         }
     }
 }

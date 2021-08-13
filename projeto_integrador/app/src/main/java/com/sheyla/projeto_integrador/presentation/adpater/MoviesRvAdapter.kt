@@ -1,4 +1,4 @@
-package com.sheyla.projeto_integrador.presentation.home.adapter
+package com.sheyla.projeto_integrador.presentation.adpater
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -40,7 +40,7 @@ class MoviesRvAdapter(
             holder.imageMovie?.let { Glide.with(context).load(Constants.BASE_URL_IMAGE.value + dataSet[position].imgHome).into(it) }
         }
         holder.movieTitle?.text = dataSet[position].title
-        holder.rating?.text = dataSet[position].rating
+        holder.rating?.text = dataSet[position].getRating()
 
 
         holder.imageMovie?.setOnClickListener {

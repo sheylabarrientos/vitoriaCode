@@ -12,7 +12,7 @@ import androidx.core.app.NotificationCompat
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
 import com.sheyla.projeto_integrador.R
-import com.sheyla.projeto_integrador.presentation.home.HomeActivity
+import com.sheyla.projeto_integrador.presentation.HomeActivity
 
 class FirebaseToken : FirebaseMessagingService() {
     override fun onNewToken(token: String) {

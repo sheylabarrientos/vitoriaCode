@@ -109,8 +109,7 @@
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/year_movie"
-            tools:ignore="MissingConstraints"
-            tools:listitem="@layout/item_all_genres" />
+            tools:listitem="@layout/item_genre_details" />
 
         <TextView
             android:id="@+id/sinopse_detail_movie"
@@ -119,6 +118,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/margin_32"
             android:layout_marginStart="16dp"
+            android:layout_marginEnd="@dimen/margin_16"
             android:layout_marginTop="@dimen/margin_16"
             android:text="@string/sinopse"
             app:layout_constraintEnd_toEndOf="parent"

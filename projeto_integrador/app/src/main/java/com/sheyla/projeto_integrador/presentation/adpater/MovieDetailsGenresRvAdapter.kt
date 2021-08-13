@@ -1,4 +1,4 @@
-package com.sheyla.projeto_integrador.presentation.details.adapter
+package com.sheyla.projeto_integrador.presentation.adpater
 
 import android.view.LayoutInflater
 import android.view.View
@@ -15,7 +15,7 @@ class MovieDetailsGenresRvAdapter (private var dataset: List<Genre> = mutableLis
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_all_genres, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_genre_details, parent, false)
         return ViewHolder(view)
     }
 

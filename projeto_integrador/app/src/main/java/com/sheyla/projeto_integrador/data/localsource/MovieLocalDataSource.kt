@@ -4,7 +4,6 @@ import com.sheyla.projeto_integrador.data.model.movies.MovieResponse
 import io.reactivex.Single
 
 interface MovieLocalDataSource {
-    //fun favoriteMovie(movie: MovieResponse): Single<Boolean>
     fun favoriteMovie(movie: MovieResponse): Single<List<MovieResponse>>
     fun unfavoriteMovie(movie: MovieResponse): Single<List<MovieResponse>>
     fun getFavoriteMovies(): Single<List<MovieResponse>>

@@ -4,24 +4,13 @@ import com.sheyla.projeto_integrador.data.model.movies.MovieResponse
 import io.reactivex.Single
 import java.lang.IllegalStateException
 
-object MovieLocalDataSourceImpl: MovieLocalDataSource{
+object MovieLocalDataSourceImpl : MovieLocalDataSource {
 
     private val favoriteMoviesList = mutableListOf<MovieResponse>()
 
-    /*override fun favoriteMovie(movie: MovieResponse): Single<Boolean> {
-        return Single.create { emitter ->
-            val result = favoriteMoviesList.add(movie) //result is either true or false
-            if (result) {
-                emitter.onSuccess(true)
-            } else {
-                emitter.onError(IllegalStateException())
-            }
-        }
-    }*/
-
     override fun favoriteMovie(movie: MovieResponse): Single<List<MovieResponse>> {
         return Single.create { emitter ->
-            val result = favoriteMoviesList.add(movie) //result is either true or false
+            val result = favoriteMoviesList.add(movie)
             if (result) {
                 emitter.onSuccess(favoriteMoviesList)
             } else {
@@ -52,7 +41,7 @@ object MovieLocalDataSourceImpl: MovieLocalDataSource{
 
     override fun checkIfFavorite(movie: MovieResponse): Single<Boolean> {
         return Single.create { emitter ->
-            val result = favoriteMoviesList.contains(movie) //result is either true or false
+            val result = favoriteMoviesList.contains(movie)
             if (result) {
                 emitter.onSuccess(true)
             } else {

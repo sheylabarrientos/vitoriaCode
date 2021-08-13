@@ -1,4 +1,4 @@
-package com.sheyla.projeto_integrador.domain.usecase
+package com.sheyla.projeto_integrador.domain
 
 class FavoriteMovie {
         private var id: Int = 0

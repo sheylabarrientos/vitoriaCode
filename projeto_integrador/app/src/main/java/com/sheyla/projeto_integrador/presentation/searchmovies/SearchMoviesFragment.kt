@@ -1,4 +1,4 @@
-package com.sheyla.projeto_integrador.presentation
+package com.sheyla.projeto_integrador.presentation.searchmovies
 
 import android.content.Intent
 import android.net.Uri
@@ -13,9 +13,12 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.sheyla.projeto_integrador.R
 import com.sheyla.projeto_integrador.domain.Movie
+import com.sheyla.projeto_integrador.presentation.FailSystemActivity
+import com.sheyla.projeto_integrador.presentation.MovieListener
 import com.sheyla.projeto_integrador.presentation.details.MovieDetailsActivity
-import com.sheyla.projeto_integrador.presentation.home.adapter.GenresRvAdapter
-import com.sheyla.projeto_integrador.presentation.home.adapter.MoviesRvAdapter
+import com.sheyla.projeto_integrador.presentation.adpater.GenresRvAdapter
+import com.sheyla.projeto_integrador.presentation.adpater.MoviesRvAdapter
+import com.sheyla.projeto_integrador.presentation.details.MovieDetailsActivity.Companion.MOVIE_ID
 import com.sheyla.projeto_integrador.presentation.model.MoviesViewModel
 import com.sheyla.projeto_integrador.presentation.model.ViewState
 
@@ -114,7 +117,7 @@ class SearchMoviesFragment : Fragment(), MovieListener {
 
     override fun openMovieDetails(movieId: Int) {
         val intent = Intent(requireContext(), MovieDetailsActivity::class.java)
-        intent.putExtra("MOVIE_ID", movieId)
+        intent.putExtra(MOVIE_ID, movieId)
         startActivity(intent)
     }
 

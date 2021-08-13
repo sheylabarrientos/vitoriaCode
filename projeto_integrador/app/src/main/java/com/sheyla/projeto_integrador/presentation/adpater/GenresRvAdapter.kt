@@ -1,4 +1,4 @@
-package com.sheyla.projeto_integrador.presentation.home.adapter
+package com.sheyla.projeto_integrador.presentation.adpater
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -30,15 +30,14 @@ class GenresRvAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.genreChip?.text = dataset[position].name
-        holder.genreChip?.setOnCheckedChangeListener { _, isChecked ->
-            if(isChecked){
-                selectedItems.add(dataset[position].id)
-            }else{
+        holder.genreChip?.setOnClickListener {
+            if (selectedItems.contains(dataset[position].id)) {
                 selectedItems.remove(dataset[position].id)
+            } else {
+                selectedItems.add(dataset[position].id)
             }
             listener?.loadMoviesWithGenre(selectedItems)
         }
-
     }
 
     override fun getItemCount() = dataset.size

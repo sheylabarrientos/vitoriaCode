@@ -14,10 +14,11 @@ import com.sheyla.projeto_integrador.domain.Movie
 import com.sheyla.projeto_integrador.presentation.MovieListener
 import com.sheyla.projeto_integrador.presentation.model.MoviesViewModel
 import com.sheyla.projeto_integrador.presentation.details.MovieDetailsActivity
-import com.sheyla.projeto_integrador.presentation.home.adapter.GenresRvAdapter
-import com.sheyla.projeto_integrador.presentation.home.adapter.MoviesRvAdapter
+import com.sheyla.projeto_integrador.presentation.adpater.GenresRvAdapter
+import com.sheyla.projeto_integrador.presentation.adpater.MoviesRvAdapter
+import com.sheyla.projeto_integrador.presentation.details.MovieDetailsActivity.Companion.MOVIE_ID
 
-class FavoriteMoviesFragment : Fragment(), MovieListener { /*se for utilizar a interface de fav movies, coloca FavMoviesListListener como parâmetro aqui e recebe a lista de filmes fav da fragment all movies*/
+class FavoriteMoviesFragment : Fragment(), MovieListener {
 
     private lateinit var moviesAdapter: MoviesRvAdapter
     private lateinit var progressBar: ProgressBar
@@ -25,6 +26,10 @@ class FavoriteMoviesFragment : Fragment(), MovieListener { /*se for utilizar a i
     private lateinit var rvGenres: RecyclerView
     private lateinit var rvMovies: RecyclerView
     private lateinit var viewModelFavorites: MoviesViewModel
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -50,9 +55,13 @@ class FavoriteMoviesFragment : Fragment(), MovieListener { /*se for utilizar a i
 
         viewModelFavorites.getGenres()
         observeGenres()
-        viewModelFavorites.getFavoriteMovies()
         observeFavoriteMovies()
 
+    }
+
+    override fun onResume() {
+        super.onResume()
+        viewModelFavorites.getFavoriteMovies()
     }
 
     private fun observeGenres() {
@@ -84,7 +93,7 @@ class FavoriteMoviesFragment : Fragment(), MovieListener { /*se for utilizar a i
 
     override fun openMovieDetails(movieId: Int) {
         val intent = Intent(requireContext(), MovieDetailsActivity::class.java)
-        intent.putExtra("MOVIE_ID", movieId)
+        intent.putExtra(MOVIE_ID, movieId)
         startActivity(intent)
     }
 

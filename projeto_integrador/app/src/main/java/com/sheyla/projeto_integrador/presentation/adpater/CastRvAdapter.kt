@@ -1,4 +1,4 @@
-package com.sheyla.projeto_integrador.presentation.home.adapter
+package com.sheyla.projeto_integrador.presentation.adpater
 
 import android.content.Context
 import android.view.LayoutInflater
