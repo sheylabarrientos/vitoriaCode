@@ -36,7 +36,7 @@
             android:imeOptions="actionSearch"
             android:inputType="text"
             android:privateImeOptions="@color/black"
-            android:textColor="@color/movieTitleColor"
+            android:textColor="@color/greenSecondaryColor"
             android:textColorHint="@color/movieInfoTextColor"
             android:textSize="@dimen/text_size_16"
             android:autofillHints="@string/pesquisar_por_filme"
@@ -56,7 +56,7 @@
             app:tabIndicator="@drawable/tab_rectangle_3"
             app:tabIndicatorColor="@color/greenPrimaryColor"
             app:tabIndicatorFullWidth="false"
-            app:tabSelectedTextColor="@color/movieTitleColor"
+            app:tabSelectedTextColor="@color/greenSecondaryColor"
             app:tabTextAppearance="@style/CustomTabTextLayout"
             app:tabTextColor="#2A12153D" />
 

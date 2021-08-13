@@ -7,15 +7,13 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="background_app">#F4F4F4</color>
-    <color name="movieInfoTextColor">#9A9BB2</color>
+    <color name="background_app">#E5E5E5</color>
+    <color name="movieInfoTextColor">#737599</color>
+    <color name="movieDetailsColor">#9A9BB2</color>
+    <color name="movieGenreDetailsColor">#434670</color>
+    <color name="movieDetailsTextBoldColor">#12153D</color>
     <color name="star">#FCC419</color>
     <color name="greenPrimaryColor">#11C76F</color>
-    <color name="favorito_coracao">#11C76F</color>
-    <color name="searchColor">#223334</color>
-    <color name="buttonGenreUnchecked">#C5C5C5</color>
-    <color name="textTab">#B7B7A4</color>
-    <color name="movieTitleColor">#223334</color>
-    <color name="button_category">#CFCFD1</color>
-    <color name="button_category_selecionado">#28303D</color>
+    <color name="greenSecondaryColor">#223334</color>
+    <color name="buttonGenreChecked">#C4C4C4</color>
 </resources>

@@ -1,7 +1,5 @@
 package com.sheyla.projeto_integrador.domain
 
-import com.sheyla.projeto_integrador.R
-
 class MovieDetail(
     val backdrop_path: String? = null,
     val genres: List<Genre>,
@@ -13,28 +11,6 @@ class MovieDetail(
     val title: String,
     var isFavorite: Boolean = false,
 ) {
-
-    companion object{
-        var searchID:Int = R.id.searchMovie
-
-        fun timeConversion(runtime: Int): String{
-            val time = runtime/60
-            val onlyHours = time.toString().substringBefore(".").toInt()
-            val onlyMinutes = runtime - (onlyHours * 60)
-            return if(onlyHours == 0){
-                onlyMinutes.toString()+"min"
-            }else{
-                onlyHours.toString()+"h "+onlyMinutes.toString()+"min"
-            }
-        }
-
-        fun ratingConversion(vote_average: Float): String{
-            val rating = (vote_average*10).toInt().toString()
-            return "$rating%"
-        }
-
-    }
-
     fun getRating(): String {
         val rating = (vote_average * 10).toInt()
         return "$rating%"

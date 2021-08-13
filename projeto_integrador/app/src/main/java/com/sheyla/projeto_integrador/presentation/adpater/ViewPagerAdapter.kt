@@ -7,7 +7,6 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.sheyla.projeto_integrador.presentation.allmovies.AllMoviesFragment
 import com.sheyla.projeto_integrador.presentation.favorite.FavoriteMoviesFragment
 
-
 class ViewPagerAdapter(fa: FragmentActivity) : FragmentStateAdapter(fa) {
     override fun getItemCount(): Int {
         return 2

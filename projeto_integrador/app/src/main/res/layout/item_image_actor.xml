@@ -5,6 +5,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:paddingHorizontal="@dimen/margin_8"
+    android:layout_marginStart="@dimen/margin_8"
     tools:ignore="RtlSymmetry">
 
     <de.hdodenhof.circleimageview.CircleImageView
@@ -12,7 +13,6 @@
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:textAlignment="center"
-        android:background="@drawable/image_actor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -28,6 +28,7 @@
         android:text="@string/james_mangold"
         android:textAlignment="center"
         android:textStyle="bold"
+        android:textColor="@color/movieDetailsTextBoldColor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/image_actor_detail_movie" />
@@ -41,7 +42,7 @@
         android:maxEms="5"
         android:text="@string/diretor"
         android:textAlignment="center"
-        android:textColor="@color/movieInfoTextColor"
+        android:textColor="@color/movieDetailsColor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/name_cast" />

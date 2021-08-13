@@ -140,10 +140,10 @@ class SearchMoviesFragment : Fragment(), MovieListener {
     override fun onFavoriteClickedListener(movie: Movie, isChecked: Boolean) {
         if (isChecked) {
             movie.isFavorite = true
-            moviesViewModel.favoriteMovie(movie)
+            moviesViewModel.addToFavoriteMovie(movie)
         } else {
             movie.isFavorite = false
-            moviesViewModel.unfavoriteMovie(movie)
+            moviesViewModel.removeFavoriteMovie(movie)
         }
     }
 

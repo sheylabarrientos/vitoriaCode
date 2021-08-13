@@ -12,7 +12,6 @@ import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.sheyla.projeto_integrador.R
-import com.sheyla.projeto_integrador.domain.MovieDetail
 import com.sheyla.projeto_integrador.presentation.adpater.ViewPagerAdapter
 import com.sheyla.projeto_integrador.presentation.adpater.ViewPagerAdapter.Companion.ALL_MOVIES_POSITION
 import com.sheyla.projeto_integrador.presentation.adpater.ViewPagerAdapter.Companion.FAVORITE_MOVIES_POSITION
@@ -43,8 +42,6 @@ class HomeActivity : AppCompatActivity() {
 
     private fun bindViews(){
         searchEdtTxt = findViewById(R.id.searchMovie)
-        MovieDetail.searchID = (searchEdtTxt as EditText).id
-
         searchBtn = findViewById(R.id.submitSearch)
         tbLytOptions = findViewById(R.id.tabLytOptions)
         viewPager = findViewById(R.id.viewPager)
@@ -128,6 +125,4 @@ class HomeActivity : AppCompatActivity() {
         searchModeTxt.visibility = View.GONE
         backToHomeBtn.visibility = View.GONE
     }
-
-
 }

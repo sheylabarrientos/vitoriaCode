@@ -58,7 +58,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/tente_novamente"
-        android:textColor="@color/favorito_coracao"
+        android:textColor="@color/greenPrimaryColor"
         android:textSize="@dimen/text_size_22"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

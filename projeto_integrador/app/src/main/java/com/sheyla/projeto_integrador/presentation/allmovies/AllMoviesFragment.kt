@@ -7,7 +7,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ProgressBar
-import android.widget.Toast
 import androidx.annotation.NonNull
 import androidx.appcompat.widget.AppCompatToggleButton
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -89,8 +88,6 @@ class AllMoviesFragment : Fragment(), MovieListener {
         listAdapter.notifyDataSetChanged()
     }
 
-
-    //Aqui se está dizendo "observe a viewmodel e quando algo acontecer a ela, a atrele ao adapter.
     private fun observeListMovies() {
         moviesViewModel.movieListLiveData.observe(viewLifecycleOwner, { response ->
             response?.let {
@@ -102,7 +99,6 @@ class AllMoviesFragment : Fragment(), MovieListener {
         })
     }
 
-    //Aqui se está dizendo "observe a viewmodel e quando algo acontecer a ela a atrele ao adapter".
     private fun observeGenres() {
         moviesViewModel.genreListLiveData.observe(viewLifecycleOwner, { response ->
             response?.let {
@@ -134,11 +130,11 @@ class AllMoviesFragment : Fragment(), MovieListener {
     override fun onFavoriteClickedListener(movie: Movie, isChecked: Boolean) {
         if (isChecked) {
             movie.isFavorite = true
-            moviesViewModel.favoriteMovie(movie)
+            moviesViewModel.addToFavoriteMovie(movie)
             MoviesViewModel.writeFavoriteMovie(movie)
         } else {
             movie.isFavorite = false
-            moviesViewModel.unfavoriteMovie(movie)
+            moviesViewModel.removeFavoriteMovie(movie)
             MoviesViewModel.deleteFavoriteMovie(movie)
         }
     }

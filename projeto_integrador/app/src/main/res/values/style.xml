@@ -15,7 +15,7 @@
     </style>
 
     <style name="Subtitle_Detail_Movie">
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">@color/movieDetailsTextBoldColor</item>
         <item name="android:textSize">@dimen/text_size_18</item>
         <item name="android:textStyle">bold</item>
         <item name="android:layout_marginStart">@dimen/margin_16</item>
@@ -23,7 +23,7 @@
     </style>
 
     <style name="Text_Detail_Movie">
-        <item name="android:textColor">@color/movieTitleColor</item>
+        <item name="android:textColor">@color/greenSecondaryColor</item>
         <item name="android:textSize">@dimen/text_size_14</item>
         <item name="android:layout_marginStart">@dimen/margin_16</item>
         <item name="android:fontFamily">@font/lato_regular</item>
@@ -32,7 +32,7 @@
     <style name="movieTitle">
         <item name="android:text">@string/movie_title</item>
         <item name="fontFamily">@font/lato_regular</item>
-        <item name="android:textColor">@color/movieTitleColor</item>
+        <item name="android:textColor">@color/greenSecondaryColor</item>
         <item name="android:textSize">@dimen/margin_24</item>
         <item name="android:textStyle">bold</item>
     </style>
@@ -61,6 +61,7 @@
         <item name="cornerSizeTopLeft">45dp</item>
         <item name="cornerSizeBottomRight">0dp</item>
         <item name="cornerSizeBottomLeft">45dp</item>
+        <item name="colorPrimaryDark">@color/white</item>
     </style>
 
     <style name="shapeableImageStyle" parent="">
@@ -71,8 +72,7 @@
     </style>
 
     <style name="LabelRatingCardView" parent="@style/Widget.MaterialComponents.CardView">
-        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.MaterialCardView.Cut
-        </item>
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.MaterialCardView.Cut</item>
     </style>
 
 </resources>

@@ -102,8 +102,8 @@ class MoviesViewModel() : ViewModel() {
             ).handleDisposable()
     }
 
-    fun favoriteMovie(movie: Movie){
-        favoriteMoviesUseCase.addFavoriteMovie(movie)
+    fun addToFavoriteMovie(movie: Movie){
+        favoriteMoviesUseCase.addToFavoriteMovie(movie)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(
@@ -117,7 +117,7 @@ class MoviesViewModel() : ViewModel() {
             ).handleDisposable()
     }
 
-    fun unfavoriteMovie(movie: Movie){
+    fun removeFavoriteMovie(movie: Movie){
         favoriteMoviesUseCase.removeFavoriteMovie(movie)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
@@ -136,7 +136,6 @@ class MoviesViewModel() : ViewModel() {
         searchForMoviesUseCase.executeSearch(movieSearched)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            //.timeout(5, TimeUnit.SECONDS)
             .subscribe(
                 {
                     _searchResultsLiveData.value = it
@@ -149,17 +148,6 @@ class MoviesViewModel() : ViewModel() {
                     _viewStateLiveData.value = ViewState.GeneralError
                 }
             ).handleDisposable()
-    }
-
-    fun checkFavorites(){
-        favoriteMoviesLiveData.value?.forEach{ movie ->
-            favoriteMoviesUseCase.isFavorite(movie)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe{ result ->
-                    movie.isFavorite = result
-                }
-        }
     }
 
     override fun onCleared() {

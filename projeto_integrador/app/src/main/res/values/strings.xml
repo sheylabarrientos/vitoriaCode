@@ -20,7 +20,7 @@
     <string name="tente_novamente">Tente novamente</string>
     <string name="biografia">Biografia</string>
     <string name="movie_title">movie_title</string>
-    <string name="star_avaliacao_usuario">Avaliação do Usuário</string>
+    <string name="star_avaliacao_usuario">Avaliação \ndos usuários</string>
     <string name="genre">Genre</string>
     <string name="search_button_description">search_button_description</string>
     <string name="search_button">search button</string>

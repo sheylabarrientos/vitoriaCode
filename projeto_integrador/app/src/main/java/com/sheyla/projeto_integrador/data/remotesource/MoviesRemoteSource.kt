@@ -12,9 +12,6 @@ import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface MoviesRemoteSource {
-
-    //Antes eu estava usando o observable, mas não é tão importante usar pra esse projeto pois ele só faz requisições q retornam response na hora
-    //um observable seria mais pra caso eu fosse implementar algo tipo um chat, que sempre precisa ficar de olho se chegou uma resposta ou não
     @GET("movie/popular")
     fun getPopularMovies(): Single<ResponseMovies>
 

@@ -12,7 +12,6 @@
         android:background="@color/background_app"
         tools:context=".presentation.details.MovieDetailsActivity">
 
-
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/cover_movie"
             android:layout_width="match_parent"
@@ -30,51 +29,52 @@
             android:id="@+id/back_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_16"
+            android:layout_marginStart="@dimen/margin_24"
             android:layout_marginTop="32dp"
             android:background="@drawable/ic_baseline_arrow_back_ios_24"
             android:contentDescription="@string/app_name"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
+            app:layout_constraintTop_toTopOf="parent"
+            android:elevation="10dp"/>
 
         <TextView
             android:id="@+id/title_movie_detail_movie"
             style="@style/movieTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_16"
-            android:layout_marginTop="@dimen/margin_32"
+            android:layout_marginStart="@dimen/margin_24"
+            android:layout_marginTop="@dimen/margin_8"
+            android:maxEms="9"
             android:text="@string/title_movie"
+            android:textColor="@color/movieDetailsTextBoldColor"
             android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cover_movie" />
+            app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
 
         <ImageView
             android:id="@+id/favorite_button_detail_movie"
             android:layout_width="@dimen/margin_40"
             android:layout_height="@dimen/margin_32"
-            android:layout_marginStart="100dp"
+            android:layout_marginEnd="@dimen/margin_32"
             android:background="@drawable/heart_button"
             android:checked="false"
             android:contentDescription="@string/app_name"
             android:text=""
             android:textOff=""
             android:textOn=""
-            app:layout_constraintStart_toEndOf="@+id/title_movie_detail_movie"
-            app:layout_constraintTop_toBottomOf="@+id/title_movie_detail_movie" />
-
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
 
         <TextView
             android:id="@+id/year_movie"
             style="@style/Text_Detail_Movie"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_16"
+            android:layout_marginStart="@dimen/margin_24"
             android:layout_marginTop="@dimen/margin_8"
             android:text="@string/year_time"
-            android:textColor="@color/movieInfoTextColor"
+            android:textColor="@color/movieDetailsColor"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/title_movie_detail_movie" />
 
@@ -84,7 +84,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/txt_page"
-            android:textColor="@color/movieInfoTextColor"
+            android:textColor="@color/movieDetailsColor"
             app:layout_constraintStart_toEndOf="@+id/year_movie"
             app:layout_constraintTop_toTopOf="@+id/year_movie" />
 
@@ -95,10 +95,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_8"
             android:text="@string/txt_movie_length"
-            android:textColor="@color/movieInfoTextColor"
+            android:textColor="@color/movieDetailsColor"
             app:layout_constraintStart_toEndOf="@+id/txtPage"
             app:layout_constraintTop_toBottomOf="@+id/title_movie_detail_movie" />
-
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rcvMovieGenres"
@@ -117,9 +116,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/margin_32"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="@dimen/margin_16"
+            android:layout_marginStart="24dp"
             android:layout_marginTop="@dimen/margin_16"
+            android:layout_marginEnd="@dimen/margin_24"
             android:text="@string/sinopse"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -131,8 +130,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/margin_32"
-            android:layout_marginTop="@dimen/margin_8"
+            android:layout_marginTop="@dimen/margin_16"
+            android:layout_marginEnd="@dimen/margin_16"
             android:textColor="@color/movieInfoTextColor"
+            android:layout_marginStart="@dimen/margin_24"
+            app:layout_goneMarginEnd="@dimen/margin_24"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sinopse_detail_movie"
@@ -143,7 +145,7 @@
             style="@style/Subtitle_Detail_Movie"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_16"
+            android:layout_marginStart="@dimen/margin_24"
             android:layout_marginTop="@dimen/margin_16"
             android:text="@string/elenco"
             android:textSize="18sp"
@@ -152,12 +154,11 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/description_sinopse" />
 
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/image_actor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_24"
+            android:layout_marginTop="@dimen/margin_16"
             android:orientation="horizontal"
             android:paddingBottom="@dimen/margin_24"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
@@ -168,38 +169,44 @@
 
         <FrameLayout
             android:id="@+id/frameLayout"
-            android:layout_width="160dp"
-            android:layout_height="120dp"
-            app:layout_constraintBottom_toTopOf="@+id/favorite_button_detail_movie"
-            app:layout_constraintEnd_toEndOf="parent">
+            android:layout_width="145dp"
+            android:layout_height="85dp"
+            app:layout_constraintBottom_toBottomOf="@+id/cover_movie"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cover_movie">
 
             <com.google.android.material.card.MaterialCardView
                 style="@style/LabelRatingCardView"
                 android:layout_width="match_parent"
-                android:layout_height="90dp"
-                app:cardElevation="16dp" />
+                android:layout_height="80dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardElevation="2dp" />
 
         </FrameLayout>
 
         <TextView
             android:id="@+id/txtUsersRating"
-            android:layout_width="70dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="50dp"
+            android:layout_marginEnd="@dimen/margin_8"
+            android:layout_marginBottom="18dp"
             android:text="@string/star_avaliacao_usuario"
-            android:textSize="@dimen/text_size_10"
+            android:layout_marginStart="@dimen/margin_32"
+            android:textColor="@color/movieDetailsColor"
+            android:textSize="@dimen/text_size_12"
             app:layout_constraintBottom_toTopOf="@+id/favorite_button_detail_movie"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/frameLayout" />
 
         <TextView
             android:id="@+id/percent_likes_detail_movies"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/_81_percent"
-            android:textColor="@color/movieInfoTextColor"
-            android:textSize="@dimen/text_size_16"
+            android:textColor="@color/movieDetailsTextBoldColor"
+            android:textSize="@dimen/text_size_14"
             android:textStyle="bold"
+            android:fontFamily="@font/lato_regular"
             app:layout_constraintBottom_toTopOf="@+id/txtUsersRating"
             app:layout_constraintStart_toStartOf="@+id/txtUsersRating" />
 
@@ -208,6 +215,7 @@
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_marginEnd="@dimen/margin_8"
+            android:layout_marginStart="@dimen/margin_16"
             android:background="@drawable/ic_vectoric_baseline_star_24"
             android:contentDescription="@string/star_avaliacao_usuario"
             app:layout_constraintBottom_toBottomOf="@+id/txtUsersRating"

@@ -1,7 +1,6 @@
 package com.sheyla.projeto_integrador.data.model.movies
 
 import com.google.gson.annotations.SerializedName
-import com.sheyla.projeto_integrador.data.model.Category
 import com.sheyla.projeto_integrador.domain.Genre
 
 class MovieDetailResponse(

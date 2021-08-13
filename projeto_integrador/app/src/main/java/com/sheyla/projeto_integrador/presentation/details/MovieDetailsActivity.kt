@@ -20,9 +20,7 @@ import kotlinx.android.synthetic.main.activity_detail_movie.*
 
 class MovieDetailsActivity : AppCompatActivity() {
 
-
     private val viewModel = MovieDetailsViewModel()
-
     private lateinit var movieLength: TextView
     private lateinit var infoPage: TextView
     private lateinit var genresRv: RecyclerView

@@ -27,10 +27,6 @@ class FavoriteMoviesFragment : Fragment(), MovieListener {
     private lateinit var rvMovies: RecyclerView
     private lateinit var viewModelFavorites: MoviesViewModel
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -87,7 +83,7 @@ class FavoriteMoviesFragment : Fragment(), MovieListener {
     override fun onFavoriteClickedListener(movie: Movie, isChecked: Boolean) {
         if (!isChecked) {
             movie.isFavorite = false
-            viewModelFavorites.unfavoriteMovie(movie)
+            viewModelFavorites.removeFavoriteMovie(movie)
         }
     }
 

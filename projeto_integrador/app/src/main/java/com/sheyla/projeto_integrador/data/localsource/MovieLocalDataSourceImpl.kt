@@ -8,7 +8,7 @@ object MovieLocalDataSourceImpl : MovieLocalDataSource {
 
     private val favoriteMoviesList = mutableListOf<MovieResponse>()
 
-    override fun favoriteMovie(movie: MovieResponse): Single<List<MovieResponse>> {
+    override fun addToFavoriteMovie(movie: MovieResponse): Single<List<MovieResponse>> {
         return Single.create { emitter ->
             val result = favoriteMoviesList.add(movie)
             if (result) {
@@ -19,7 +19,7 @@ object MovieLocalDataSourceImpl : MovieLocalDataSource {
         }
     }
 
-    override fun unfavoriteMovie(movie: MovieResponse): Single<List<MovieResponse>> {
+    override fun removeFavoriteMovie(movie: MovieResponse): Single<List<MovieResponse>> {
         return Single.create { emitter ->
             val movieToRemove = favoriteMoviesList.find {
                 it.id == movie.id
@@ -38,16 +38,4 @@ object MovieLocalDataSourceImpl : MovieLocalDataSource {
             emitter.onSuccess(favoriteMoviesList)
         }
     }
-
-    override fun checkIfFavorite(movie: MovieResponse): Single<Boolean> {
-        return Single.create { emitter ->
-            val result = favoriteMoviesList.contains(movie)
-            if (result) {
-                emitter.onSuccess(true)
-            } else {
-                emitter.onSuccess(false)
-            }
-        }
-    }
-
 }
