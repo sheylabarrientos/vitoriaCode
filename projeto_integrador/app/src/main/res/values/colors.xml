@@ -15,5 +15,6 @@
     <color name="star">#FCC419</color>
     <color name="greenPrimaryColor">#11C76F</color>
     <color name="greenSecondaryColor">#223334</color>
+    <color name="transparentColor">#A1FFFFFF</color>
     <color name="buttonGenreChecked">#C4C4C4</color>
 </resources>

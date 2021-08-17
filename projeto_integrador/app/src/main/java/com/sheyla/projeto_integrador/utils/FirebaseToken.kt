@@ -22,29 +22,5 @@ class FirebaseToken : FirebaseMessagingService() {
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onMessageReceived(p0: RemoteMessage) {
         super.onMessageReceived(p0)
-
-        val intent = Intent(this, HomeActivity::class.java)
-        val pendingIntent = PendingIntent.getActivity(this, 0, intent, 0)
-        val notificationManager = baseContext.getSystemService(NOTIFICATION_SERVICE) as NotificationManager
-
-        val notificationChannel = NotificationChannel("com.sheyla.projeto_integrador", "projeto integrador", NotificationManager.IMPORTANCE_DEFAULT)
-        notificationManager.createNotificationChannel(notificationChannel)
-
-        val notification = NotificationCompat.Builder(this, "com.sheyla.projeto_integrador")
-            .setSmallIcon(R.drawable.ic_android_black_24dp)
-            .setLargeIcon(BitmapFactory.decodeResource(resources, R.drawable.ic_baseline_account_circle_24))
-            .setContentTitle("Titulo:" + p0.notification?.title)
-            .setContentText(p0.notification?.body)
-            .addAction(R.drawable.ic_baseline_search_24, "VISUALIZAR", pendingIntent)
-            .setChannelId("com.sheyla.projeto_integrador")
-            .build()
-
-        //NotificationManagerCompat.from(this).notify(0, notification.build())
-
-        notificationManager.notify(0, notification)
-    }
-
-    override fun onDeletedMessages() {
-        super.onDeletedMessages()
     }
 }

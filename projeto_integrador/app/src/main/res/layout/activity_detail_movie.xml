@@ -16,8 +16,7 @@
             android:id="@+id/cover_movie"
             android:layout_width="match_parent"
             android:layout_height="250dp"
-            android:background="@drawable/john_wick_chapter_three_ver2"
-            android:contentDescription="@string/app_name"
+            android:contentDescription="@string/cover_movie"
             android:scaleType="centerCrop"
             app:layout_constraintCircleRadius="32sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -25,17 +24,21 @@
             app:layout_constraintTop_toTopOf="parent"
             app:shapeAppearanceOverlay="@style/shapeableImageStyle" />
 
-        <ImageButton
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/back_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_24"
-            android:layout_marginTop="32dp"
-            android:background="@drawable/ic_baseline_arrow_back_ios_24"
+            android:layout_marginTop="@dimen/margin_32"
+            app:fabCustomSize="@dimen/margin_24"
+            android:background="@color/transparentColor"
+            android:backgroundTint="@color/transparentColor"
             android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_baseline_arrow_back_ios_24"
+            app:borderWidth="0dp"
+            app:fabSize="mini"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:elevation="10dp"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/title_movie_detail_movie"
@@ -130,14 +133,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/margin_32"
+            android:layout_marginStart="@dimen/margin_24"
             android:layout_marginTop="@dimen/margin_16"
             android:layout_marginEnd="@dimen/margin_16"
             android:textColor="@color/movieInfoTextColor"
-            android:layout_marginStart="@dimen/margin_24"
-            app:layout_goneMarginEnd="@dimen/margin_24"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sinopse_detail_movie"
+            app:layout_goneMarginEnd="@dimen/margin_24"
             tools:text="@string/sinopse" />
 
         <TextView
@@ -188,10 +191,10 @@
             android:id="@+id/txtUsersRating"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_32"
             android:layout_marginEnd="@dimen/margin_8"
             android:layout_marginBottom="18dp"
             android:text="@string/star_avaliacao_usuario"
-            android:layout_marginStart="@dimen/margin_32"
             android:textColor="@color/movieDetailsColor"
             android:textSize="@dimen/text_size_12"
             app:layout_constraintBottom_toTopOf="@+id/favorite_button_detail_movie"
@@ -202,11 +205,11 @@
             android:id="@+id/percent_likes_detail_movies"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/lato_regular"
             android:text="@string/_81_percent"
             android:textColor="@color/movieDetailsTextBoldColor"
             android:textSize="@dimen/text_size_14"
             android:textStyle="bold"
-            android:fontFamily="@font/lato_regular"
             app:layout_constraintBottom_toTopOf="@+id/txtUsersRating"
             app:layout_constraintStart_toStartOf="@+id/txtUsersRating" />
 
@@ -214,8 +217,8 @@
             android:id="@+id/star_favorite"
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:layout_marginEnd="@dimen/margin_8"
             android:layout_marginStart="@dimen/margin_16"
+            android:layout_marginEnd="@dimen/margin_8"
             android:background="@drawable/ic_vectoric_baseline_star_24"
             android:contentDescription="@string/star_avaliacao_usuario"
             app:layout_constraintBottom_toBottomOf="@+id/txtUsersRating"

@@ -8,6 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.imageview.ShapeableImageView
 import com.sheyla.projeto_integrador.R
 import com.sheyla.projeto_integrador.data.base.Constants
@@ -27,7 +28,7 @@ class MovieDetailsActivity : AppCompatActivity() {
     private lateinit var castRv: RecyclerView
     lateinit var castRvAdapter: CastRvAdapter
     lateinit var genresAdapter: MovieDetailsGenresRvAdapter
-    lateinit var btnBack: ImageButton
+    lateinit var btnBack: FloatingActionButton
     lateinit var imgMovie: ShapeableImageView
     lateinit var favoriteHeartButton: ImageView
     lateinit var percentLikes: TextView

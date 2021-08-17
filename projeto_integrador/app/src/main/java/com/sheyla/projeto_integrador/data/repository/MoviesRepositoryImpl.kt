@@ -103,7 +103,7 @@ class MoviesRepositoryImpl: MoviesRepository {
             }
     }
 
-    override fun searchForMovie(movieSearched: Uri): Single<List<com.sheyla.projeto_integrador.domain.Movie>> {
+    override fun searchForMovie(movieSearched: Uri): Single<List<Movie>> {
         return moviesRemoteSource
             .searchForMovie(movieSearched)
             .flatMap { movieResponseList ->

@@ -19,11 +19,11 @@ object Network {
         val logging = HttpLoggingInterceptor()
         logging.level = HttpLoggingInterceptor.Level.BODY
 
-        val httpClient = OkHttpClient.Builder()
-        httpClient.addInterceptor(logging)
-        httpClient.addInterceptor { chain ->
+        val okHttpClient = OkHttpClient.Builder()
+        okHttpClient.addInterceptor(logging)
+        okHttpClient.addInterceptor { chain ->
             val original = chain.request()
-            val originalHttpUrl = original.url()
+            val originalHttpUrl = original.url
 
             val url = originalHttpUrl.newBuilder()
                 .addQueryParameter("api_key", Constants.PRIVATE_KEY.value)
@@ -37,7 +37,7 @@ object Network {
             .baseUrl(Constants.BASE_URL.value)
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .addConverterFactory(GsonConverterFactory.create())
-            .client(httpClient.build())
+            .client(okHttpClient.build())
             .build()
     }
 
