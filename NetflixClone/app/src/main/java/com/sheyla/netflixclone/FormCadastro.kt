@@ -7,6 +7,7 @@ import com.google.firebase.FirebaseNetworkException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthUserCollisionException
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException
+import com.marcos.netflixclone.R
 import com.marcos.netflixclone.databinding.ActivityFormCadastroBinding
 
 class FormCadastro : AppCompatActivity() {

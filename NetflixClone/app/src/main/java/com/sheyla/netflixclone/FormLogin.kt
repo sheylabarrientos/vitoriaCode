@@ -8,6 +8,7 @@ import com.google.firebase.FirebaseNetworkException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.marcos.netflixclone.databinding.ActivityFormLoginBinding
+import com.sheyla.netflixclone.FormCadastro
 
 class FormLogin : AppCompatActivity() {
 
@@ -23,7 +24,7 @@ class FormLogin : AppCompatActivity() {
 
         binding.txtTelaCadastro.setOnClickListener {
 
-          val intent = Intent(this,FormCadastro::class.java)
+          val intent = Intent(this, FormCadastro::class.java)
             startActivity(intent)
         }
 
