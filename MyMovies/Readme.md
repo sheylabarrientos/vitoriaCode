@@ -6,7 +6,7 @@
 
 :paperclip: A aplicação deve estar fiel a UI;<br>
 :paperclip: Cadastro e Login com Email e Senha autenticados no Firebase;<br>
-:paperclip: Cada usuário poderá ter quatro perfis dentro de sua conta de cadastro;
+:paperclip: Cada usuário poderá ter quatro perfis dentro de sua conta de cadastro; <br>
 :paperclip: Ter a opção de logar pelo facebook;<br>
 :paperclip: Cada usuário poderá ter quatro perfis dentro de sua conta de cadastro;<br>
 :paperclip: Deve contem filmes sugeridos através dos filmes que o perfil mais assite;<br>
