@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingStart="@dimen/margin_24"
+    tools:ignore="RtlSymmetry">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvImage"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_16"
+        android:layout_marginTop="@dimen/margin_24"
+        android:layout_marginEnd="@dimen/margin_24"
+        app:cardBackgroundColor="@android:color/transparent"
+        app:cardCornerRadius="40dp"
+        app:cardElevation="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:clickable="true"
+                android:contentDescription="@string/cover_movie"
+                android:focusable="true"
+                tools:src="@drawable/john_wick_chapter_three_ver2john_wick" />
+
+        </FrameLayout>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/title_movie"
+        style="@style/movieTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_24"
+        android:layout_marginTop="@dimen/margin_24"
+        android:ellipsize="end"
+        android:maxEms="8"
+        android:maxLines="2"
+        android:textAlignment="center"
+        android:textColor="@color/movieDetailsTextBoldColor"
+        app:layout_constraintEnd_toEndOf="@+id/cvImage"
+        app:layout_constraintStart_toStartOf="@+id/cvImage"
+        app:layout_constraintTop_toBottomOf="@+id/cvImage"
+        tools:text="Movie Title" />
+
+    <ToggleButton
+        android:id="@+id/favorite_heart_empty"
+        android:layout_width="@dimen/margin_32"
+        android:layout_height="@dimen/margin_24"
+        android:layout_marginStart="@dimen/margin_8"
+        android:background="@drawable/heart_button"
+        android:checked="false"
+        android:contentDescription="@string/favorite_movie"
+        android:text=""
+        android:textOff=""
+        android:textOn=""
+        app:layout_constraintStart_toEndOf="@+id/title_movie"
+        app:layout_constraintTop_toTopOf="@+id/title_movie" />
+
+    <ImageButton
+        android:id="@+id/star_percent_likes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_16"
+        android:background="@drawable/ic_vectoric_baseline_star_24"
+        android:contentDescription="@string/star_icon"
+        android:layout_marginEnd="@dimen/margin_16"
+        app:layout_constraintEnd_toEndOf="@id/cvImage"
+        app:layout_constraintStart_toStartOf="@id/cvImage"
+        app:layout_constraintTop_toBottomOf="@+id/title_movie" />
+
+    <TextView
+        android:id="@+id/percent_likes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lato_regular"
+        android:layout_marginStart="2dp"
+        android:text="@string/_81_percent"
+        android:textColor="@color/movieGenreDetailsColor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/star_percent_likes"
+        app:layout_constraintTop_toTopOf="@+id/star_percent_likes" />
+
+    <TextView
+        android:id="@+id/movie_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lato_regular"
+        android:layout_marginStart="@dimen/margin_8"
+        android:visibility="invisible"
+        android:textColor="@color/greenSecondaryColor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/star_percent_likes"
+        app:layout_constraintTop_toTopOf="@+id/star_percent_likes" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

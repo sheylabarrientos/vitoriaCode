@@ -11,4 +11,14 @@
     <color name="red">#FF0000</color>
     <color name="orange">#FF9800</color>
     <color name="gray">#B8B8B8</color>
+    <color name="background_app">#E5E5E5</color>
+    <color name="movieInfoTextColor">#737599</color>
+    <color name="movieDetailsColor">#9A9BB2</color>
+    <color name="movieGenreDetailsColor">#434670</color>
+    <color name="movieDetailsTextBoldColor">#12153D</color>
+    <color name="star">#FCC419</color>
+    <color name="greenPrimaryColor">#11C76F</color>
+    <color name="greenSecondaryColor">#223334</color>
+    <color name="transparentColor">#A1FFFFFF</color>
+    <color name="buttonGenreChecked">#C4C4C4</color>
 </resources>

@@ -6,13 +6,13 @@
     android:layout_height="match_parent"
     android:background="@color/black"
     android:orientation="vertical"
-    tools:context=".FormLogin">
+    tools:context=".presentation.FormLogin">
 
     <Toolbar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:navigationIcon="@drawable/ic_netflix_official_logo" />
+        android:navigationIcon="@drawable/ic_jeraflyx_official_logo" />
 
     <EditText
         android:id="@+id/edit_email"
@@ -51,8 +51,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:text="Coloque o seu e-mail"
-        android:textColor="@color/orange"
+        android:text=""
+        android:textColor="@color/greenPrimaryColor"
         android:textSize="18sp"
         android:textStyle="bold" />
 
@@ -68,8 +68,8 @@
         android:textAllCaps="false"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:textColor="@color/white"
-        app:strokeColor="@color/white"
+        android:textColor="@color/greenPrimaryColor"
+        app:strokeColor="@color/greenPrimaryColor"
         app:strokeWidth="2dp"
         android:padding="15dp"
         app:cornerRadius="10dp"/>

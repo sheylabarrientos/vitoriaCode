@@ -5,13 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
-    tools:context=".ProgressActivity">
+    tools:context=".presentation.ProgressActivity">
 
     <ImageView
         android:id="@+id/logo_mymovies"
         android:layout_width="wrap_content"
-        android:layout_height="150dp"
-        android:src="@drawable/logo"
+        android:layout_height="70dp"
+        android:src="@drawable/logo_jera"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true" />
 
@@ -19,7 +19,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/logo_mymovies"
+        android:layout_marginTop="@dimen/margin_16"
         android:layout_centerHorizontal="true"
-        android:indeterminateTint="@color/red" />
+        android:indeterminateTint="@color/greenPrimaryColor" />
 
 </RelativeLayout>

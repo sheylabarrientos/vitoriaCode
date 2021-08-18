@@ -1,4 +1,4 @@
-package com.sheyla.mymovies
+package com.sheyla.mymovies.presentation
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -60,7 +60,7 @@ class FormLogin : AppCompatActivity() {
                 erro is FirebaseAuthWeakPasswordException -> message_error.setText("Digite uma senha com no mínimo 6 caracteres")
                 erro is FirebaseAuthUserCollisionException -> message_error.setText("Esta conta já foi cadastrada")
                 erro is FirebaseNetworkException -> message_error.setText("Sem conexão com a internet")
-                else -> message_error.setText("Erro ao cadastrar usuário")
+                else -> message_error.setText("Erro ao logar usuário")
             }
         }
     }
