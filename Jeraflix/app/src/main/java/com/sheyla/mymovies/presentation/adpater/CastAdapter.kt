@@ -12,8 +12,8 @@ import com.sheyla.mymovies.R
 import com.sheyla.mymovies.data.base.Constants
 import com.sheyla.mymovies.domain.Cast
 
-class CastRvAdapter(val context: Context, var dataset: MutableList<Cast> = mutableListOf()) :
-    RecyclerView.Adapter<CastRvAdapter.RecyclerviewViewHolder>() {
+class CastAdapter(val context: Context, var dataset: MutableList<Cast> = mutableListOf()) :
+    RecyclerView.Adapter<CastAdapter.RecyclerviewViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerviewViewHolder =
         RecyclerviewViewHolder(

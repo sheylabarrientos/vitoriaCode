@@ -13,7 +13,7 @@ class MoviesRepositoryImpl : MoviesRepository {
         com.sheyla.mymovies.data.base.Network.getMoviesRemoteSource()
     private val movieLocalDataSource = MovieLocalDataSourceImpl
     private val movieMapper = MovieMapper()
-    private val genreMapper = GenreMapper()
+    private val genreMapper = CategoryMapper()
     private val castMapper = CastMapper()
     private val movieDetailMapper = MovieDetailMapper()
     private val certificationMapper = CertificationMapper()

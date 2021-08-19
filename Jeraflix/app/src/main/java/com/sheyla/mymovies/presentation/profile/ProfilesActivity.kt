@@ -36,7 +36,6 @@ class ProfilesActivity : AppCompatActivity() {
     }
 
 
-
     private fun showList(profiles: ArrayList<UserProfile>) {
         adapter = ProfilesAdapter(profiles)
         profilesListRcv.adapter = adapter

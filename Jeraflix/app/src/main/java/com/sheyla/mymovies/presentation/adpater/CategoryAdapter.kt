@@ -10,11 +10,11 @@ import com.sheyla.mymovies.R
 import com.sheyla.mymovies.domain.Genre
 import com.sheyla.mymovies.onclick.MovieListener
 
-class GenresRvAdapter(
+class CategoryAdapter(
     val context: Context,
     private val listener: MovieListener? = null,
     var dataset: MutableList<Genre> = mutableListOf()
-): RecyclerView.Adapter<GenresRvAdapter.ViewHolder>() {
+): RecyclerView.Adapter<CategoryAdapter.ViewHolder>() {
 
     private val selectedItems: MutableList<Int> = mutableListOf()
 

@@ -8,7 +8,7 @@ import com.google.android.material.chip.Chip
 import com.sheyla.mymovies.R
 import com.sheyla.mymovies.domain.Genre
 
-class MovieDetailsGenresRvAdapter (private var dataset: List<Genre> = mutableListOf()): RecyclerView.Adapter<MovieDetailsGenresRvAdapter.ViewHolder>() {
+class InfosMoviesCategoryAdapter (private var dataset: List<Genre> = mutableListOf()): RecyclerView.Adapter<InfosMoviesCategoryAdapter.ViewHolder>() {
 
     class ViewHolder(view: View): RecyclerView.ViewHolder(view){
         val itemGenre: Chip? = view.findViewById(R.id.itemGenre)

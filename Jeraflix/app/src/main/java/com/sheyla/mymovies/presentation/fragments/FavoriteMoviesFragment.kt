@@ -1,4 +1,4 @@
-package com.sheyla.mymovies.presentation.favorite
+package com.sheyla.mymovies.presentation.fragments
 
 import android.content.Intent
 import android.os.Bundle
@@ -12,17 +12,17 @@ import androidx.recyclerview.widget.RecyclerView
 import com.sheyla.mymovies.R
 import com.sheyla.mymovies.domain.Movie
 import com.sheyla.mymovies.onclick.MovieListener
-import com.sheyla.mymovies.presentation.adpater.GenresRvAdapter
-import com.sheyla.mymovies.presentation.adpater.MoviesRvAdapter
-import com.sheyla.mymovies.presentation.details.MovieDetailsActivity
-import com.sheyla.mymovies.presentation.details.MovieDetailsActivity.Companion.MOVIE_ID
+import com.sheyla.mymovies.presentation.adpater.CategoryAdapter
+import com.sheyla.mymovies.presentation.adpater.MoviesAdapter
+import com.sheyla.mymovies.presentation.infos.InfosMovieActivity
+import com.sheyla.mymovies.presentation.infos.InfosMovieActivity.Companion.MOVIE_ID
 import com.sheyla.mymovies.presentation.model.MoviesViewModel
 
 class FavoriteMoviesFragment : Fragment(), MovieListener {
 
-    private lateinit var moviesAdapter: MoviesRvAdapter
+    private lateinit var moviesAdapter: MoviesAdapter
     private lateinit var progressBar: ProgressBar
-    private lateinit var genresAdapter: GenresRvAdapter
+    private lateinit var categoryAdapter: CategoryAdapter
     private lateinit var rvGenres: RecyclerView
     private lateinit var rvMovies: RecyclerView
     private lateinit var viewModelFavorites: MoviesViewModel
@@ -44,9 +44,9 @@ class FavoriteMoviesFragment : Fragment(), MovieListener {
 
         viewModelFavorites = ViewModelProvider(requireActivity()).get(MoviesViewModel::class.java)
 
-        genresAdapter = GenresRvAdapter(context = view.context, listener = this)
-        moviesAdapter = MoviesRvAdapter(context = view.context, listener = this)
-        rvGenres.adapter = genresAdapter
+        categoryAdapter = CategoryAdapter(context = view.context, listener = this)
+        moviesAdapter = MoviesAdapter(context = view.context, listener = this)
+        rvGenres.adapter = categoryAdapter
         rvMovies.adapter = moviesAdapter
 
         viewModelFavorites.getGenres()
@@ -63,8 +63,8 @@ class FavoriteMoviesFragment : Fragment(), MovieListener {
     private fun observeGenres() {
         viewModelFavorites.genreListLiveData.observe(viewLifecycleOwner, { result ->
             result?.let {
-                genresAdapter.dataset.addAll(it)
-                genresAdapter.notifyDataSetChanged()
+                categoryAdapter.dataset.addAll(it)
+                categoryAdapter.notifyDataSetChanged()
             }
         })
     }
@@ -89,7 +89,7 @@ class FavoriteMoviesFragment : Fragment(), MovieListener {
     }
 
     override fun openMovieDetails(movieId: Int) {
-        val intent = Intent(requireContext(), MovieDetailsActivity::class.java)
+        val intent = Intent(requireContext(), InfosMovieActivity::class.java)
         intent.putExtra(MOVIE_ID, movieId)
         startActivity(intent)
     }

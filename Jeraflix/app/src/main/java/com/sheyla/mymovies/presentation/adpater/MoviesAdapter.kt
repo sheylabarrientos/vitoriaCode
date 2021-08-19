@@ -14,11 +14,11 @@ import com.sheyla.mymovies.data.base.Constants
 import com.sheyla.mymovies.domain.Movie
 import com.sheyla.mymovies.onclick.MovieListener
 
-class MoviesRvAdapter(
+class MoviesAdapter(
     val context: Context,
     private val listener: MovieListener? = null,
     var dataSet: MutableList<Movie> = mutableListOf()
-) : RecyclerView.Adapter<MoviesRvAdapter.ViewHolder>() {
+) : RecyclerView.Adapter<MoviesAdapter.ViewHolder>() {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         var imageMovie: ImageView? = view.findViewById(R.id.imageView5)

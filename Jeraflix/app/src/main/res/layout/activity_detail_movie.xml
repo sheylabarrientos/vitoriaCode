@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/background_app"
-        tools:context=".presentation.details.MovieDetailsActivity">
+        tools:context=".presentation.infos.InfosMovieActivity">
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/cover_movie"

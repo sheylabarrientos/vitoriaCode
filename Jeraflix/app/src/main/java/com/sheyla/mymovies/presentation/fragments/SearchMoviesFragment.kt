@@ -1,4 +1,4 @@
-package com.sheyla.projeto_integrador.presentation.searchmovies
+package com.sheyla.mymovies.presentation.fragments
 
 import android.content.Intent
 import android.net.Uri
@@ -15,18 +15,18 @@ import com.sheyla.mymovies.R
 import com.sheyla.mymovies.domain.Movie
 import com.sheyla.mymovies.presentation.FailSystemActivity
 import com.sheyla.mymovies.onclick.MovieListener
-import com.sheyla.mymovies.presentation.adpater.GenresRvAdapter
-import com.sheyla.mymovies.presentation.adpater.MoviesRvAdapter
-import com.sheyla.mymovies.presentation.details.MovieDetailsActivity
-import com.sheyla.mymovies.presentation.details.MovieDetailsActivity.Companion.MOVIE_ID
+import com.sheyla.mymovies.presentation.adpater.CategoryAdapter
+import com.sheyla.mymovies.presentation.adpater.MoviesAdapter
+import com.sheyla.mymovies.presentation.infos.InfosMovieActivity
+import com.sheyla.mymovies.presentation.infos.InfosMovieActivity.Companion.MOVIE_ID
 import com.sheyla.mymovies.presentation.model.MoviesViewModel
 import com.sheyla.mymovies.presentation.model.ViewState
 
 class SearchMoviesFragment : Fragment(), MovieListener {
 
     private var movieSearched: String? = null
-    private lateinit var moviesAdapter: MoviesRvAdapter
-    private lateinit var genresAdapter: GenresRvAdapter
+    private lateinit var moviesAdapter: MoviesAdapter
+    private lateinit var categoryAdapter: CategoryAdapter
     private lateinit var progressBar: ProgressBar
     private lateinit var movieNotFound: View
     private lateinit var rvMovies: RecyclerView
@@ -56,10 +56,10 @@ class SearchMoviesFragment : Fragment(), MovieListener {
         progressBar = view.findViewById(R.id.loading)
         progressBar.visibility = View.VISIBLE
 
-        genresAdapter = GenresRvAdapter(context = view.context, listener = this)
-        moviesAdapter = MoviesRvAdapter(context = view.context, listener = this)
+        categoryAdapter = CategoryAdapter(context = view.context, listener = this)
+        moviesAdapter = MoviesAdapter(context = view.context, listener = this)
         rvMovies.adapter = moviesAdapter
-        rvGenres.adapter = genresAdapter
+        rvGenres.adapter = categoryAdapter
 
         val movieUri = movieSearched?.toUri()
         if (movieUri != null) {
@@ -92,8 +92,8 @@ class SearchMoviesFragment : Fragment(), MovieListener {
     private fun observeGenres() {
         moviesViewModel.genreListLiveData.observe(viewLifecycleOwner, { result ->
             result?.let {
-                genresAdapter.dataset.addAll(it)
-                genresAdapter.notifyDataSetChanged()
+                categoryAdapter.dataset.addAll(it)
+                categoryAdapter.notifyDataSetChanged()
             }
         })
     }
@@ -116,7 +116,7 @@ class SearchMoviesFragment : Fragment(), MovieListener {
     }
 
     override fun openMovieDetails(movieId: Int) {
-        val intent = Intent(requireContext(), MovieDetailsActivity::class.java)
+        val intent = Intent(requireContext(), InfosMovieActivity::class.java)
         intent.putExtra(MOVIE_ID, movieId)
         startActivity(intent)
     }

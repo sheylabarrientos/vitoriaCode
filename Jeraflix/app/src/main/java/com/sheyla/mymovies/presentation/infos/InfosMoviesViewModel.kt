@@ -1,4 +1,4 @@
-package com.sheyla.mymovies.presentation.details
+package com.sheyla.mymovies.presentation.infos
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -7,16 +7,16 @@ import com.sheyla.mymovies.domain.Cast
 import com.sheyla.mymovies.domain.Certification
 import com.sheyla.mymovies.domain.Movie
 import com.sheyla.mymovies.domain.MovieDetail
-import com.sheyla.mymovies.domain.usecase.GetMovieDetailsUseCase
+import com.sheyla.mymovies.domain.usecase.GetMovieInfosUseCase
 import com.sheyla.mymovies.presentation.model.ViewState
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 
-class MovieDetailsViewModel : ViewModel() {
+class InfosMoviesViewModel : ViewModel() {
 
-    private val getMovieDetailsUseCase = GetMovieDetailsUseCase()
+    private val getMovieDetailsUseCase = GetMovieInfosUseCase()
 
     private val _movieLiveData = MutableLiveData<MovieDetail>()
     val movieLiveData: LiveData<MovieDetail> = _movieLiveData

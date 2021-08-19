@@ -1,9 +1,9 @@
 package com.sheyla.mymovies.data.remotesource
 
 import android.net.Uri
-import com.sheyla.mymovies.data.model.categories.ResponseGenres
+import com.sheyla.mymovies.data.model.categories.ResponseCategories
 import com.sheyla.mymovies.data.model.certification.ResponseCertification
-import com.sheyla.mymovies.data.model.movies.MovieDetailResponse
+import com.sheyla.mymovies.data.model.movies.MovieInfoResponse
 import com.sheyla.mymovies.data.model.movies.ResponseMovies
 import com.sheyla.mymoviesdata.model.cast.ResponseCast
 import io.reactivex.Single
@@ -16,7 +16,7 @@ interface MoviesRemoteSource {
     fun getPopularMovies(): Single<ResponseMovies>
 
     @GET("movie/{movie_id}")
-    fun getMovieDetails(@Path("movie_id") movieId: Int): Single<MovieDetailResponse>
+    fun getMovieDetails(@Path("movie_id") movieId: Int): Single<MovieInfoResponse>
 
     @GET("search/movie")
     fun searchForMovie(@Query("query") movieSearched: Uri): Single<ResponseMovies>
@@ -25,7 +25,7 @@ interface MoviesRemoteSource {
     fun getCast(@Path("movie_id") movieId: Int): Single<ResponseCast>
 
     @GET("genre/movie/list")
-    fun getAllGenres(): Single<ResponseGenres>
+    fun getAllGenres(): Single<ResponseCategories>
 
     @GET("movie/{movie_id}/release_dates")
     fun getCertification(@Path("movie_id") movieId: Int): Single<ResponseCertification>

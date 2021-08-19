@@ -50,7 +50,7 @@
             android:name=".presentation.FailSystemActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".presentation.details.MovieDetailsActivity"
+            android:name=".presentation.infos.InfosMovieActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".presentation.ProgressActivity"

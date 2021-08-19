@@ -3,7 +3,7 @@ package com.sheyla.mymovies.data.model.movies
 import com.google.gson.annotations.SerializedName
 import com.sheyla.mymovies.domain.Genre
 
-class MovieDetailResponse(
+class MovieInfoResponse(
     @SerializedName("backdrop_path")
     val backdrop_path: String? = null,
     @SerializedName("genres")

@@ -15,7 +15,7 @@ import com.sheyla.mymovies.domain.usecase.FavoriteMoviesUseCase
 import com.sheyla.mymovies.domain.usecase.GetAllMoviesUseCase
 import com.sheyla.mymovies.domain.usecase.GetMoviesByGenreUseCase
 import com.sheyla.mymovies.domain.usecase.SearchForMovieUseCase
-import com.sheyla.mymoviesdomain.usecase.GetGenresUseCase
+import com.sheyla.mymoviesdomain.usecase.GetCategoriesUseCase
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
@@ -25,7 +25,7 @@ import java.util.ArrayList
 class MoviesViewModel() : ViewModel() {
 
     private val getAllMoviesUseCase = GetAllMoviesUseCase()
-    private val getGenresUseCase = GetGenresUseCase()
+    private val getGenresUseCase = GetCategoriesUseCase()
     private val getMoviesByGenreUseCase = GetMoviesByGenreUseCase()
     private val favoriteMoviesUseCase = FavoriteMoviesUseCase()
     private val searchForMoviesUseCase = SearchForMovieUseCase()

@@ -1,10 +1,10 @@
 package com.sheyla.mymovies.data.mappers
 
-import com.sheyla.mymovies.data.model.categories.GenreResponse
+import com.sheyla.mymovies.data.model.categories.CategoriesResponse
 import com.sheyla.mymovies.domain.Genre
 
-class GenreMapper {
-    fun map(genresResponseList: List<GenreResponse>): List<Genre> {
+class CategoryMapper {
+    fun map(genresResponseList: List<CategoriesResponse>): List<Genre> {
         val genres = mutableListOf<Genre>()
         genresResponseList.forEach {
             val genre = Genre(

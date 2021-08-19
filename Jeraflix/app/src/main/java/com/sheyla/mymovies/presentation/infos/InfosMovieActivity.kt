@@ -1,9 +1,8 @@
-package com.sheyla.mymovies.presentation.details
+package com.sheyla.mymovies.presentation.infos
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -14,20 +13,20 @@ import com.sheyla.mymovies.R
 import com.sheyla.mymovies.data.base.Constants
 import com.sheyla.mymovies.domain.MovieDetail
 import com.sheyla.mymovies.presentation.FailSystemActivity
-import com.sheyla.mymovies.presentation.adpater.CastRvAdapter
-import com.sheyla.mymovies.presentation.adpater.MovieDetailsGenresRvAdapter
+import com.sheyla.mymovies.presentation.adpater.CastAdapter
+import com.sheyla.mymovies.presentation.adpater.InfosMoviesCategoryAdapter
 import com.sheyla.mymovies.presentation.model.ViewState
 import kotlinx.android.synthetic.main.activity_detail_movie.*
 
-class MovieDetailsActivity : AppCompatActivity() {
+class InfosMovieActivity : AppCompatActivity() {
 
-    private val viewModel = MovieDetailsViewModel()
+    private val viewModel = InfosMoviesViewModel()
     private lateinit var movieLength: TextView
     private lateinit var infoPage: TextView
     private lateinit var genresRv: RecyclerView
     private lateinit var castRv: RecyclerView
-    lateinit var castRvAdapter: CastRvAdapter
-    lateinit var genresAdapter: MovieDetailsGenresRvAdapter
+    lateinit var castAdapter: CastAdapter
+    lateinit var genresAdapter: InfosMoviesCategoryAdapter
     lateinit var btnBack: FloatingActionButton
     lateinit var imgMovie: ShapeableImageView
     lateinit var favoriteHeartButton: ImageView
@@ -84,11 +83,11 @@ class MovieDetailsActivity : AppCompatActivity() {
     }
 
     private fun showMovie(movie: MovieDetail) {
-        genresAdapter = MovieDetailsGenresRvAdapter(movie.genres)
+        genresAdapter = InfosMoviesCategoryAdapter(movie.genres)
         genresRv.adapter = genresAdapter
 
-        castRvAdapter = CastRvAdapter(this)
-        image_actor.adapter = castRvAdapter
+        castAdapter = CastAdapter(this)
+        image_actor.adapter = castAdapter
 
         viewModel.getCast(movie.id)
         observeCastOfMovie()
@@ -131,8 +130,8 @@ class MovieDetailsActivity : AppCompatActivity() {
     private fun observeCastOfMovie() {
         viewModel.castLiveData.observe(this, { result ->
             result?.let {
-                castRvAdapter.dataset.addAll(it)
-                castRvAdapter.notifyDataSetChanged()
+                castAdapter.dataset.addAll(it)
+                castAdapter.notifyDataSetChanged()
             }
         })
     }
