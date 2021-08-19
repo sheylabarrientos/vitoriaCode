@@ -26,6 +26,7 @@ import com.sheyla.mymovies.presentation.model.MoviesViewModel
 import com.sheyla.mymovies.presentation.adpater.ViewPagerAdapter.Companion.ALL_MOVIES_POSITION
 import com.sheyla.mymovies.presentation.adpater.ViewPagerAdapter.Companion.FAVORITE_MOVIES_POSITION
 import com.sheyla.mymovies.presentation.adpater.ViewPagerAdapter.Companion.MOVIES_WATCHED
+import com.sheyla.mymovies.presentation.login.FormLogin
 import com.sheyla.projeto_integrador.presentation.searchmovies.SearchMoviesFragment
 
 

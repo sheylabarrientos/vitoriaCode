@@ -1,4 +1,4 @@
-package com.sheyla.mymovies.presentation
+package com.sheyla.mymovies.presentation.profile
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -12,10 +12,10 @@ import com.facebook.AccessToken
 import com.facebook.GraphRequest
 import com.facebook.HttpMethod
 import com.facebook.login.LoginManager
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
 import com.sheyla.mymovies.R
 import com.sheyla.mymovies.databinding.ActivityAddProfilesBinding
+import com.sheyla.mymovies.presentation.login.FormLogin
 
 class AddProfilesActivity : AppCompatActivity() {
 

@@ -1,4 +1,4 @@
-package com.sheyla.mymovies.presentation
+package com.sheyla.mymovies.presentation.login
 
 import android.content.Intent
 import android.os.Bundle
@@ -13,6 +13,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthUserCollisionException
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException
 import com.sheyla.mymovies.databinding.ActivityFormLoginBinding
+import com.sheyla.mymovies.presentation.profile.AddProfilesActivity
 import kotlinx.android.synthetic.main.activity_form_login.*
 
 class FormLogin : AppCompatActivity() {

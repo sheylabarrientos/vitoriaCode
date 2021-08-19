@@ -1,17 +1,13 @@
-package com.sheyla.mymovies.presentation
+package com.sheyla.mymovies.presentation.profile
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.TextView
-import android.widget.Toast
-import androidx.core.view.isEmpty
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.sheyla.mymovies.R
-import com.sheyla.mymovies.databinding.ActivityAddProfilesBinding
 import com.sheyla.mymovies.databinding.ActivityProfilesBinding
+import com.sheyla.mymovies.presentation.ListOfMovies
 
 class ProfilesActivity : AppCompatActivity() {
 

@@ -12,8 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyMovies">
-        <activity android:name=".presentation.ProfilesActivity"></activity>
-        <activity android:name=".presentation.AddProfilesActivity" />
+        <activity android:name=".presentation.profile.ProfilesActivity"></activity>
+        <activity android:name=".presentation.profile.AddProfilesActivity" />
         <activity android:name=".presentation.AuthenticatedActivity" />
 
         <meta-data
@@ -43,10 +43,10 @@
             android:name=".presentation.ListOfMovies"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".presentation.FormSubscribe"
+            android:name=".presentation.login.FormSubscribe"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".presentation.FormLogin"
+            android:name=".presentation.login.FormLogin"
             android:screenOrientation="portrait" />
         <activity
             android:name=".presentation.FailSystemActivity"

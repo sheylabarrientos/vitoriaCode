@@ -1,4 +1,4 @@
-package com.sheyla.mymovies.presentation
+package com.sheyla.mymovies.presentation.profile
 
 import android.os.Parcelable
 import android.widget.TextView
