@@ -137,6 +137,7 @@ class FormLogin : AppCompatActivity() {
         }
     }
 
+    //goToScreenProfile
     private fun goToScreenMovie() {
         val intent = Intent(this, ListOfMovies::class.java)
         startActivity(intent)

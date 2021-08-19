@@ -12,6 +12,10 @@ import android.view.inputmethod.EditorInfo
 import android.widget.*
 import androidx.core.net.toUri
 import androidx.viewpager2.widget.ViewPager2
+import com.facebook.AccessToken
+import com.facebook.GraphRequest
+import com.facebook.HttpMethod
+import com.facebook.login.LoginManager
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.google.firebase.auth.FirebaseAuth
@@ -160,5 +164,14 @@ private fun bindViews(){
         val intent = Intent(this, FormLogin::class.java)
         startActivity(intent)
         finish()
+
+            if (AccessToken.getCurrentAccessToken() != null) {
+                GraphRequest(AccessToken.getCurrentAccessToken(), "/me/permissions/", null, HttpMethod.DELETE, GraphRequest.Callback {
+                    AccessToken.setCurrentAccessToken(null)
+                    LoginManager.getInstance().logOut()
+
+                    finish()
+                }).executeAsync()
+            }
     }
 }
