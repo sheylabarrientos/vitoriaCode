@@ -1,0 +1,46 @@
+[
+    {
+        "merged": "C:\\Users\\She\\AndroidStudioProjects\\vitoriaCode\\projeto_integrador\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_genres.xml",
+        "source": "C:\\Users\\She\\AndroidStudioProjects\\vitoriaCode\\projeto_integrador\\app\\src\\main\\res\\layout\\fragment_genres.xml"
+    },
+    {
+        "merged": "C:\\Users\\She\\AndroidStudioProjects\\vitoriaCode\\projeto_integrador\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_detail_movie.xml",
+        "source": "C:\\Users\\She\\AndroidStudioProjects\\vitoriaCode\\projeto_integrador\\app\\src\\main\\res\\layout\\activity_detail_movie.xml"
+    },
+    {
+        "merged": "C:\\Users\\She\\AndroidStudioProjects\\vitoriaCode\\projeto_integrador\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_main.xml",
+        "source": "C:\\Users\\She\\AndroidStudioProjects\\vitoriaCode\\projeto_integrador\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\She\\AndroidStudioProjects\\vitoriaCode\\projeto_integrador\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\item_genre_details.xml",
+        "source": "C:\\Users\\She\\AndroidStudioProjects\\vitoriaCode\\projeto_integrador\\app\\src\\main\\res\\layout\\item_genre_details.xml"
+    },
+    {
+        "merged": "C:\\Users\\She\\AndroidStudioProjects\\vitoriaCode\\projeto_integrador\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\item_all_genres.xml",
+        "source": "C:\\Users\\She\\AndroidStudioProjects\\vitoriaCode\\projeto_integrador\\app\\src\\main\\res\\layout\\item_all_genres.xml"
+    },
+    {
+        "merged": "C:\\Users\\She\\AndroidStudioProjects\\vitoriaCode\\projeto_integrador\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_movies.xml",
+        "source": "C:\\Users\\She\\AndroidStudioProjects\\vitoriaCode\\projeto_integrador\\app\\src\\main\\res\\layout\\fragment_movies.xml"
+    },
+    {
+        "merged": "C:\\Users\\She\\AndroidStudioProjects\\vitoriaCode\\projeto_integrador\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_not_found.xml",
+        "source": "C:\\Users\\She\\AndroidStudioProjects\\vitoriaCode\\projeto_integrador\\app\\src\\main\\res\\layout\\fragment_not_found.xml"
+    },
+    {
+        "merged": "C:\\Users\\She\\AndroidStudioProjects\\vitoriaCode\\projeto_integrador\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\recycler_movies_list.xml",
+        "source": "C:\\Users\\She\\AndroidStudioProjects\\vitoriaCode\\projeto_integrador\\app\\src\\main\\res\\layout\\recycler_movies_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\She\\AndroidStudioProjects\\vitoriaCode\\projeto_integrador\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_home_allmovies.xml",
+        "source": "C:\\Users\\She\\AndroidStudioProjects\\vitoriaCode\\projeto_integrador\\app\\src\\main\\res\\layout\\fragment_home_allmovies.xml"
+    },
+    {
+        "merged": "C:\\Users\\She\\AndroidStudioProjects\\vitoriaCode\\projeto_integrador\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_fail_system.xml",
+        "source": "C:\\Users\\She\\AndroidStudioProjects\\vitoriaCode\\projeto_integrador\\app\\src\\main\\res\\layout\\activity_fail_system.xml"
+    },
+    {
+        "merged": "C:\\Users\\She\\AndroidStudioProjects\\vitoriaCode\\projeto_integrador\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\item_image_actor.xml",
+        "source": "C:\\Users\\She\\AndroidStudioProjects\\vitoriaCode\\projeto_integrador\\app\\src\\main\\res\\layout\\item_image_actor.xml"
+    }
+]

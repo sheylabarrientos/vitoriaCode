@@ -1,0 +1,2 @@
+com/sheyla/projeto_integrador/test/BuildConfig.java
+ com.sheyla.projeto_integrador.test.BuildConfig

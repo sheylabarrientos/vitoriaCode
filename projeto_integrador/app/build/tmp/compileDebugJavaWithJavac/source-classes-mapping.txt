@@ -1,0 +1,24 @@
+com/sheyla/projeto_integrador/databinding/RecyclerMoviesListBinding.java
+ com.sheyla.projeto_integrador.databinding.RecyclerMoviesListBinding
+com/sheyla/projeto_integrador/databinding/FragmentGenresBinding.java
+ com.sheyla.projeto_integrador.databinding.FragmentGenresBinding
+com/sheyla/projeto_integrador/databinding/ActivityDetailMovieBinding.java
+ com.sheyla.projeto_integrador.databinding.ActivityDetailMovieBinding
+com/sheyla/projeto_integrador/databinding/ActivityMainBinding.java
+ com.sheyla.projeto_integrador.databinding.ActivityMainBinding
+com/sheyla/projeto_integrador/databinding/ItemImageActorBinding.java
+ com.sheyla.projeto_integrador.databinding.ItemImageActorBinding
+com/sheyla/projeto_integrador/databinding/FragmentMoviesBinding.java
+ com.sheyla.projeto_integrador.databinding.FragmentMoviesBinding
+com/sheyla/projeto_integrador/databinding/ItemGenreDetailsBinding.java
+ com.sheyla.projeto_integrador.databinding.ItemGenreDetailsBinding
+com/sheyla/projeto_integrador/databinding/ItemAllGenresBinding.java
+ com.sheyla.projeto_integrador.databinding.ItemAllGenresBinding
+com/sheyla/projeto_integrador/BuildConfig.java
+ com.sheyla.projeto_integrador.BuildConfig
+com/sheyla/projeto_integrador/databinding/FragmentHomeAllmoviesBinding.java
+ com.sheyla.projeto_integrador.databinding.FragmentHomeAllmoviesBinding
+com/sheyla/projeto_integrador/databinding/ActivityFailSystemBinding.java
+ com.sheyla.projeto_integrador.databinding.ActivityFailSystemBinding
+com/sheyla/projeto_integrador/databinding/FragmentNotFoundBinding.java
+ com.sheyla.projeto_integrador.databinding.FragmentNotFoundBinding
