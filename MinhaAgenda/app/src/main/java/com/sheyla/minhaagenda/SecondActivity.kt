@@ -38,7 +38,7 @@ class SecondActivity : AppCompatActivity() {
     private fun exibirLista(contatos: ArrayList<Pessoa>) {
         adapter = ContatosAdapter(contatos)
         contatosListaRecyclerView.adapter = adapter
-        contatosListaRecyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        contatosListaRecyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
 
 //        contatos.sortBy { it.getNome() }
 //        listaContatos.visibility = View.VISIBLE

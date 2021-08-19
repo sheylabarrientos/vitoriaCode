@@ -7,6 +7,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import com.facebook.AccessToken
 import com.facebook.GraphRequest
 import com.facebook.HttpMethod
@@ -19,11 +20,10 @@ import com.sheyla.mymovies.databinding.ActivityAddProfilesBinding
 class AddProfilesActivity : AppCompatActivity() {
 
     private lateinit var name: EditText
-    private lateinit var button: FloatingActionButton
 
     private lateinit var binding: ActivityAddProfilesBinding
 
-    var user = arrayListOf<UserProfile>() //lista de contatos declaração
+    var user = arrayListOf<UserProfile>() //lista de perfis
     lateinit var usersSubscribes: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,7 +34,12 @@ class AddProfilesActivity : AppCompatActivity() {
         bindViews()
 
         binding.btnAddProfile.setOnClickListener {
-            goToProfiles()
+            if(name.text.isEmpty()) {
+                name.error = ""
+                Toast.makeText(this, "Digite um nome", Toast.LENGTH_SHORT).show()
+            }else{
+                goToProfiles()
+            }
         }
     }
 
