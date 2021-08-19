@@ -6,9 +6,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.chip.Chip
 import com.sheyla.projeto_integrador.R
-import com.sheyla.projeto_integrador.domain.Genre
+import com.sheyla.projeto_integrador.domain.Category
 
-class MovieDetailsGenresRvAdapter (private var dataset: List<Genre> = mutableListOf()): RecyclerView.Adapter<MovieDetailsGenresRvAdapter.ViewHolder>() {
+class MovieDetailsGenresRvAdapter (private var dataset: List<Category> = mutableListOf()): RecyclerView.Adapter<MovieDetailsGenresRvAdapter.ViewHolder>() {
 
     class ViewHolder(view: View): RecyclerView.ViewHolder(view){
         val itemGenre: Chip? = view.findViewById(R.id.itemGenre)

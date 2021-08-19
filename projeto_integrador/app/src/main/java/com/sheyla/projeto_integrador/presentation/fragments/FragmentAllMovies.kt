@@ -16,14 +16,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.textview.MaterialTextView
 import com.sheyla.projeto_integrador.R
 import com.sheyla.projeto_integrador.domain.Movie
-import com.sheyla.projeto_integrador.presentation.FailSystemActivity
 import com.sheyla.projeto_integrador.presentation.details.MovieDetailsActivity
 import com.sheyla.projeto_integrador.presentation.MovieListener
 import com.sheyla.projeto_integrador.presentation.model.MoviesViewModel
 import com.sheyla.projeto_integrador.presentation.adpater.GenresRvAdapter
 import com.sheyla.projeto_integrador.presentation.adpater.MoviesRvAdapter
 import com.sheyla.projeto_integrador.presentation.details.MovieDetailsActivity.Companion.MOVIE_ID
-import com.sheyla.projeto_integrador.presentation.model.ViewState
 
 class AllMoviesFragment : Fragment(), MovieListener {
 
@@ -53,13 +51,11 @@ class AllMoviesFragment : Fragment(), MovieListener {
         rvGenres.adapter = genresAdapter
 
         moviesViewModel = ViewModelProvider(requireActivity()).get(MoviesViewModel::class.java)
-        moviesViewModel.getPopularMovies()
-        moviesViewModel.getGenres()
+
         progressBar = view.findViewById(R.id.loading)
 
         observeGenres()
         observeListMovies()
-        observeViewState()
 
         rvMovies.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrolled(@NonNull recyclerView: RecyclerView, dx: Int, dy: Int): Unit {
@@ -108,15 +104,6 @@ class AllMoviesFragment : Fragment(), MovieListener {
         })
     }
 
-    private fun observeViewState() {
-        moviesViewModel.viewStateLiveData.observe(viewLifecycleOwner, { result ->
-            if (result == ViewState.GeneralError) {
-                val intent = Intent(requireContext(), FailSystemActivity::class.java)
-                startActivity(intent)
-            }
-        })
-    }
-
     override fun openMovieDetails(movieId: Int) {
         val intent = Intent(requireContext(), MovieDetailsActivity::class.java)
         intent.putExtra(MOVIE_ID, movieId)
@@ -124,7 +111,7 @@ class AllMoviesFragment : Fragment(), MovieListener {
     }
 
     override fun loadMoviesWithGenre(genreIds: List<Int>) {
-        moviesViewModel.getMoviesByGenre(genreIds)
+
     }
 
     override fun onFavoriteClickedListener(movie: Movie, isChecked: Boolean) {
@@ -134,7 +121,7 @@ class AllMoviesFragment : Fragment(), MovieListener {
             MoviesViewModel.writeFavoriteMovie(movie)
         } else {
             movie.isFavorite = false
-            moviesViewModel.removeFavoriteMovie(movie)
+            moviesViewModel.removeMovieFavorite(movie)
             MoviesViewModel.deleteFavoriteMovie(movie)
         }
     }

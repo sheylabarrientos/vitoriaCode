@@ -7,13 +7,13 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.chip.Chip
 import com.sheyla.projeto_integrador.R
-import com.sheyla.projeto_integrador.domain.Genre
+import com.sheyla.projeto_integrador.domain.Category
 import com.sheyla.projeto_integrador.presentation.MovieListener
 
 class GenresRvAdapter(
     val context: Context,
     private val listener: MovieListener? = null,
-    var dataset: MutableList<Genre> = mutableListOf()
+    var dataset: MutableList<Category> = mutableListOf()
 ): RecyclerView.Adapter<GenresRvAdapter.ViewHolder>() {
 
     private val selectedItems: MutableList<Int> = mutableListOf()

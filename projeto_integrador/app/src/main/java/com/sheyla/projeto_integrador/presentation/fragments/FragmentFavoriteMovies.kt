@@ -49,7 +49,7 @@ class FavoriteMoviesFragment : Fragment(), MovieListener {
         rvGenres.adapter = genresAdapter
         rvMovies.adapter = moviesAdapter
 
-        viewModelFavorites.getGenres()
+        viewModelFavorites.getCategories()
         observeGenres()
         observeFavoriteMovies()
 
@@ -83,7 +83,7 @@ class FavoriteMoviesFragment : Fragment(), MovieListener {
     override fun onFavoriteClickedListener(movie: Movie, isChecked: Boolean) {
         if (!isChecked) {
             movie.isFavorite = false
-            viewModelFavorites.removeFavoriteMovie(movie)
+            viewModelFavorites.removeMovieFavorite(movie)
         }
     }
 

@@ -2,7 +2,7 @@ package com.sheyla.projeto_integrador.domain
 
 class MovieDetail(
     val backdrop_path: String? = null,
-    val genres: List<Genre>,
+    val genres: List<Category>,
     val id: Int,
     val overview: String? = null,
     val release_date: String,

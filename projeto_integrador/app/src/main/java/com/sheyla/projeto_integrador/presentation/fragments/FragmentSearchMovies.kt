@@ -20,7 +20,6 @@ import com.sheyla.projeto_integrador.presentation.adpater.GenresRvAdapter
 import com.sheyla.projeto_integrador.presentation.adpater.MoviesRvAdapter
 import com.sheyla.projeto_integrador.presentation.details.MovieDetailsActivity.Companion.MOVIE_ID
 import com.sheyla.projeto_integrador.presentation.model.MoviesViewModel
-import com.sheyla.projeto_integrador.presentation.model.ViewState
 
 class SearchMoviesFragment : Fragment(), MovieListener {
 
@@ -72,9 +71,9 @@ class SearchMoviesFragment : Fragment(), MovieListener {
 
     fun updateQuery(query: Uri) {
         observeGenres()
-        setObservers()
-        moviesViewModel.searchForMovie(query)
-        moviesViewModel.getGenres()
+
+        moviesViewModel.searchMovie(query)
+        moviesViewModel.getCategories()
         movieNotFound.visibility = View.GONE
     }
 
@@ -98,22 +97,6 @@ class SearchMoviesFragment : Fragment(), MovieListener {
         })
     }
 
-    private fun setObservers() {
-        moviesViewModel.viewStateLiveData.observe(viewLifecycleOwner, { result ->
-            when (result) {
-                ViewState.MovieNotFound -> {
-                    movieNotFound.visibility = View.VISIBLE
-                    rvMovies.visibility = View.GONE
-                }
-                ViewState.GeneralError -> {
-                    Toast.makeText(requireContext(), "General error", Toast.LENGTH_LONG).show()
-                    val intent = Intent(requireContext(), FailSystemActivity::class.java)
-                    startActivity(intent)
-                }
-            }
-        })
-
-    }
 
     override fun openMovieDetails(movieId: Int) {
         val intent = Intent(requireContext(), MovieDetailsActivity::class.java)
@@ -143,7 +126,7 @@ class SearchMoviesFragment : Fragment(), MovieListener {
             moviesViewModel.addToFavoriteMovie(movie)
         } else {
             movie.isFavorite = false
-            moviesViewModel.removeFavoriteMovie(movie)
+            moviesViewModel.removeMovieFavorite(movie)
         }
     }
 

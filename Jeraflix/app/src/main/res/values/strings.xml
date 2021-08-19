@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MyMovies</string>
+    <string name="app_name">Jeraflix</string>
     <string name="pesquisar_por_filme">Pesquisar por filme…</string>
     <string name="modo_pesquisa">Modo Pesquisa</string>
     <string name="title_movie">Titulo do Filme</string>

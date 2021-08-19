@@ -13,10 +13,8 @@ import com.google.android.material.imageview.ShapeableImageView
 import com.sheyla.projeto_integrador.R
 import com.sheyla.projeto_integrador.data.base.Constants
 import com.sheyla.projeto_integrador.domain.MovieDetail
-import com.sheyla.projeto_integrador.presentation.FailSystemActivity
 import com.sheyla.projeto_integrador.presentation.adpater.CastRvAdapter
 import com.sheyla.projeto_integrador.presentation.adpater.MovieDetailsGenresRvAdapter
-import com.sheyla.projeto_integrador.presentation.model.ViewState
 import kotlinx.android.synthetic.main.activity_detail_movie.*
 
 class MovieDetailsActivity : AppCompatActivity() {
@@ -45,7 +43,6 @@ class MovieDetailsActivity : AppCompatActivity() {
 
         viewModel.getMovieDetails(movieId!!)
         getMovieDetails()
-        observeViewState()
 
         btnBack.setOnClickListener { finish() }
 
@@ -64,15 +61,6 @@ class MovieDetailsActivity : AppCompatActivity() {
         genresRv = findViewById(R.id.rcvMovieGenres)
         castRv = findViewById(R.id.image_actor)
 
-    }
-
-    private fun observeViewState(){
-        viewModel.viewStateLiveData.observe(this, { result ->
-            if(result == ViewState.GeneralError){
-                val intent = Intent(this, FailSystemActivity::class.java)
-                startActivity(intent)
-            }
-        })
     }
 
     private fun getMovieDetails() {
