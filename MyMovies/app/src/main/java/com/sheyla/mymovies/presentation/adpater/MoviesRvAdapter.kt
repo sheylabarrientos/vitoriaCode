@@ -12,7 +12,7 @@ import com.bumptech.glide.Glide
 import com.sheyla.mymovies.R
 import com.sheyla.mymovies.data.base.Constants
 import com.sheyla.mymovies.domain.Movie
-import com.sheyla.mymovies.presentation.MovieListener
+import com.sheyla.mymovies.onclick.MovieListener
 
 class MoviesRvAdapter(
     val context: Context,

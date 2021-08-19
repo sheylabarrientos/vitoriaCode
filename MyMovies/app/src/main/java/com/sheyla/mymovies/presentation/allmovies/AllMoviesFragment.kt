@@ -17,7 +17,7 @@ import com.google.android.material.textview.MaterialTextView
 import com.sheyla.mymovies.R
 import com.sheyla.mymovies.domain.Movie
 import com.sheyla.mymovies.presentation.FailSystemActivity
-import com.sheyla.mymovies.presentation.MovieListener
+import com.sheyla.mymovies.onclick.MovieListener
 import com.sheyla.mymovies.presentation.adpater.GenresRvAdapter
 import com.sheyla.mymovies.presentation.adpater.MoviesRvAdapter
 import com.sheyla.mymovies.presentation.details.MovieDetailsActivity

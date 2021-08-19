@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.chip.Chip
 import com.sheyla.mymovies.R
 import com.sheyla.mymovies.domain.Genre
-import com.sheyla.mymovies.presentation.MovieListener
+import com.sheyla.mymovies.onclick.MovieListener
 
 class GenresRvAdapter(
     val context: Context,
