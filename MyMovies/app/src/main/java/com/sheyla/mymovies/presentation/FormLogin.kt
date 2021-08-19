@@ -15,7 +15,6 @@ import com.google.firebase.auth.FirebaseAuthWeakPasswordException
 import com.sheyla.mymovies.databinding.ActivityFormLoginBinding
 import kotlinx.android.synthetic.main.activity_form_login.*
 
-@Suppress("DEPRECAION")
 class FormLogin : AppCompatActivity() {
 
     private lateinit var binding: ActivityFormLoginBinding
@@ -101,7 +100,7 @@ class FormLogin : AppCompatActivity() {
         val accessToken = data?.extras?.get("com.facebook.LoginFragment:Result")
         val isLoggedIn = accessToken != null
         if (isLoggedIn) {
-            goToScreenMovie()
+            goToAddProfile()
         }
     }
 
@@ -115,7 +114,7 @@ class FormLogin : AppCompatActivity() {
             .addOnCompleteListener {
                 if (it.isSuccessful) {
                     Toast.makeText(this, "Login efetuado com Sucesso!", Toast.LENGTH_SHORT).show()
-                    goToScreenMovie()
+                    goToAddProfile()
                 }
             }.addOnFailureListener {
                 var erro = it
@@ -133,11 +132,16 @@ class FormLogin : AppCompatActivity() {
         val userConnected = FirebaseAuth.getInstance().currentUser
 
         if (userConnected != null) {
-            goToScreenMovie()
+            goToAddProfile()
         }
     }
 
-    //goToScreenProfile
+    private fun goToAddProfile() {
+        val intent = Intent(this, AddProfilesActivity::class.java)
+        startActivity(intent)
+        finish()
+    }
+
     private fun goToScreenMovie() {
         val intent = Intent(this, ListOfMovies::class.java)
         startActivity(intent)
