@@ -64,35 +64,57 @@
         android:layout_marginTop="30dp"
         android:layout_marginEnd="24dp"
         android:backgroundTint="@color/black"
+        android:padding="15dp"
         android:text="Entrar"
         android:textAllCaps="false"
+        android:textColor="@color/greenPrimaryColor"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:textColor="@color/greenPrimaryColor"
+        app:cornerRadius="10dp"
         app:strokeColor="@color/greenPrimaryColor"
-        app:strokeWidth="2dp"
-        android:padding="15dp"
-        app:cornerRadius="10dp"/>
+        app:strokeWidth="2dp" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:textSize="18sp" />
+
+        <com.facebook.login.widget.LoginButton
+            android:id="@+id/btnLoginFacebook"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+
+    </RelativeLayout>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
         android:text="Precisa de ajuda?"
         android:textColor="@color/white"
         android:textSize="18sp"
-        android:textStyle="bold"
-        android:layout_gravity="center"
-        android:layout_marginTop="30dp" />
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/txt_screen_inscribe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
         android:text="Novo por aqui? Inscreva-se agora."
         android:textColor="@color/white"
         android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_gravity="center"
-        android:layout_marginTop="30dp" />
+        android:textStyle="bold" />
 
 </LinearLayout>

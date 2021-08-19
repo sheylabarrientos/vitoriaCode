@@ -28,4 +28,7 @@
     <string name="voltar_ao_inicio">Voltar ao início</string>
     <string name="star_icon">star icon</string>
     <string name="buscar">Buscar</string>
+    <string name="facebook_app_id">1040983213384718</string>
+    <string name="fb_login_protocol_scheme">fb1040983213384718</string>
+
 </resources>
