@@ -1,10 +1,4 @@
-package com.sheyla.projeto_integrador.data.remotesource
-
-import android.net.Uri
-import io.reactivex.Single
-import retrofit2.http.GET
-import retrofit2.http.Path
-import retrofit2.http.Query
+package com.sheyla.projeto_integrador.data
 
 interface MoviesRemoteSource {
 //    @GET("movie/popular")

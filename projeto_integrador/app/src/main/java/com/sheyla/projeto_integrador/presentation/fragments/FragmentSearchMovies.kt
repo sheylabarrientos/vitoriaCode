@@ -21,7 +21,7 @@ import com.sheyla.projeto_integrador.presentation.adpater.MoviesRvAdapter
 import com.sheyla.projeto_integrador.presentation.details.MovieDetailsActivity.Companion.MOVIE_ID
 import com.sheyla.projeto_integrador.presentation.model.MoviesViewModel
 
-class SearchMoviesFragment : Fragment(), MovieListener {
+class FragmentSearchMovies : Fragment(), MovieListener {
 
     private var movieSearched: String? = null
     private lateinit var moviesAdapter: MoviesRvAdapter

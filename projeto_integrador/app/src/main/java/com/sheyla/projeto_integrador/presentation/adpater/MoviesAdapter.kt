@@ -10,7 +10,7 @@ import android.widget.ToggleButton
 import androidx.recyclerview.widget.RecyclerView
 import com.sheyla.projeto_integrador.R
 import com.bumptech.glide.Glide
-import com.sheyla.projeto_integrador.data.base.Constants
+import com.sheyla.projeto_integrador.data.Constants
 import com.sheyla.projeto_integrador.domain.Movie
 import com.sheyla.projeto_integrador.presentation.MovieListener
 

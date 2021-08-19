@@ -23,7 +23,7 @@ import com.sheyla.projeto_integrador.presentation.adpater.GenresRvAdapter
 import com.sheyla.projeto_integrador.presentation.adpater.MoviesRvAdapter
 import com.sheyla.projeto_integrador.presentation.details.MovieDetailsActivity.Companion.MOVIE_ID
 
-class AllMoviesFragment : Fragment(), MovieListener {
+class FragmentAllMovies : Fragment(), MovieListener {
 
     private lateinit var listAdapter: MoviesRvAdapter
     private lateinit var genresAdapter: GenresRvAdapter

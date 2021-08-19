@@ -9,7 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.sheyla.projeto_integrador.R
-import com.sheyla.projeto_integrador.data.base.Constants
+import com.sheyla.projeto_integrador.data.Constants
 import com.sheyla.projeto_integrador.domain.Cast
 
 class CastRvAdapter(val context: Context, var dataset: MutableList<Cast> = mutableListOf()) :

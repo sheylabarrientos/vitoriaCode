@@ -18,7 +18,7 @@ import com.sheyla.projeto_integrador.presentation.adpater.GenresRvAdapter
 import com.sheyla.projeto_integrador.presentation.adpater.MoviesRvAdapter
 import com.sheyla.projeto_integrador.presentation.details.MovieDetailsActivity.Companion.MOVIE_ID
 
-class FavoriteMoviesFragment : Fragment(), MovieListener {
+class FragmentFavoriteMovies : Fragment(), MovieListener {
 
     private lateinit var moviesAdapter: MoviesRvAdapter
     private lateinit var progressBar: ProgressBar
