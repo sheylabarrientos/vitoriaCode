@@ -50,6 +50,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-crashlytics-ktx:18.2.1'
 
     implementation 'com.facebook.android:facebook-login:11.1.0'
+    implementation 'com.facebook.android:facebook-common:11.1.0'
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.6.0'

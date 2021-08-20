@@ -41,7 +41,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ce0bc662-af4f-44ed-b320-8633b912fbdd" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../Jeraflix/app/src/main/java/com/sheyla/mymovies/presentation/Add.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Jeraflix/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../Jeraflix/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Jeraflix/app/src/main/java/com/sheyla/mymovies/presentation/login/CalendarHelper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../Jeraflix/app/src/main/java/com/sheyla/mymovies/presentation/login/CalendarHelper.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Jeraflix/app/src/main/java/com/sheyla/mymovies/presentation/login/FormLogin.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../Jeraflix/app/src/main/java/com/sheyla/mymovies/presentation/login/FormLogin.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Jeraflix/app/src/main/java/com/sheyla/mymovies/presentation/login/FormSubscribe.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../Jeraflix/app/src/main/java/com/sheyla/mymovies/presentation/login/FormSubscribe.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Jeraflix/app/src/main/java/com/sheyla/mymovies/presentation/profile/AddProfilesActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../Jeraflix/app/src/main/java/com/sheyla/mymovies/presentation/profile/AddProfilesActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Jeraflix/app/src/main/java/com/sheyla/mymovies/presentation/profile/ProfilesActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../Jeraflix/app/src/main/java/com/sheyla/mymovies/presentation/profile/ProfilesActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Jeraflix/app/src/main/res/layout/activity_form_subscribe.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Jeraflix/app/src/main/res/layout/activity_form_subscribe.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Jeraflix/app/src/main/res/layout/activity_profiles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Jeraflix/app/src/main/res/layout/activity_profiles.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Jeraflix/app/src/main/res/layout/item_profile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Jeraflix/app/src/main/res/layout/item_profile.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +94,7 @@
     <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-06-08T19:23:38.206002500Z" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/values" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../MinhaAgenda" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">

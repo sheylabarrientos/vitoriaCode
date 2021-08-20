@@ -10,5 +10,6 @@ object CalendarHelper {
 
     fun getCurrentDateInMills() : Long{
         return Calendar.getInstance().timeInMillis
+
     }
 }

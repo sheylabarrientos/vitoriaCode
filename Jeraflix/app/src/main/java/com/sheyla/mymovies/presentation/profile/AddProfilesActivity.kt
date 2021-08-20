@@ -15,6 +15,7 @@ import com.facebook.login.LoginManager
 import com.google.firebase.auth.FirebaseAuth
 import com.sheyla.mymovies.R
 import com.sheyla.mymovies.databinding.ActivityAddProfilesBinding
+import com.sheyla.mymovies.presentation.Add
 import com.sheyla.mymovies.presentation.login.FormLogin
 
 class AddProfilesActivity : AppCompatActivity() {
@@ -22,6 +23,7 @@ class AddProfilesActivity : AppCompatActivity() {
     private lateinit var name: EditText
 
     private lateinit var binding: ActivityAddProfilesBinding
+    private val add = Add()
 
     var user = arrayListOf<UserProfile>() //lista de perfis
     lateinit var usersSubscribes: TextView
@@ -34,10 +36,10 @@ class AddProfilesActivity : AppCompatActivity() {
         bindViews()
 
         binding.btnAddProfile.setOnClickListener {
-            if(name.text.isEmpty()) {
+            if (name.text.isEmpty()) {
                 name.error = ""
                 Toast.makeText(this, "Digite um nome", Toast.LENGTH_SHORT).show()
-            }else{
+            } else {
                 goToProfiles()
             }
         }
@@ -51,7 +53,7 @@ class AddProfilesActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
-        when(item.itemId){
+        when (item.itemId) {
             R.id.disconnect -> {
                 FirebaseAuth.getInstance().signOut()
                 backScreenLogin()
@@ -69,12 +71,16 @@ class AddProfilesActivity : AppCompatActivity() {
     }
 
     private fun addProfile(): List<UserProfile> {
+        val add = add.subscribeProfile()
 
-        if (name.text.isEmpty()) {
-            name.error = "Digite um nome."
-        } else {
+        if (add != -1) {
             val nomeDigitado = name.text.toString()
             user.add(UserProfile(nomeDigitado))
+            if (name.text.isEmpty()) {
+                name.error = "Digite um nome."
+            }
+        } else {
+            Toast.makeText(this, "Você criou o número máximo da perfis.", Toast.LENGTH_SHORT).show()
         }
         return user
     }
@@ -89,12 +95,17 @@ class AddProfilesActivity : AppCompatActivity() {
         finish()
 
         if (AccessToken.getCurrentAccessToken() != null) {
-            GraphRequest(AccessToken.getCurrentAccessToken(), "/me/permissions/", null, HttpMethod.DELETE, GraphRequest.Callback {
-                AccessToken.setCurrentAccessToken(null)
-                LoginManager.getInstance().logOut()
+            GraphRequest(
+                AccessToken.getCurrentAccessToken(),
+                "/me/permissions/",
+                null,
+                HttpMethod.DELETE,
+                GraphRequest.Callback {
+                    AccessToken.setCurrentAccessToken(null)
+                    LoginManager.getInstance().logOut()
 
-                finish()
-            }).executeAsync()
+                    finish()
+                }).executeAsync()
         }
     }
 }

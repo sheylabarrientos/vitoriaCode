@@ -19,7 +19,7 @@ import kotlinx.android.synthetic.main.activity_form_login.*
 class FormLogin : AppCompatActivity() {
 
     private lateinit var binding: ActivityFormLoginBinding
-
+    private var accessToken: AccessToken? = null
     private var callbackManager: CallbackManager? = null
     private val EMAIL = "email"
 
@@ -43,10 +43,10 @@ class FormLogin : AppCompatActivity() {
                             GraphRequest.newMeRequest(result?.accessToken) { obj, response ->
                                 try {
                                     if (obj!!.has("id")) {
-                                        intent.putExtra("accessToken", result?.accessToken)
                                         Log.d("FACEBOOKDATA", obj.getString("name"))
                                         Log.d("FACEBOOKDATA", obj.getString("email"))
                                         Log.d("FACEBOOKDATA", obj.getString("picture"))
+                                        accessToken = result?.accessToken
                                     }
                                 } catch (e: Exception) {
 
