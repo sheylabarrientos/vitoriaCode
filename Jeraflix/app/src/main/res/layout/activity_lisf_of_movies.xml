@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/background_app"
-        tools:context=".presentation.ListOfMovies">
+        tools:context=".ui.ListOfMovies">
 
         <ImageButton
             android:id="@+id/submitSearch"

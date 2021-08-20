@@ -12,8 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyMovies">
-        <activity android:name=".presentation.profile.ProfilesActivity"></activity>
-        <activity android:name=".presentation.profile.AddProfilesActivity" />
+        <activity android:name=".ui.profile.ProfilesActivity"></activity>
+        <activity android:name=".ui.profile.AddProfilesActivity" />
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />
@@ -38,22 +38,22 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".presentation.ListOfMovies"
+            android:name=".ui.ListOfMovies"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".presentation.login.FormSubscribe"
+            android:name=".ui.login.FormSubscribe"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".presentation.login.FormLogin"
+            android:name=".ui.login.FormLogin"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".presentation.FailSystemActivity"
+            android:name=".ui.FailSystemActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".presentation.infos.InfosMovieActivity"
+            android:name=".ui.infos.InfosMovieActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".presentation.ProgressActivity"
+            android:name=".ui.ProgressActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -62,7 +62,7 @@
             </intent-filter>
         </activity>
 
-        <service android:name=".presentation.utils.FirebaseToken">
+        <service android:name=".ui.utils.FirebaseToken">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>

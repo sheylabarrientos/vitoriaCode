@@ -6,7 +6,19 @@ import java.lang.IllegalStateException
 
 object MovieLocalDataSourceImpl : MovieLocalDataSource {
 
+    private val watchedMovie = mutableListOf<MovieResponse>()
     private val favoriteMoviesList = mutableListOf<MovieResponse>()
+
+    override fun addToWatchedList(movie: MovieResponse): Single<List<MovieResponse>> {
+        return Single.create { emitter ->
+            val result = watchedMovie.add(movie)
+            if (result) {
+                emitter.onSuccess(watchedMovie)
+            } else {
+                emitter.onError(IllegalStateException())
+            }
+        }
+    }
 
     override fun addToFavoriteMovie(movie: MovieResponse): Single<List<MovieResponse>> {
         return Single.create { emitter ->

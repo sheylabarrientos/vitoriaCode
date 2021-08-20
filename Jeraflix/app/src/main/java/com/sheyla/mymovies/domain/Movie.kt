@@ -10,7 +10,8 @@ data class Movie(
     val title: String? = null,
     val rating: Float,
     val genreIds: List<Int>,
-    var isFavorite: Boolean = false,
+    var inWatchList: Boolean = false,
+    var watchedMovie: Boolean = false,
 ) : Parcelable {
 
     fun getRating(): String {

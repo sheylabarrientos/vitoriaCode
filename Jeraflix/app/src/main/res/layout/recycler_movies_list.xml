@@ -105,5 +105,38 @@
         app:layout_constraintStart_toEndOf="@+id/star_percent_likes"
         app:layout_constraintTop_toTopOf="@+id/star_percent_likes" />
 
+
+    <ToggleButton
+        android:id="@+id/add_watchlist"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="@dimen/margin_16"
+        android:background="@drawable/ic_baseline_playlist_add_24"
+        android:elevation="10sp"
+        android:checked="false"
+        android:contentDescription="add watch list"
+        android:text=""
+        android:textOff=""
+        android:textOn=""
+        app:layout_constraintEnd_toEndOf="@+id/favorite_heart_empty"
+        app:layout_constraintStart_toStartOf="@+id/favorite_heart_empty"
+        app:layout_constraintTop_toBottomOf="@+id/favorite_heart_empty" />
+
+    <ToggleButton
+        android:id="@+id/add_watchedlist"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginEnd="@dimen/margin_8"
+        android:background="@drawable/ic_baseline_videocam_24"
+        android:elevation="10sp"
+        android:checked="false"
+        android:contentDescription="add watched list"
+        android:text=""
+        android:textOff=""
+        android:textOn=""
+        app:layout_constraintBottom_toBottomOf="@+id/add_watchlist"
+        app:layout_constraintEnd_toStartOf="@+id/add_watchlist"
+        app:layout_constraintTop_toTopOf="@+id/add_watchlist" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
 
