@@ -20,5 +20,6 @@ class MovieInfoResponse(
     val vote_average: Float,
     @SerializedName("title")
     val title: String,
-    var isFavorite: Boolean = false
+    var isFavorite: Boolean = false,
+    var watchedMovie: Boolean = false,
 )

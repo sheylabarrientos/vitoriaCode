@@ -6,6 +6,7 @@ import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.sheyla.mymovies.ui.fragments.AllMoviesFragment
 import com.sheyla.mymovies.ui.fragments.FavoriteMoviesFragment
+import com.sheyla.mymovies.ui.fragments.WatchedMoviesFragment
 
 class ViewPagerAdapter(fa: FragmentActivity) : FragmentStateAdapter(fa) {
     override fun getItemCount(): Int {
@@ -16,7 +17,7 @@ class ViewPagerAdapter(fa: FragmentActivity) : FragmentStateAdapter(fa) {
         return when (position) {
             ALL_MOVIES_POSITION -> AllMoviesFragment()
             FAVORITE_MOVIES_POSITION -> FavoriteMoviesFragment()
-            MOVIES_WATCHED -> FavoriteMoviesFragment()
+            MOVIES_WATCHED -> WatchedMoviesFragment()
             else -> FavoriteMoviesFragment()
         }
     }

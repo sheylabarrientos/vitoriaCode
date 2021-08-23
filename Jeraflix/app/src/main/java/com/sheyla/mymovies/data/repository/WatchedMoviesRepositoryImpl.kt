@@ -19,4 +19,21 @@ class WatchedMoviesRepositoryImpl: WatchedMoviesRepository {
                 movieMapper.map(it)
             }
     }
+
+    override fun removedWatchedList(movie: Movie): Single<List<Movie>> {
+        val movieMapped = movieResponseMapper.map(movie)
+        return movieLocalDataSource
+            .removedWatchedList(movieMapped)
+            .map{
+                movieMapper.map(it)
+            }
+    }
+
+    override fun getWatchedMovies(): Single<List<Movie>> {
+        return movieLocalDataSource
+            .getWatchedMovies()
+            .map {
+                movieMapper.map(it)
+            }
+    }
 }

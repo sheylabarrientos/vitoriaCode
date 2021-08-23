@@ -51,14 +51,14 @@ class WatchedMoviesFragment : Fragment(), MovieListener {
 
         viewModelFavorites.getGenres()
         observeGenres()
-        observeFavoriteMovies()
+//        observeFavoriteMovies()
         observeWatchedMovies()
 
     }
 
     override fun onResume() {
         super.onResume()
-        viewModelFavorites.getFavoriteMovies()
+        viewModelFavorites.getWatchedMovies()
     }
 
     private fun observeGenres() {
@@ -95,7 +95,7 @@ class WatchedMoviesFragment : Fragment(), MovieListener {
     override fun onWatchedListClickedListener(movie: Movie, isChecked: Boolean) {
         if (!isChecked) {
             movie.watchedMovie = false
-            viewModelFavorites.removeFavoriteMovie(movie)
+            viewModelFavorites.deleteWatchedMovie(movie)
             MoviesViewModel.deleteFavoriteMovie(movie)
         }
     }

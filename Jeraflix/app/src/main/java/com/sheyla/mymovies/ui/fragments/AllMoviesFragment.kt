@@ -100,7 +100,7 @@ class AllMoviesFragment : Fragment(), MovieListener {
     }
 
     private fun observeGenres() {
-        moviesViewModel.genreListLiveData.observe(viewLifecycleOwner, { response ->
+        moviesViewModel.categoryListLiveData.observe(viewLifecycleOwner, { response ->
             response?.let {
                 categoryAdapter.dataset.addAll(it)
                 categoryAdapter.notifyDataSetChanged()
@@ -123,14 +123,13 @@ class AllMoviesFragment : Fragment(), MovieListener {
         startActivity(intent)
     }
 
-    override fun loadMoviesWithGenre(genreIds: List<Int>) {
-        moviesViewModel.getMoviesByGenre(genreIds)
+    override fun loadMoviesWithGenre(categoryIds: List<Int>) {
+        moviesViewModel.getMoviesByCategory(categoryIds)
     }
 
     override fun onWatchListClickedListener(movie: Movie, isChecked: Boolean) {
         if (isChecked) {
             movie.inWatchList = true
-            moviesViewModel.addToWatchedList(movie)
             moviesViewModel.addToFavoriteMovie(movie)
             MoviesViewModel.writeFavoriteMovie(movie)
         } else {
@@ -144,11 +143,10 @@ class AllMoviesFragment : Fragment(), MovieListener {
         if (isChecked) {
             movie.watchedMovie = true
             moviesViewModel.addToWatchedList(movie)
-            moviesViewModel.addToFavoriteMovie(movie)
             MoviesViewModel.writeFavoriteMovie(movie)
         } else {
             movie.watchedMovie = false
-            moviesViewModel.removeFavoriteMovie(movie)
+            moviesViewModel.deleteWatchedMovie(movie)
             MoviesViewModel.deleteFavoriteMovie(movie)
         }
     }

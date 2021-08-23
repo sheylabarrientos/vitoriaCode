@@ -8,4 +8,6 @@ interface MovieLocalDataSource {
     fun removeFavoriteMovie(movie: MovieResponse): Single<List<MovieResponse>>
     fun getFavoriteMovies(): Single<List<MovieResponse>>
     fun addToWatchedList(movie: MovieResponse): Single<List<MovieResponse>>
+    fun removedWatchedList(movie: MovieResponse): Single<List<MovieResponse>>
+    fun getWatchedMovies(): Single<List<MovieResponse>>
 }

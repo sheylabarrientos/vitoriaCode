@@ -88,13 +88,13 @@ class FavoriteMoviesFragment : Fragment(), MovieListener {
         }
     }
 
-    override fun onWatchedListClickedListener(movie: Movie, isChecked: Boolean) {
-        if (!isChecked) {
-            movie.watchedMovie = false
-            viewModelFavorites.removeFavoriteMovie(movie)
-            MoviesViewModel.deleteFavoriteMovie(movie)
-        }
-    }
+//    override fun onWatchedListClickedListener(movie: Movie, isChecked: Boolean) {
+//        if (!isChecked) {
+//            movie.watchedMovie = false
+//            viewModelFavorites.removeFavoriteMovie(movie) //removewatchedlist
+//            MoviesViewModel.deleteFavoriteMovie(movie)
+//        }
+//    }
 
     override fun openMovieDetails(movieId: Int) {
         val intent = Intent(requireContext(), InfosMovieActivity::class.java)
@@ -116,5 +116,18 @@ class FavoriteMoviesFragment : Fragment(), MovieListener {
                 moviesAdapter.notifyDataSetChanged()
             }
         })
+    }
+
+    override fun onWatchedListClickedListener(movie: Movie, isChecked: Boolean) {
+        if (isChecked) {
+            movie.watchedMovie = true
+            viewModelFavorites.addToWatchedList(movie)
+            viewModelFavorites.removeFavoriteMovie(movie)
+            MoviesViewModel.writeFavoriteMovie(movie)
+        } else {
+            movie.watchedMovie = false
+            viewModelFavorites.deleteWatchedMovie(movie)
+            MoviesViewModel.deleteFavoriteMovie(movie)
+        }
     }
 }

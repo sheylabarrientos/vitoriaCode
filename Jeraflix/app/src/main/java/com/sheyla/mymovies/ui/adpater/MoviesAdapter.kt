@@ -52,8 +52,10 @@ class MoviesAdapter(
         holder.addBtn?.setOnClickListener {
             listener?.onWatchListClickedListener(dataSet[position], !dataSet[position].inWatchList)
         }
+
+        holder.addWatched?.isChecked = dataSet[position].watchedMovie
         holder.addWatched?.setOnClickListener {
-            listener?.onWatchListClickedListener(dataSet[position], !dataSet[position].inWatchList)
+            listener?.onWatchedListClickedListener(dataSet[position], !dataSet[position].watchedMovie)
         }
 
         holder.movieId?.text = dataSet[position].id.toString()

@@ -22,7 +22,7 @@ import java.util.ArrayList
 class MoviesViewModel() : ViewModel() {
 
     private val getAllMoviesUseCase = GetAllMoviesUseCase()
-    private val getGenresUseCase = GetCategoriesUseCase()
+    private val getCategoriesUseCase = GetCategoriesUseCase()
     private val getMoviesByGenreUseCase = GetMoviesByGenreUseCase()
     private val favoriteMoviesUseCase = FavoriteMoviesUseCase()
     private val searchForMoviesUseCase = SearchForMovieUseCase()
@@ -31,8 +31,8 @@ class MoviesViewModel() : ViewModel() {
     private val _moviesLiveData = MutableLiveData<List<Movie>>(mutableListOf())
     val movieListLiveData : LiveData<List<Movie>> = _moviesLiveData
 
-    private val _genresLiveData = MutableLiveData<List<Genre>>()
-    val genreListLiveData : LiveData<List<Genre>> = _genresLiveData
+    private val _categoryLiveData = MutableLiveData<List<Genre>>()
+    val categoryListLiveData : LiveData<List<Genre>> = _categoryLiveData
 
     private val _favoriteMoviesLiveData = MutableLiveData<List<Movie>>(mutableListOf())
     val favoriteMoviesLiveData : LiveData<List<Movie>> = _favoriteMoviesLiveData
@@ -63,8 +63,8 @@ class MoviesViewModel() : ViewModel() {
             ).handleDisposable()
     }
 
-    fun getMoviesByGenre(genresId: List<Int>){
-        getMoviesByGenreUseCase.executeMoviesByGenre(genresId.joinToString(","))
+    fun getMoviesByCategory(categoryId: List<Int>){
+        getMoviesByGenreUseCase.executeMoviesByGenre(categoryId.joinToString(","))
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe (
@@ -79,16 +79,30 @@ class MoviesViewModel() : ViewModel() {
     }
 
     fun getGenres(){
-        getGenresUseCase.executeGenres()
+        getCategoriesUseCase.executeGenres()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(
                 {result ->
-                    _genresLiveData.value = result
+                    _categoryLiveData.value = result
                 },
                 {
                     Log.e("ErroReq", "erro: " + it.cause)
                     _viewStateLiveData.value = ViewState.GeneralError
+                }
+            ).handleDisposable()
+    }
+
+    fun getWatchedMovies(){
+        watchedMovieUseCase.getWatchedMovies()
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(
+                {
+                    _watchedMoviesLiveData.value = it
+                },
+                {
+                    print(it.message)
                 }
             ).handleDisposable()
     }
@@ -109,6 +123,21 @@ class MoviesViewModel() : ViewModel() {
 
     fun addToWatchedList(movie: Movie){
         watchedMovieUseCase.addToWatchedMovie(movie)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(
+                {
+                    _watchedMoviesLiveData.value = it
+                    //checkFavorites()
+                },
+                {
+                    print(it.message)
+                }
+            ).handleDisposable()
+    }
+
+    fun deleteWatchedMovie(movie: Movie){
+        watchedMovieUseCase.deleteWatchedMovie(movie)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(

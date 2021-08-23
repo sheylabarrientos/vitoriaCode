@@ -20,6 +20,27 @@ object MovieLocalDataSourceImpl : MovieLocalDataSource {
         }
     }
 
+    override fun removedWatchedList(movie: MovieResponse): Single<List<MovieResponse>> {
+        return Single.create { emitter ->
+            val movieToRemove = watchedMovie.find {
+                it.id == movie.id
+            }
+            val result = watchedMovie.remove(movieToRemove)
+            if (result) {
+                emitter.onSuccess(watchedMovie)
+            } else {
+                emitter.onError(IllegalStateException())
+            }
+        }
+    }
+
+    override fun getWatchedMovies(): Single<List<MovieResponse>> {
+        return Single.create { emitter ->
+            emitter.onSuccess(watchedMovie)
+        }
+    }
+
+
     override fun addToFavoriteMovie(movie: MovieResponse): Single<List<MovieResponse>> {
         return Single.create { emitter ->
             val result = favoriteMoviesList.add(movie)
