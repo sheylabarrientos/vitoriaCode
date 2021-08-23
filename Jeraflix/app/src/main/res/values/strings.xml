@@ -30,5 +30,6 @@
     <string name="buscar">Buscar</string>
     <string name="facebook_app_id">1040983213384718</string>
     <string name="fb_login_protocol_scheme">fb1040983213384718</string>
+    <string name="digite_o_nome_do_perfil">Digite o nome do Perfil</string>
 
 </resources>

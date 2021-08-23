@@ -142,11 +142,11 @@ class SearchMoviesFragment : Fragment(), MovieListener {
         if (isChecked) {
             movie.inWatchList = true
             moviesViewModel.addToFavoriteMovie(movie)
-            MoviesViewModel.writeFavoriteMovie(movie)
+//            MoviesViewModel.writeFavoriteMovie(movie)
         } else {
             movie.inWatchList = false
             moviesViewModel.removeFavoriteMovie(movie)
-            MoviesViewModel.deleteFavoriteMovie(movie)
+//            MoviesViewModel.deleteFavoriteMovie(movie)
         }
     }
 
@@ -155,11 +155,11 @@ class SearchMoviesFragment : Fragment(), MovieListener {
             movie.watchedMovie = true
             moviesViewModel.addToWatchedList(movie)
             moviesViewModel.addToFavoriteMovie(movie)
-            MoviesViewModel.writeFavoriteMovie(movie)
+//            MoviesViewModel.writeFavoriteMovie(movie)
         } else {
             movie.watchedMovie = false
             moviesViewModel.removeFavoriteMovie(movie)
-            MoviesViewModel.deleteFavoriteMovie(movie)
+//            MoviesViewModel.deleteFavoriteMovie(movie)
         }
     }
 

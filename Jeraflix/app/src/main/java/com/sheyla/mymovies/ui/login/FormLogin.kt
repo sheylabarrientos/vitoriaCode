@@ -28,6 +28,7 @@ class FormLogin : AppCompatActivity() {
         binding = ActivityFormLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
         btnLoginFacebook.setOnClickListener {
 
             btnLoginFacebook.setPermissions(listOf(EMAIL))

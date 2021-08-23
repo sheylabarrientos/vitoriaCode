@@ -7,16 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ProgressBar
-import androidx.annotation.NonNull
-import androidx.appcompat.widget.AppCompatToggleButton
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.textview.MaterialTextView
 import com.sheyla.mymovies.R
 import com.sheyla.mymovies.domain.Movie
-import com.sheyla.mymovies.domain.User
 import com.sheyla.mymovies.ui.FailSystemActivity
 import com.sheyla.mymovies.onclick.MovieListener
 import com.sheyla.mymovies.ui.adpater.CategoryAdapter
@@ -62,26 +56,26 @@ class AllMoviesFragment : Fragment(), MovieListener {
         observeListMovies()
         observeViewState()
 
-        rvMovies.addOnScrollListener(object : RecyclerView.OnScrollListener() {
-            override fun onScrolled(@NonNull recyclerView: RecyclerView, dx: Int, dy: Int): Unit {
-                var layout =
-                    (rvMovies.layoutManager as LinearLayoutManager).findViewByPosition((rvMovies.layoutManager as LinearLayoutManager).findFirstVisibleItemPosition())
-
-                val indexOfToggleButton = 2
-                val indexOfId = 5
-
-                if (layout is ConstraintLayout) {
-                    if (layout.getChildAt(indexOfId) is MaterialTextView) {
-                        val movieIdString =
-                            (layout.getChildAt(indexOfId) as MaterialTextView).text.toString()
-                        val movieId = Integer.parseInt(movieIdString)
-
-                        (layout.getChildAt(indexOfToggleButton) as AppCompatToggleButton).isChecked =
-                            MoviesViewModel.movieIdIsFavorite(movieId) == true
-                    }
-                }
-            }
-        })
+//        rvMovies.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+//            override fun onScrolled(@NonNull recyclerView: RecyclerView, dx: Int, dy: Int): Unit {
+//                var layout =
+//                    (rvMovies.layoutManager as LinearLayoutManager).findViewByPosition((rvMovies.layoutManager as LinearLayoutManager).findFirstVisibleItemPosition())
+//
+//                val indexOfToggleButton = 2
+//                val indexOfId = 5
+//
+//                if (layout is ConstraintLayout) {
+//                    if (layout.getChildAt(indexOfId) is MaterialTextView) {
+//                        val movieIdString =
+//                            (layout.getChildAt(indexOfId) as MaterialTextView).text.toString()
+//                        val movieId = Integer.parseInt(movieIdString)
+//
+//                        (layout.getChildAt(indexOfToggleButton) as AppCompatToggleButton).isChecked =
+//                            MoviesViewModel.movieIdIsFavorite(movieId) == true
+//                    }
+//                }
+//            }
+//        })
     }
 
     override fun onResume() {

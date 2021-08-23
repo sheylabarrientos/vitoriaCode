@@ -19,7 +19,7 @@ class ProgressActivity : AppCompatActivity() {
         FacebookSdk.sdkInitialize(applicationContext)
         AppEventsLogger.activateApp(this)
 
-        MoviesViewModel.readDataBase()
+//        MoviesViewModel.readDataBase()
         supportActionBar!!.hide()
 
         Handler(Looper.getMainLooper()).postDelayed({

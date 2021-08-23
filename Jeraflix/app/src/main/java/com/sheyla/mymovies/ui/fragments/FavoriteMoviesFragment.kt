@@ -11,7 +11,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.sheyla.mymovies.R
 import com.sheyla.mymovies.domain.Movie
-import com.sheyla.mymovies.domain.User
 import com.sheyla.mymovies.onclick.MovieListener
 import com.sheyla.mymovies.ui.adpater.CategoryAdapter
 import com.sheyla.mymovies.ui.adpater.MoviesAdapter
@@ -85,18 +84,9 @@ class FavoriteMoviesFragment : Fragment(), MovieListener {
         if (!isChecked) {
             movie.inWatchList = false
             viewModelFavorites.removeFavoriteMovie(movie)
-            MoviesViewModel.deleteFavoriteMovie(movie)
+//            MoviesViewModel.deleteFavoriteMovie(movie)
         }
     }
-
-
-//    override fun onWatchedListClickedListener(movie: Movie, isChecked: Boolean) {
-//        if (!isChecked) {
-//            movie.watchedMovie = false
-//            viewModelFavorites.removeFavoriteMovie(movie) //removewatchedlist
-//            MoviesViewModel.deleteFavoriteMovie(movie)
-//        }
-//    }
 
     override fun openMovieDetails(movieId: Int) {
         val intent = Intent(requireContext(), InfosMovieActivity::class.java)

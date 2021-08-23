@@ -55,19 +55,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
 
-        <ImageView
-            android:id="@+id/favorite_button_detail_movie"
-            android:layout_width="@dimen/margin_40"
-            android:layout_height="@dimen/margin_32"
-            android:layout_marginEnd="@dimen/margin_32"
-            android:background="@drawable/heart_button"
-            android:checked="false"
-            android:contentDescription="@string/app_name"
-            android:text=""
-            android:textOff=""
-            android:textOn=""
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
 
         <TextView
             android:id="@+id/year_movie"
@@ -193,11 +180,11 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_32"
             android:layout_marginEnd="@dimen/margin_8"
-            android:layout_marginBottom="18dp"
+            android:layout_marginBottom="@dimen/margin_24"
             android:text="@string/star_avaliacao_usuario"
             android:textColor="@color/movieDetailsColor"
             android:textSize="@dimen/text_size_12"
-            app:layout_constraintBottom_toTopOf="@+id/favorite_button_detail_movie"
+            app:layout_constraintBottom_toBottomOf="@+id/frameLayout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/frameLayout" />
 

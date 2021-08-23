@@ -1,4 +1,4 @@
-package com.sheyla.mymovies.ui.profile
+package com.sheyla.mymovies.ui.adpater
 
 import android.text.TextWatcher
 import android.view.LayoutInflater
@@ -10,6 +10,7 @@ import androidx.core.widget.doAfterTextChanged
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.sheyla.mymovies.R
+import com.sheyla.mymovies.domain.UserProfile
 
 class Adapter(private val myDataSet: ArrayList<UserProfile>) :
     RecyclerView.Adapter<Adapter.ViewHolder>() {

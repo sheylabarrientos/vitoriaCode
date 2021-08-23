@@ -16,14 +16,13 @@ import com.facebook.login.LoginManager
 import com.google.firebase.auth.FirebaseAuth
 import com.sheyla.mymovies.R
 import com.sheyla.mymovies.databinding.ActivityAddProfilesBinding
-import com.sheyla.mymovies.ui.Add
-import com.sheyla.mymovies.ui.ListOfMovies
+import com.sheyla.mymovies.domain.Add
 import com.sheyla.mymovies.ui.login.FormLogin
+import com.sheyla.mymovies.domain.UserProfile
 
 class AddProfilesActivity : AppCompatActivity() {
 
     private lateinit var name: EditText
-
     private lateinit var binding: ActivityAddProfilesBinding
     private val add = Add()
 //    var user = arrayListOf<UserProfile>() //lista de perfis
@@ -39,39 +38,46 @@ class AddProfilesActivity : AppCompatActivity() {
         bindViews()
 
         binding.btnAddProfile.setOnClickListener {
-            irParaProfileActivity()
+            val messageError: String = name.text.toString()
+            if (messageError.trim().isEmpty()) {
+                name.error = "Digite um nome"
+            }else{
+                irParaProfileActivity()
+//                finish()
+            }
         }
     }
 
     private fun irParaProfileActivity() {
-        salvarContato() //função salvar contato
+        addProfile() //função salvar contato
         val intent = Intent(this, ProfilesActivity::class.java)
         intent.putParcelableArrayListExtra("PROFILES", profiles)
         startActivity(intent)
+        finish()
     }
 
-    private fun salvarContato(): List<UserProfile> {
-        val messageError: String = name.text.toString()
+
+    private fun addProfile(): List<UserProfile> {
         val add = add.subscribeProfile()
         //check if the EditText have values or not
         if (add != -1) {
-            if (messageError.trim().isEmpty()) {
-                name.error = "Digite um nome"
-            } else {
-                val nomeDigitado = name.text.toString()
-                Toast.makeText(
-                    applicationContext,
-                    "Perfil criado com sucesso!",
-                    Toast.LENGTH_SHORT
-                ).show()
-
-                // After successful login u will move on next page/ activity
-                profiles.add(UserProfile(nomeDigitado))
-            }}
+            val nomeDigitado = name.text.toString()
+            profiles.add(UserProfile(nomeDigitado))
+            Toast.makeText(
+                applicationContext,
+                "Perfil criado com sucesso!",
+                Toast.LENGTH_SHORT
+            ).show()
+        }
+        else{
+            Toast.makeText(
+                applicationContext,
+                "Você criou o número máximo de perfis.",
+                Toast.LENGTH_SHORT
+            ).show()
+        }
             return profiles
         }
-
-
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         val inflate = menuInflater

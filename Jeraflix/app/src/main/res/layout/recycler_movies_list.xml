@@ -55,26 +55,12 @@
         app:layout_constraintTop_toBottomOf="@+id/cvImage"
         tools:text="Movie Title" />
 
-    <ToggleButton
-        android:id="@+id/favorite_heart_empty"
-        android:layout_width="@dimen/margin_32"
-        android:layout_height="@dimen/margin_24"
-        android:layout_marginStart="@dimen/margin_8"
-        android:background="@drawable/heart_button"
-        android:checked="false"
-        android:contentDescription="@string/favorite_movie"
-        android:text=""
-        android:textOff=""
-        android:textOn=""
-        app:layout_constraintStart_toEndOf="@+id/title_movie"
-        app:layout_constraintTop_toTopOf="@+id/title_movie" />
-
     <ImageButton
         android:id="@+id/star_percent_likes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_16"
-        android:layout_marginEnd="@dimen/margin_16"
+        android:layout_marginEnd="@dimen/margin_40"
         android:background="@drawable/ic_vectoric_baseline_star_24"
         android:contentDescription="@string/star_icon"
         app:layout_constraintEnd_toEndOf="@id/cvImage"
@@ -85,7 +71,7 @@
         android:id="@+id/percent_likes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="2dp"
+        android:layout_marginStart="@dimen/margin_8"
         android:fontFamily="@font/lato_regular"
         android:text="@string/_81_percent"
         android:textColor="@color/movieGenreDetailsColor"
@@ -110,7 +96,7 @@
         android:id="@+id/add_watchlist"
         android:layout_width="24dp"
         android:layout_height="24dp"
-        android:layout_marginTop="@dimen/margin_16"
+        android:layout_marginStart="@dimen/margin_8"
         android:background="@drawable/add_watch_list"
         android:checked="false"
         android:contentDescription="add watch list"
@@ -118,24 +104,24 @@
         android:text=""
         android:textOff=""
         android:textOn=""
-        app:layout_constraintEnd_toEndOf="@+id/favorite_heart_empty"
-        app:layout_constraintStart_toStartOf="@+id/favorite_heart_empty"
-        app:layout_constraintTop_toBottomOf="@+id/favorite_heart_empty" />
+        app:layout_constraintBottom_toBottomOf="@+id/add_watchedlist"
+        app:layout_constraintStart_toEndOf="@+id/add_watchedlist"
+        app:layout_constraintTop_toTopOf="@+id/add_watchedlist" />
 
     <ToggleButton
         android:id="@+id/add_watchedlist"
         android:layout_width="24dp"
         android:layout_height="24dp"
-        android:layout_marginEnd="@dimen/margin_8"
+        android:layout_marginStart="@dimen/margin_8"
         android:background="@drawable/add_watched_list"
         android:checked="false"
         android:contentDescription="add watched list"
         android:text=""
         android:textOff=""
         android:textOn=""
-        app:layout_constraintBottom_toBottomOf="@+id/add_watchlist"
-        app:layout_constraintEnd_toStartOf="@+id/add_watchlist"
-        app:layout_constraintTop_toTopOf="@+id/add_watchlist" />
+        app:layout_constraintBottom_toBottomOf="@+id/star_percent_likes"
+        app:layout_constraintStart_toEndOf="@+id/percent_likes"
+        app:layout_constraintTop_toTopOf="@+id/star_percent_likes" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

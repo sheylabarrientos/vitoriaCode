@@ -1,6 +1,6 @@
 package com.sheyla.mymovies.domain
 
-data class NumberViewsDay(
+data class NumberViewsDay (
     val adult: Boolean,
     val also_known_as: List<String>,
     val biography: String,

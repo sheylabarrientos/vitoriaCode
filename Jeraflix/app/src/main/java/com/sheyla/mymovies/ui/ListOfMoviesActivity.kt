@@ -30,7 +30,7 @@ import com.sheyla.mymovies.ui.login.FormLogin
 import com.sheyla.mymovies.ui.fragments.SearchMoviesFragment
 
 
-class ListOfMovies : AppCompatActivity() {
+class ListOfMoviesActivity : AppCompatActivity() {
 
     private var searchEdtTxt: EditText? = null
     private lateinit var searchBtn: ImageButton
@@ -50,7 +50,7 @@ class ListOfMovies : AppCompatActivity() {
         binding = ActivityLisfOfMoviesBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        MoviesViewModel.readDataBase()
+//        MoviesViewModel.readDataBase()
         bindViews()
 
     }

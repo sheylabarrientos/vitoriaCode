@@ -1,4 +1,4 @@
-package com.sheyla.mymovies.ui
+package com.sheyla.mymovies.domain
 
 class Add (
     var numberProfiles: Int = 0,

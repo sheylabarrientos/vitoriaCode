@@ -1,4 +1,4 @@
-package com.sheyla.mymovies.ui.profile
+package com.sheyla.mymovies.ui.adpater
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.sheyla.mymovies.R
+import com.sheyla.mymovies.domain.UserProfile
 
 class ProfilesAdapter(var dataSet: List<UserProfile>) :
     RecyclerView.Adapter<ProfilesAdapter.ProfilesViewHolder>() {

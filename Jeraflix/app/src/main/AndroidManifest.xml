@@ -38,7 +38,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.ListOfMovies"
+            android:name=".ui.ListOfMoviesActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.login.FormSubscribe"

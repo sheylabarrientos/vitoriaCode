@@ -8,9 +8,9 @@
     android:layout_gravity="center_horizontal">
 
 
-    <Button
+    <TextView
         android:id="@+id/imageProfile"
-        android:layout_width="wrap_content"
+        android:layout_width="80dp"
         android:layout_height="80dp"
         android:background="@drawable/ic_baseline_account_box_24"
         android:backgroundTint="@color/greenPrimaryColor"
@@ -25,7 +25,6 @@
         android:text="Nome"
         android:textSize="@dimen/text_size_18"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/imageProfile"
         app:layout_constraintStart_toStartOf="@+id/imageProfile"
         app:layout_constraintTop_toBottomOf="@+id/imageProfile" />
 
@@ -36,9 +35,10 @@
         android:layout_height="24dp"
         android:background="@drawable/ic_baseline_delete_24"
         android:elevation="10sp"
-        app:layout_constraintEnd_toEndOf="@+id/item_name"
-        app:layout_constraintStart_toStartOf="@+id/item_name"
-        app:layout_constraintTop_toBottomOf="@+id/item_name" />
+        app:layout_constraintBottom_toBottomOf="@+id/item_name"
+        app:layout_constraintEnd_toEndOf="@+id/imageProfile"
+        app:layout_constraintStart_toEndOf="@+id/item_name"
+        app:layout_constraintTop_toBottomOf="@+id/imageProfile" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,4 +1,4 @@
-package com.sheyla.mymovies.domain.usecase
+package com.sheyla.mymovies.domain
 
 data class Result(
     val adult: Boolean,

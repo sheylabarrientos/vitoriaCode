@@ -53,7 +53,6 @@ class InfosMovieActivity : AppCompatActivity() {
     private fun bindViews() {
         btnBack = findViewById(R.id.back_button)
         imgMovie = findViewById(R.id.cover_movie)
-        favoriteHeartButton = findViewById(R.id.favorite_button_detail_movie)
         percentLikes = findViewById(R.id.percent_likes_detail_movies)
         titleMovie = findViewById(R.id.title_movie_detail_movie)
         yearMovie = findViewById(R.id.year_movie)

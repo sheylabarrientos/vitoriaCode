@@ -1,21 +1,17 @@
 package com.sheyla.mymovies.ui.fragments
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ProgressBar
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.sheyla.mymovies.R
 import com.sheyla.mymovies.domain.Movie
-import com.sheyla.mymovies.domain.User
 import com.sheyla.mymovies.onclick.MovieListener
 import com.sheyla.mymovies.ui.model.MoviesViewModel
-import com.sheyla.mymovies.ui.model.ViewState
-import com.sheyla.mymovies.ui.profile.ProfilesAdapter
+import com.sheyla.mymovies.ui.adpater.ProfilesAdapter
 
 class ProfileFragment : Fragment(), MovieListener {
 
