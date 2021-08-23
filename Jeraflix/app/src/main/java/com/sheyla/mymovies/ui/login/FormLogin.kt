@@ -8,10 +8,12 @@ import androidx.appcompat.app.AppCompatActivity
 import com.facebook.*
 import com.facebook.login.LoginManager
 import com.facebook.login.LoginResult
+import com.facebook.login.widget.LoginButton
 import com.google.firebase.FirebaseNetworkException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthUserCollisionException
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException
+import com.sheyla.mymovies.R
 import com.sheyla.mymovies.databinding.ActivityFormLoginBinding
 import com.sheyla.mymovies.ui.profile.AddProfilesActivity
 import kotlinx.android.synthetic.main.activity_form_login.*
@@ -28,49 +30,7 @@ class FormLogin : AppCompatActivity() {
         binding = ActivityFormLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
-        btnLoginFacebook.setOnClickListener {
-
-            btnLoginFacebook.setPermissions(listOf(EMAIL))
-
-            callbackManager = CallbackManager.Factory.create()
-
-            LoginManager.getInstance()
-                .registerCallback(callbackManager, object : FacebookCallback<LoginResult> {
-
-                    override fun onSuccess(result: LoginResult?) {
-
-                        val graphRequest =
-                            GraphRequest.newMeRequest(result?.accessToken) { obj, response ->
-                                try {
-                                    if (obj!!.has("id")) {
-                                        Log.d("FACEBOOKDATA", obj.getString("name"))
-                                        Log.d("FACEBOOKDATA", obj.getString("email"))
-                                        Log.d("FACEBOOKDATA", obj.getString("picture"))
-                                        accessToken = result?.accessToken
-                                    }
-                                } catch (e: Exception) {
-
-                                }
-                            }
-
-                        val param = Bundle()
-                        param.putString("fields", "name, email, id, picture.type(large)")
-                        graphRequest.parameters = param
-                        graphRequest.executeAsync()
-                    }
-
-                    override fun onCancel() {
-                        Log.d("MainActivity", "Facebook onCancel.")
-
-                    }
-
-                    override fun onError(error: FacebookException) {
-                        Log.d("MainActivity", "Facebook onError.")
-
-                    }
-                })
-        }
+        configureButtonLoginFacebook()
 
         supportActionBar!!.hide()
         verifyUserConnected()
@@ -94,6 +54,35 @@ class FormLogin : AppCompatActivity() {
             }
         }
 
+    }
+
+    private fun configureButtonLoginFacebook() {
+        configureCallBackManager()
+
+
+        btnLoginFacebook.setPermissions("email")
+
+        LoginManager.getInstance()
+            .registerCallback(callbackManager, object : FacebookCallback<LoginResult> {
+
+                override fun onSuccess(result: LoginResult) {
+                    println("Logado")
+                }
+
+                override fun onCancel() {
+                    Log.d("MainActivity", "Facebook onCancel.")
+                    goToLogin()
+                }
+
+                override fun onError(error: FacebookException) {
+                    Log.d("MainActivity", "Facebook onError.")
+
+                }
+            })
+    }
+
+    fun configureCallBackManager() {
+        callbackManager = CallbackManager.Factory.create();
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -137,12 +126,12 @@ class FormLogin : AppCompatActivity() {
             goToAddProfile()
         }
     }
-//
-//    private fun goToLogin() {
-//        val intent = Intent(this, FormLogin::class.java)
-//        startActivity(intent)
-//        finish()
-//    }
+    //
+    private fun goToLogin() {
+        val intent = Intent(this, FormLogin::class.java)
+        startActivity(intent)
+        finish()
+    }
 
     private fun goToAddProfile() {
         val intent = Intent(this, AddProfilesActivity::class.java)
