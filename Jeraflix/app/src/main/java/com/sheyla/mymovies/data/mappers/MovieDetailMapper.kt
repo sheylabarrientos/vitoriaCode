@@ -7,7 +7,7 @@ class MovieDetailMapper {
     fun map(movieResponse: MovieInfoResponse): MovieDetail {
         val movieDetailed = MovieDetail(
             backdrop_path = movieResponse.backdrop_path,
-            genres = movieResponse.genres,
+            categories = movieResponse.categories,
             id = movieResponse.id,
             overview = movieResponse.overview,
             release_date = movieResponse.release_date,

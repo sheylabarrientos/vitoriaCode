@@ -1,9 +1,11 @@
 package com.sheyla.mymovies.ui.profile
 
 import android.os.Parcelable
+import android.text.style.ClickableSpan
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-data class UserProfile(val nome: String) : Parcelable {
-
-}
+class UserProfile(
+    var name: String? = null,
+    var btn: Boolean = false,
+): Parcelable

@@ -11,6 +11,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.sheyla.mymovies.R
 import com.sheyla.mymovies.domain.Movie
+import com.sheyla.mymovies.domain.User
 import com.sheyla.mymovies.onclick.MovieListener
 import com.sheyla.mymovies.ui.adpater.CategoryAdapter
 import com.sheyla.mymovies.ui.adpater.MoviesAdapter
@@ -61,7 +62,7 @@ class FavoriteMoviesFragment : Fragment(), MovieListener {
     }
 
     private fun observeGenres() {
-        viewModelFavorites.genreListLiveData.observe(viewLifecycleOwner, { result ->
+        viewModelFavorites.categoryListLiveData.observe(viewLifecycleOwner, { result ->
             result?.let {
                 categoryAdapter.dataset.addAll(it)
                 categoryAdapter.notifyDataSetChanged()
@@ -88,6 +89,7 @@ class FavoriteMoviesFragment : Fragment(), MovieListener {
         }
     }
 
+
 //    override fun onWatchedListClickedListener(movie: Movie, isChecked: Boolean) {
 //        if (!isChecked) {
 //            movie.watchedMovie = false
@@ -107,7 +109,7 @@ class FavoriteMoviesFragment : Fragment(), MovieListener {
             result?.let { movies ->
                 val movieList = mutableListOf<Movie>()
                 movies.forEach { movie ->
-                    if (movie.genreIds.containsAll(genreIds)) {
+                    if (movie.categoryIds.containsAll(genreIds)) {
                         movieList.add(movie)
                     }
                 }
@@ -123,11 +125,11 @@ class FavoriteMoviesFragment : Fragment(), MovieListener {
             movie.watchedMovie = true
             viewModelFavorites.addToWatchedList(movie)
             viewModelFavorites.removeFavoriteMovie(movie)
-            MoviesViewModel.writeFavoriteMovie(movie)
+//            MoviesViewModel.writeFavoriteMovie(movie)
         } else {
             movie.watchedMovie = false
             viewModelFavorites.deleteWatchedMovie(movie)
-            MoviesViewModel.deleteFavoriteMovie(movie)
+//            MoviesViewModel.deleteFavoriteMovie(movie)
         }
     }
 }

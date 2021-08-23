@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.sheyla.mymovies.R
 import com.sheyla.mymovies.domain.Movie
+import com.sheyla.mymovies.domain.User
 import com.sheyla.mymovies.ui.FailSystemActivity
 import com.sheyla.mymovies.onclick.MovieListener
 import com.sheyla.mymovies.ui.adpater.CategoryAdapter
@@ -90,7 +91,7 @@ class SearchMoviesFragment : Fragment(), MovieListener {
     }
 
     private fun observeGenres() {
-        moviesViewModel.genreListLiveData.observe(viewLifecycleOwner, { result ->
+        moviesViewModel.categoryListLiveData.observe(viewLifecycleOwner, { result ->
             result?.let {
                 categoryAdapter.dataset.addAll(it)
                 categoryAdapter.notifyDataSetChanged()
@@ -126,7 +127,7 @@ class SearchMoviesFragment : Fragment(), MovieListener {
             result?.let { movies ->
                 val movieList = mutableListOf<Movie>()
                 movies.forEach { movie ->
-                    if (movie.genreIds.containsAll(genreIds)) {
+                    if (movie.categoryIds.containsAll(genreIds)) {
                         movieList.add(movie)
                     }
                 }

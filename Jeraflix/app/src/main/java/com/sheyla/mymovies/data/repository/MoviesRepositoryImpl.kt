@@ -15,8 +15,31 @@ class MoviesRepositoryImpl : MoviesRepository {
     private val movieMapper = MovieMapper()
     private val genreMapper = CategoryMapper()
     private val castMapper = CastMapper()
+    private val userMapper = UserMapper()
     private val movieDetailMapper = MovieDetailMapper()
     private val certificationMapper = CertificationMapper()
+
+    override fun getRateWatchlist(): Single<List<AccountStates>> {
+        return moviesRemoteSource
+            .getRateWatchlist()
+            .flatMap { userResponseList ->
+                movieLocalDataSource
+                    .getProfileList()
+                    .map { profileList ->
+                        userResponseList.profileResults.forEach { userResponse ->
+                            val result = profileList.any { profile ->
+                                profile.id == userResponse.id
+                            }
+                            userResponse.favorite = result
+                        }
+                        userResponseList.profileResults
+                    }
+
+            }
+            .map {
+                userMapper.map(it)
+            }
+    }
 
     override fun getPopularMovies(): Single<List<Movie>> {
         return moviesRemoteSource
@@ -58,7 +81,7 @@ class MoviesRepositoryImpl : MoviesRepository {
             }
     }
 
-    override fun getAllGenres(): Single<List<Genre>> {
+    override fun getAllGenres(): Single<List<Category>> {
         return moviesRemoteSource
             .getAllGenres()
             .map {
@@ -66,9 +89,9 @@ class MoviesRepositoryImpl : MoviesRepository {
             }
     }
 
-    override fun getMoviesByGenre(genresId: String): Single<List<Movie>> {
+    override fun getMoviesByCategory(categoryId: String): Single<List<Movie>> {
         return moviesRemoteSource
-            .getMoviesByGenre(genresId)
+            .getMoviesByCategory(categoryId)
             .flatMap { movieResponseList ->
                 movieLocalDataSource
                     .getFavoriteMovies()
@@ -126,5 +149,4 @@ class MoviesRepositoryImpl : MoviesRepository {
                 movieMapper.map(it)
             }
     }
-
 }

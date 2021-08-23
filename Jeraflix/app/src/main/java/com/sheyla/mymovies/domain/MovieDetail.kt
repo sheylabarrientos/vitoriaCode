@@ -2,7 +2,7 @@ package com.sheyla.mymovies.domain
 
 class MovieDetail(
     val backdrop_path: String? = null,
-    val genres: List<Genre>,
+    val categories: List<Category>,
     val id: Int,
     val overview: String? = null,
     val release_date: String,
@@ -10,6 +10,7 @@ class MovieDetail(
     val vote_average: Float,
     val title: String,
     var isFavorite: Boolean = false,
+    var watchList: Boolean = false,
 ) {
     fun getRating(): String {
         val rating = (vote_average * 10).toInt()

@@ -136,6 +136,12 @@ class FormLogin : AppCompatActivity() {
             goToAddProfile()
         }
     }
+//
+//    private fun goToLogin() {
+//        val intent = Intent(this, FormLogin::class.java)
+//        startActivity(intent)
+//        finish()
+//    }
 
     private fun goToAddProfile() {
         val intent = Intent(this, AddProfilesActivity::class.java)

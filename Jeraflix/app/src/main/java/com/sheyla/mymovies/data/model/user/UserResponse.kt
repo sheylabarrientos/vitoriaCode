@@ -1,11 +1,13 @@
-package com.sheyla.mymovies.data.model
+package com.sheyla.mymovies.data.model.user
 
 import com.google.gson.annotations.SerializedName
+import com.sheyla.mymovies.domain.Rated
 
-class UserResponse {
+class UserResponse(
     @SerializedName("id")
     val id: Int,
-    @SerializedName("username")
-    val username: String? = null,
-    val adult: Boolean,
-}
+    var favorite: Boolean = false,
+    val rated: Rated,
+    @SerializedName("watchlist")
+    var watchlist: Boolean
+)

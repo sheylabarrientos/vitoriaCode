@@ -14,7 +14,7 @@ class SecondActivity : AppCompatActivity() {
     private lateinit var listaContatos: TextView
     private lateinit var contatosListaRecyclerView: RecyclerView
     private lateinit var adapter: ContatosAdapter
-    //private var contatos = arrayListOf<Pessoa>()
+    private var contatos = arrayListOf<Pessoa>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,13 +24,13 @@ class SecondActivity : AppCompatActivity() {
 
         val extras = intent.extras
         val contatos = extras?.getParcelableArrayList<Pessoa>("CONTATOS")
-
+        contatos?.let { it1 -> exibirLista(it1) }
 
         btnPesquisar.setOnClickListener {
             //pesquisarContato()
         }
         btnExibirTodos.setOnClickListener {
-            contatos?.let { it1 -> exibirLista(it1) }
+
         }
 
     }
@@ -77,4 +77,8 @@ class SecondActivity : AppCompatActivity() {
 //        }
 //
 //    }
+
+    companion object {
+        var contatosList = mutableListOf<Pessoa>()
+    }
 }

@@ -1,13 +1,13 @@
 package com.sheyla.mymovies.data.model.movies
 
 import com.google.gson.annotations.SerializedName
-import com.sheyla.mymovies.domain.Genre
+import com.sheyla.mymovies.domain.Category
 
 class MovieInfoResponse(
     @SerializedName("backdrop_path")
     val backdrop_path: String? = null,
     @SerializedName("genres")
-    val genres: List<Genre>,
+    val categories: List<Category>,
     @SerializedName("id")
     val id: Int,
     @SerializedName("overview")

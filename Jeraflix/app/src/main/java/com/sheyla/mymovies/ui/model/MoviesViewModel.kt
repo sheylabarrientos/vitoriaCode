@@ -8,10 +8,9 @@ import androidx.lifecycle.ViewModel
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
-import com.sheyla.mymovies.domain.FavoriteMovie
-import com.sheyla.mymovies.domain.Genre
-import com.sheyla.mymovies.domain.Movie
+import com.sheyla.mymovies.domain.*
 import com.sheyla.mymovies.domain.usecase.*
+import com.sheyla.mymovies.ui.profile.UserProfile
 import com.sheyla.mymoviesdomain.usecase.GetCategoriesUseCase
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
@@ -23,16 +22,21 @@ class MoviesViewModel() : ViewModel() {
 
     private val getAllMoviesUseCase = GetAllMoviesUseCase()
     private val getCategoriesUseCase = GetCategoriesUseCase()
+    private val getProfileUseCase = GetProfileUseCase()
     private val getMoviesByGenreUseCase = GetMoviesByGenreUseCase()
     private val favoriteMoviesUseCase = FavoriteMoviesUseCase()
     private val searchForMoviesUseCase = SearchForMovieUseCase()
     private val watchedMovieUseCase = WatchedMoviesUseCase()
+    private val addProfileUseCase = ProfileUseCase()
 
     private val _moviesLiveData = MutableLiveData<List<Movie>>(mutableListOf())
     val movieListLiveData : LiveData<List<Movie>> = _moviesLiveData
 
-    private val _categoryLiveData = MutableLiveData<List<Genre>>()
-    val categoryListLiveData : LiveData<List<Genre>> = _categoryLiveData
+    private val _categoryLiveData = MutableLiveData<List<Category>>()
+    val categoryListLiveData : LiveData<List<Category>> = _categoryLiveData
+
+    private val _getProfileLiveData = MutableLiveData<List<AccountStates>>(mutableListOf())
+    val getProfileListLiveData : LiveData<List<AccountStates>> = _getProfileLiveData
 
     private val _favoriteMoviesLiveData = MutableLiveData<List<Movie>>(mutableListOf())
     val favoriteMoviesLiveData : LiveData<List<Movie>> = _favoriteMoviesLiveData
@@ -46,7 +50,24 @@ class MoviesViewModel() : ViewModel() {
     private val _viewStateLiveData = MutableLiveData<ViewState>()
     val viewStateLiveData : LiveData<ViewState> = _viewStateLiveData
 
+    private val _viewProfileLiveData = MutableLiveData<List<UserProfile>>(mutableListOf())
+    val viewStateProfile: MutableLiveData<List<UserProfile>> = _viewProfileLiveData
+
     private val disposable = CompositeDisposable()
+
+    fun getProfiles() {
+        addProfileUseCase.getProfiles()
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(
+                {
+//                    _viewProfileLiveData.value = it
+                },
+                {
+                    print(it.message)
+                }
+            ).handleDisposable()
+    }
 
     fun getPopularMovies(){
         getAllMoviesUseCase.execute()
@@ -63,8 +84,23 @@ class MoviesViewModel() : ViewModel() {
             ).handleDisposable()
     }
 
-    fun getMoviesByCategory(categoryId: List<Int>){
-        getMoviesByGenreUseCase.executeMoviesByGenre(categoryId.joinToString(","))
+    fun getProfileId(userId: Int) {
+        getProfileUseCase.executeProfile()
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe (
+                {result ->
+                    _getProfileLiveData.value = result
+                },
+                {
+                    Log.e("ErroReq", "erro: " + it.cause)
+                    _viewStateLiveData.value = ViewState.GeneralError
+                }
+            ).handleDisposable()
+    }
+
+    fun getMoviesByCategory(categoryIds: List<Int>){
+        getMoviesByGenreUseCase.executeMoviesByCategory(categoryIds.joinToString(","))
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe (

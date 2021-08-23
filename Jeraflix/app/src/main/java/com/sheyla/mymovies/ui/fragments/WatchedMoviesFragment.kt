@@ -11,6 +11,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.sheyla.mymovies.R
 import com.sheyla.mymovies.domain.Movie
+import com.sheyla.mymovies.domain.User
 import com.sheyla.mymovies.onclick.MovieListener
 import com.sheyla.mymovies.ui.adpater.CategoryAdapter
 import com.sheyla.mymovies.ui.adpater.MoviesAdapter
@@ -62,7 +63,7 @@ class WatchedMoviesFragment : Fragment(), MovieListener {
     }
 
     private fun observeGenres() {
-        viewModelFavorites.genreListLiveData.observe(viewLifecycleOwner, { result ->
+        viewModelFavorites.categoryListLiveData.observe(viewLifecycleOwner, { result ->
             result?.let {
                 categoryAdapter.dataset.addAll(it)
                 categoryAdapter.notifyDataSetChanged()
@@ -96,16 +97,16 @@ class WatchedMoviesFragment : Fragment(), MovieListener {
         if (!isChecked) {
             movie.watchedMovie = false
             viewModelFavorites.deleteWatchedMovie(movie)
-            MoviesViewModel.deleteFavoriteMovie(movie)
+//            MoviesViewModel.deleteFavoriteMovie(movie)
         }
     }
 
-//onFavoriteClickListener
+    //onFavoriteClickListener
     override fun onWatchListClickedListener(movie: Movie, isChecked: Boolean) {
-        if (!isChecked) {
+        if (isChecked) {
             movie.inWatchList = false
             viewModelFavorites.removeFavoriteMovie(movie)
-            MoviesViewModel.deleteFavoriteMovie(movie)
+//            MoviesViewModel.deleteFavoriteMovie(movie)
         }
     }
 
@@ -120,7 +121,7 @@ class WatchedMoviesFragment : Fragment(), MovieListener {
             result?.let { movies ->
                 val movieList = mutableListOf<Movie>()
                 movies.forEach { movie ->
-                    if (movie.genreIds.containsAll(genreIds)) {
+                    if (movie.categoryIds.containsAll(genreIds)) {
                         movieList.add(movie)
                     }
                 }

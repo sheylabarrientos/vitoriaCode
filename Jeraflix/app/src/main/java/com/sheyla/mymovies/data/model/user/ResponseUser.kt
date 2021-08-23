@@ -1,8 +1,8 @@
-package com.sheyla.mymovies.data.model
+package com.sheyla.mymovies.data.model.user
 
 import com.google.gson.annotations.SerializedName
 
-data class ResponseUser {
+data class ResponseUser (
     @SerializedName("results")
     val profileResults: List<UserResponse>
-}
+)

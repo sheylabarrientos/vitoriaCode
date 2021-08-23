@@ -14,12 +14,8 @@ class ProfilesAdapter(var dataSet: List<UserProfile>) :
     //Classe de Viewholder: view de atributos xml <> código:
     // referência entre os componentes e o código (ex. findViewById)
     class ProfilesViewHolder(view: View) : RecyclerView.ViewHolder(view) { // qual item vou reciclar
-        val nome: TextView = view.findViewById(R.id.item_name)
-        //val btnExcluir = view.findViewById<TextView>(R.id.btnExcluir)
+        val itemProfile: TextView? = view.findViewById(R.id.item_name)
 
-        fun bindProfile(pessoa: UserProfile){
-            nome.text = pessoa.nome
-        }
     }
 
 //    interface OnItemClickListener {
@@ -30,15 +26,13 @@ class ProfilesAdapter(var dataSet: List<UserProfile>) :
     //Ciclo de vida vulgo método que cria o viewholder ## INFLA SUA APLICAÇÃO
     // parent = componente mãe que vai chamar esse meu adapter
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProfilesViewHolder {
-        val instanciaView = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_profile, parent, false) // infla essa view na parent
+        val instanciaView = LayoutInflater.from(parent.context).inflate(R.layout.item_profile, parent, false) // infla essa view na parent
         return ProfilesViewHolder(instanciaView)
     }
-
     // Vìnculo entre dataset x item (layout)
     // Substituir os itens do layout pelos itens do meu DATASET
     override fun onBindViewHolder(holder: ProfilesViewHolder, position: Int) {
-        holder.bindProfile(dataSet[position])
+            holder.itemProfile?.text = dataSet[position].name
 //        holder.nome.text = dataSet[position].nome
 //        holder.telefone.text = dataSet[position].telefone
 //        holder.descricao.text = dataSet[position].referencia

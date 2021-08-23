@@ -1,5 +1,6 @@
 package com.sheyla.mymovies.data.localsource
 
+import com.sheyla.mymovies.data.model.user.UserResponse
 import com.sheyla.mymoviesdata.model.movies.MovieResponse
 import io.reactivex.Single
 import java.lang.IllegalStateException
@@ -8,6 +9,38 @@ object MovieLocalDataSourceImpl : MovieLocalDataSource {
 
     private val watchedMovie = mutableListOf<MovieResponse>()
     private val favoriteMoviesList = mutableListOf<MovieResponse>()
+    private val profileList = mutableListOf<UserResponse>()
+
+    override fun addToProfileList(userResponse: UserResponse): Single<List<UserResponse>> {
+        return Single.create { emitter ->
+            val result = profileList.add(userResponse)
+            if (result) {
+                emitter.onSuccess(profileList)
+            } else {
+                emitter.onError(IllegalStateException())
+            }
+        }
+    }
+
+    override fun removedProfiledList(userResponse: UserResponse): Single<List<UserResponse>> {
+        return Single.create { emitter ->
+            val profileToRemove = profileList.find {
+                it.id == userResponse.id
+            }
+            val result = profileList.remove(profileToRemove)
+            if (result) {
+                emitter.onSuccess(profileList)
+            } else {
+                emitter.onError(IllegalStateException())
+            }
+        }
+    }
+
+    override fun getProfileList(): Single<List<UserResponse>> {
+        return Single.create { emitter ->
+            emitter.onSuccess(profileList)
+        }
+    }
 
     override fun addToWatchedList(movie: MovieResponse): Single<List<MovieResponse>> {
         return Single.create { emitter ->

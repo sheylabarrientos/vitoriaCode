@@ -1,10 +1,12 @@
 package com.sheyla.mymovies.data.remotesource
 
 import android.net.Uri
+import com.sheyla.mymovies.data.model.user.ResponseUser
 import com.sheyla.mymovies.data.model.categories.ResponseCategories
 import com.sheyla.mymovies.data.model.certification.ResponseCertification
 import com.sheyla.mymovies.data.model.movies.MovieInfoResponse
 import com.sheyla.mymovies.data.model.movies.ResponseMovies
+import com.sheyla.mymovies.data.model.user.UserResponse
 import com.sheyla.mymoviesdata.model.cast.ResponseCast
 import io.reactivex.Single
 import retrofit2.http.GET
@@ -31,5 +33,11 @@ interface MoviesRemoteSource {
     fun getCertification(@Path("movie_id") movieId: Int): Single<ResponseCertification>
 
     @GET("discover/movie")
-    fun getMoviesByGenre(@Query("with_genres", encoded = true) genresId: String): Single<ResponseMovies>
+    fun getMoviesByCategory(@Query("with_genres", encoded = true) categoriesId: String): Single<ResponseMovies>
+
+    @GET("movie/{movie_id}/account_states")
+    fun getRateWatchlist(): Single<ResponseUser>
+
+//    @GET("account/{session_id}")
+//    fun getProfile(): Single<ResponseUser>
 }

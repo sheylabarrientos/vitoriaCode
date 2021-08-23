@@ -5,6 +5,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.sheyla.minhaagenda.SecondActivity.Companion.contatosList
+import kotlinx.android.synthetic.main.item_contato.view.*
 
 //Classe de Adapter: vínculo entre dataset e viewholder (item) // Lista de Filmes TMDB
 class ContatosAdapter(var dataSet: List<Pessoa>) :
@@ -17,9 +19,9 @@ class ContatosAdapter(var dataSet: List<Pessoa>) :
         val nome = view.findViewById<TextView>(R.id.itemNome)
         val telefone = view.findViewById<TextView>(R.id.itemTelefone)
         val descricao = view.findViewById<TextView>(R.id.itemReferencia)
-        //val btnExcluir = view.findViewById<TextView>(R.id.btnExcluir)
+        val btnExcluir = view.findViewById<TextView>(R.id.btnExcluir)
 
-        fun bindContato(pessoa: Pessoa){
+        fun bindContato(pessoa: Pessoa) {
             nome.text = pessoa.nome
             telefone.text = pessoa.telefone
             descricao.text = pessoa.referencia
@@ -50,7 +52,12 @@ class ContatosAdapter(var dataSet: List<Pessoa>) :
 ////            listener?.let{
 ////                it.setOnDeleteListener()
 ////            }
+        holder.itemView.btnExcluir.setOnClickListener {
+            contatosList.removeAt(position)
+            notifyItemRemoved(position)
+            notifyDataSetChanged()
         }
+    }
 
     // Tamanho do DATASET / Tamnho dos itens da lista
     override fun getItemCount(): Int = dataSet.size

@@ -1,5 +1,6 @@
 package com.sheyla.mymovies.ui.profile
 
+
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -25,8 +26,9 @@ class AddProfilesActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityAddProfilesBinding
     private val add = Add()
+//    var user = arrayListOf<UserProfile>() //lista de perfis
+    var profiles = arrayListOf<UserProfile>()
 
-    var user = arrayListOf<UserProfile>() //lista de perfis
     lateinit var usersSubscribes: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,14 +39,39 @@ class AddProfilesActivity : AppCompatActivity() {
         bindViews()
 
         binding.btnAddProfile.setOnClickListener {
-            if (name.text.isEmpty()) {
-                name.error = ""
-                Toast.makeText(this, "Digite um nome", Toast.LENGTH_SHORT).show()
-            } else {
-                goToProfiles()
-            }
+            irParaProfileActivity()
         }
     }
+
+    private fun irParaProfileActivity() {
+        salvarContato() //função salvar contato
+        val intent = Intent(this, ProfilesActivity::class.java)
+        intent.putParcelableArrayListExtra("PROFILES", profiles)
+        startActivity(intent)
+    }
+
+    private fun salvarContato(): List<UserProfile> {
+        val messageError: String = name.text.toString()
+        val add = add.subscribeProfile()
+        //check if the EditText have values or not
+        if (add != -1) {
+            if (messageError.trim().isEmpty()) {
+                name.error = "Digite um nome"
+            } else {
+                val nomeDigitado = name.text.toString()
+                Toast.makeText(
+                    applicationContext,
+                    "Perfil criado com sucesso!",
+                    Toast.LENGTH_SHORT
+                ).show()
+
+                // After successful login u will move on next page/ activity
+                profiles.add(UserProfile(nomeDigitado))
+            }}
+            return profiles
+        }
+
+
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         val inflate = menuInflater
@@ -62,28 +89,6 @@ class AddProfilesActivity : AppCompatActivity() {
         }
 
         return super.onOptionsItemSelected(item)
-    }
-
-    private fun goToProfiles() {
-        addProfile() //função salvar perfil
-        val intent = Intent(this, ListOfMovies::class.java)
-        intent.putParcelableArrayListExtra("PROFILES", user)
-        startActivity(intent)
-    }
-
-    private fun addProfile(): List<UserProfile> {
-        val add = add.subscribeProfile()
-
-        if (add != -1) {
-            val nomeDigitado = name.text.toString()
-            user.add(UserProfile(nomeDigitado))
-            if (name.text.isEmpty()) {
-                name.error = "Digite um nome."
-            }
-        } else {
-            Toast.makeText(this, "Você criou o número máximo da perfis.", Toast.LENGTH_SHORT).show()
-        }
-        return user
     }
 
     private fun bindViews() {

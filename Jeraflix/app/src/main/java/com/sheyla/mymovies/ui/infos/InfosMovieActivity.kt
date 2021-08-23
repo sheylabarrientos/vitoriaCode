@@ -83,7 +83,7 @@ class InfosMovieActivity : AppCompatActivity() {
     }
 
     private fun showMovie(movie: MovieDetail) {
-        genresAdapter = InfosMoviesCategoryAdapter(movie.genres)
+        genresAdapter = InfosMoviesCategoryAdapter(movie.categories)
         genresRv.adapter = genresAdapter
 
         castAdapter = CastAdapter(this)

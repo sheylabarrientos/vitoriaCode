@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.textview.MaterialTextView
 import com.sheyla.mymovies.R
 import com.sheyla.mymovies.domain.Movie
+import com.sheyla.mymovies.domain.User
 import com.sheyla.mymovies.ui.FailSystemActivity
 import com.sheyla.mymovies.onclick.MovieListener
 import com.sheyla.mymovies.ui.adpater.CategoryAdapter
@@ -131,23 +132,24 @@ class AllMoviesFragment : Fragment(), MovieListener {
         if (isChecked) {
             movie.inWatchList = true
             moviesViewModel.addToFavoriteMovie(movie)
-            MoviesViewModel.writeFavoriteMovie(movie)
+            moviesViewModel.deleteWatchedMovie(movie)
+//            MoviesViewModel.writeFavoriteMovie(movie)
         } else {
             movie.inWatchList = false
             moviesViewModel.removeFavoriteMovie(movie)
-            MoviesViewModel.deleteFavoriteMovie(movie)
+//            MoviesViewModel.deleteFavoriteMovie(movie)
         }
     }
 
     override fun onWatchedListClickedListener(movie: Movie, isChecked: Boolean) {
         if (isChecked) {
             movie.watchedMovie = true
-            moviesViewModel.addToWatchedList(movie)
-            MoviesViewModel.writeFavoriteMovie(movie)
+            moviesViewModel.removeFavoriteMovie(movie)
+//            MoviesViewModel.writeFavoriteMovie(movie)
         } else {
             movie.watchedMovie = false
             moviesViewModel.deleteWatchedMovie(movie)
-            MoviesViewModel.deleteFavoriteMovie(movie)
+//            MoviesViewModel.deleteFavoriteMovie(movie)
         }
     }
 }

@@ -1,6 +1,6 @@
 package com.sheyla.mymovies.domain
 
-data class AccoutStates(
+data class AccountStates(
     val favorite: Boolean,
     val id: Int,
     val rated: Rated,

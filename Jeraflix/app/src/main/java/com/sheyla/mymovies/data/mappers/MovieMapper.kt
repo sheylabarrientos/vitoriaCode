@@ -13,7 +13,7 @@ class MovieMapper {
                 id = it.id,
                 title = it.title,
                 rating = it.rating,
-                genreIds = it.genreIds,
+                categoryIds = it.genreIds,
                 inWatchList = it.isFavorite,
                 watchedMovie = it.watchedMovie,
             )

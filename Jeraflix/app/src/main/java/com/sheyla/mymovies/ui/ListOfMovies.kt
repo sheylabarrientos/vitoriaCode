@@ -175,4 +175,8 @@ private fun bindViews(){
                 }).executeAsync()
             }
     }
+
+    companion object {
+        const val LIST_ID = "LIST_ID"
+    }
 }
