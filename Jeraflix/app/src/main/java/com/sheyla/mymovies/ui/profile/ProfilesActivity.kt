@@ -7,14 +7,11 @@ import android.os.Bundle
 import android.provider.MediaStore
 import android.view.MenuItem
 import android.widget.Toast
-import com.facebook.AccessToken
-import com.facebook.GraphRequest
-import com.facebook.HttpMethod
-import com.facebook.login.LoginManager
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import com.sheyla.mymovies.R
+import com.sheyla.mymovies.databinding.ActivityProfilesBinding
 import com.sheyla.mymovies.domain.Profiles
 import com.sheyla.mymovies.ui.login.FormLogin
 import kotlinx.android.synthetic.main.activity_profiles.*
@@ -22,11 +19,15 @@ import java.util.*
 
 class ProfilesActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityProfilesBinding
+
     private var SelecionarUri: Uri? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_profiles)
+        binding = ActivityProfilesBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
 
         bt_selecionar_foto.setOnClickListener {
 
@@ -116,14 +117,5 @@ class ProfilesActivity : AppCompatActivity() {
         val intent = Intent(this, FormLogin::class.java)
         startActivity(intent)
         finish()
-
-        if (AccessToken.getCurrentAccessToken() != null) {
-            GraphRequest(AccessToken.getCurrentAccessToken(), "/me/permissions/", null, HttpMethod.DELETE, GraphRequest.Callback {
-                AccessToken.setCurrentAccessToken(null)
-                LoginManager.getInstance().logOut()
-
-                finish()
-            }).executeAsync()
-        }
     }
 }

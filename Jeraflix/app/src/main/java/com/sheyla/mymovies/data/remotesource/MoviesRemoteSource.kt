@@ -37,7 +37,4 @@ interface MoviesRemoteSource {
 
     @GET("movie/{movie_id}/account_states")
     fun getRateWatchlist(): Single<ResponseUser>
-
-//    @GET("account/{session_id}")
-//    fun getProfile(): Single<ResponseUser>
 }

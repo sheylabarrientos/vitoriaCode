@@ -155,11 +155,9 @@ class SearchMoviesFragment : Fragment(), MovieListener {
             movie.watchedMovie = true
             moviesViewModel.addToWatchedList(movie)
             moviesViewModel.addToFavoriteMovie(movie)
-//            MoviesViewModel.writeFavoriteMovie(movie)
         } else {
             movie.watchedMovie = false
             moviesViewModel.removeFavoriteMovie(movie)
-//            MoviesViewModel.deleteFavoriteMovie(movie)
         }
     }
 

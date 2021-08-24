@@ -105,11 +105,6 @@ class InfosMovieActivity : AppCompatActivity() {
         titleMovie.text = movie.title
         percentLikes.text = movie.getRating()
 
-        if (movie.isFavorite) {
-            favoriteHeartButton.setImageResource(R.drawable.ic_baseline_favorite_24)
-        } else {
-            favoriteHeartButton.setImageResource(R.drawable.ic_baseline_favorite_border_24)
-        }
         yearMovie.text = movie.getReleaseYear()
 
         viewModel.getCertification(movie.id)

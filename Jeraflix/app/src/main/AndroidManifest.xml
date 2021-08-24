@@ -14,7 +14,6 @@
         android:theme="@style/Theme.MyMovies">
         <activity android:name=".ui.profile.SelectProfilesActivity"></activity>
         <activity android:name=".ui.profile.ProfilesActivity" />
-        <activity android:name=".ui.profile.AddProfilesActivity" />
 
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"

@@ -49,7 +49,6 @@ class ListOfMoviesActivity : AppCompatActivity() {
         binding = ActivityLisfOfMoviesBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-//        MoviesViewModel.readDataBase()
         bindViews()
 
     }

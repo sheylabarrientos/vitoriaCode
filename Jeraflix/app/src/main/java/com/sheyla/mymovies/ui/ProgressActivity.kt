@@ -9,7 +9,6 @@ import com.facebook.FacebookSdk
 import com.facebook.appevents.AppEventsLogger
 import com.sheyla.mymovies.R
 import com.sheyla.mymovies.ui.login.FormLogin
-import com.sheyla.mymovies.ui.model.MoviesViewModel
 
 class ProgressActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,7 +18,6 @@ class ProgressActivity : AppCompatActivity() {
         FacebookSdk.sdkInitialize(applicationContext)
         AppEventsLogger.activateApp(this)
 
-//        MoviesViewModel.readDataBase()
         supportActionBar!!.hide()
 
         Handler(Looper.getMainLooper()).postDelayed({

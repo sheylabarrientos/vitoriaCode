@@ -97,7 +97,7 @@ class FormLogin : AppCompatActivity() {
                     goToAddProfile()
                 }
             }.addOnFailureListener {
-                var erro = it
+                val erro = it
 
                 when {
                     erro is FirebaseAuthWeakPasswordException -> message_error.setText("Digite uma senha com no mínimo 6 caracteres")
@@ -115,7 +115,7 @@ class FormLogin : AppCompatActivity() {
             goToAddProfile()
         }
     }
-    //
+
     private fun goToLogin() {
         val intent = Intent(this, FormLogin::class.java)
         startActivity(intent)
