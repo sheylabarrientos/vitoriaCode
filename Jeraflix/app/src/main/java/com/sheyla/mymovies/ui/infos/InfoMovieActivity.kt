@@ -18,9 +18,9 @@ import com.sheyla.mymovies.ui.adpater.InfosMoviesCategoryAdapter
 import com.sheyla.mymovies.ui.model.ViewState
 import kotlinx.android.synthetic.main.activity_detail_movie.*
 
-class InfosMovieActivity : AppCompatActivity() {
+class InfoMovieActivity : AppCompatActivity() {
 
-    private val viewModel = InfosMoviesViewModel()
+    private val viewModel = InfoMoviesViewModel()
     private lateinit var movieLength: TextView
     private lateinit var infoPage: TextView
     private lateinit var genresRv: RecyclerView
@@ -105,6 +105,11 @@ class InfosMovieActivity : AppCompatActivity() {
         titleMovie.text = movie.title
         percentLikes.text = movie.getRating()
 
+        if (movie.isFavorite) {
+            favoriteHeartButton.setImageResource(R.drawable.ic_baseline_favorite_24)
+        } else {
+            favoriteHeartButton.setImageResource(R.drawable.ic_baseline_favorite_border_24)
+        }
         yearMovie.text = movie.getReleaseYear()
 
         viewModel.getCertification(movie.id)

@@ -14,7 +14,7 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 
-class InfosMoviesViewModel : ViewModel() {
+class InfoMoviesViewModel : ViewModel() {
 
     private val getMovieDetailsUseCase = GetMovieInfosUseCase()
 

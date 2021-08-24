@@ -9,6 +9,7 @@ import com.facebook.*
 import com.facebook.login.LoginResult
 import com.google.firebase.FirebaseNetworkException
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseAuthEmailException
 import com.google.firebase.auth.FirebaseAuthUserCollisionException
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException
 import com.sheyla.mymovies.databinding.ActivityFormLoginBinding
@@ -100,6 +101,7 @@ class FormLogin : AppCompatActivity() {
                 val erro = it
 
                 when {
+                    erro is FirebaseAuthEmailException -> message_error.setText("Digite um e-mail válido.")
                     erro is FirebaseAuthWeakPasswordException -> message_error.setText("Digite uma senha com no mínimo 6 caracteres")
                     erro is FirebaseAuthUserCollisionException -> message_error.setText("Esta conta já foi cadastrada")
                     erro is FirebaseNetworkException -> message_error.setText("Sem conexão com a internet")

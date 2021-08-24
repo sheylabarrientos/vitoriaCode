@@ -51,7 +51,7 @@
             android:name=".ui.FailSystemActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.infos.InfosMovieActivity"
+            android:name=".ui.infos.InfoMovieActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.ProgressActivity"

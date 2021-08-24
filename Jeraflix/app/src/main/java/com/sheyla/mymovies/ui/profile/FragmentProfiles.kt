@@ -26,7 +26,6 @@ class FragmentProfiles : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_profiles, container, false)
     }
 
@@ -48,14 +47,14 @@ class FragmentProfiles : Fragment() {
         override fun bind(viewHolder: ViewHolder, position: Int) {
 
             viewHolder.itemView.name_profile_database.text = adProfiles.nome
+            //ERROR
 //            Picasso.get().load(adProfiles.uid).into(viewHolder.itemView.imageProfile)
 
             name_profile_database?.setOnClickListener {
                 val intent = Intent(it.context, ListOfMoviesActivity::class.java)
-                intent.putExtra("profiles", adProfiles)
+                intent.putExtra("Profiles", adProfiles)
                 it.context.startActivity(intent)
             }
-
         }
     }
 

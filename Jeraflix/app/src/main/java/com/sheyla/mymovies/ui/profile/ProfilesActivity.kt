@@ -30,7 +30,6 @@ class ProfilesActivity : AppCompatActivity() {
 
 
         bt_selecionar_foto.setOnClickListener {
-
             SelecionarFotoDaGaleria()
         }
 
@@ -63,7 +62,7 @@ class ProfilesActivity : AppCompatActivity() {
 
         val nomeUsuario = UUID.randomUUID().toString()
         val referencia = FirebaseStorage.getInstance().getReference(
-            "/profiles/${nomeUsuario}"
+            "/imagens/${nomeUsuario}"
         )
 
         SelecionarUri?.let {
@@ -73,27 +72,27 @@ class ProfilesActivity : AppCompatActivity() {
                     referencia.downloadUrl.addOnSuccessListener {
 
                         val url = it.toString()
-
                         val name = name_profile_filho.text.toString()
                         val uid = FirebaseAuth.getInstance().uid
 
-                        val Profiles = Profiles(name, url)
-
-                        FirebaseFirestore.getInstance().collection("Profiles")
-                            .add(Profiles)
-                            .addOnSuccessListener {
-                                Toast.makeText(
-                                    this,
-                                    "Usuário cadastrado com sucesso!",
-                                    Toast.LENGTH_SHORT
-                                ).show()
-                            }.addOnFailureListener {
-                                Toast.makeText(this, "Tente novamente!", Toast.LENGTH_SHORT).show()
-                            }
+                            val Profiles = Profiles(name, url)
+                            FirebaseFirestore.getInstance().collection("Profiles")
+                                .add(Profiles)
+                                .addOnSuccessListener {
+                                    Toast.makeText(
+                                        this,
+                                        "Usuário cadastrado com sucesso!",
+                                        Toast.LENGTH_SHORT
+                                    ).show()
+                                }.addOnFailureListener {
+                                    Toast.makeText(this, "Tente novamente!", Toast.LENGTH_SHORT)
+                                        .show()
+                                }
+                        }
                     }
                 }
         }
-    }
+
 
     private fun goToProfiles() {
         val intent = Intent(this, SelectProfilesActivity::class.java)

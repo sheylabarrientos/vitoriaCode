@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/background_app"
-        tools:context=".ui.infos.InfosMovieActivity">
+        tools:context=".ui.infos.InfoMovieActivity">
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/cover_movie"
@@ -53,6 +53,20 @@
             android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
+
+        <ImageView
+            android:id="@+id/favorite_button_detail_movie"
+            android:layout_width="@dimen/margin_40"
+            android:layout_height="@dimen/margin_32"
+            android:layout_marginEnd="@dimen/margin_32"
+            android:background="@drawable/heart_button"
+            android:checked="false"
+            android:contentDescription="@string/app_name"
+            android:text=""
+            android:textOff=""
+            android:textOn=""
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
 
 
