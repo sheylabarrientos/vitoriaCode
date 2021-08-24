@@ -12,8 +12,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyMovies">
+        <activity android:name=".ui.profile.SelectProfilesActivity"></activity>
         <activity android:name=".ui.profile.ProfilesActivity" />
         <activity android:name=".ui.profile.AddProfilesActivity" />
+
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />

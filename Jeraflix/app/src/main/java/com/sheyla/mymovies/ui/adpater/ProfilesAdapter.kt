@@ -15,7 +15,7 @@ class ProfilesAdapter(var dataSet: List<UserProfile>) :
     //Classe de Viewholder: view de atributos xml <> código:
     // referência entre os componentes e o código (ex. findViewById)
     class ProfilesViewHolder(view: View) : RecyclerView.ViewHolder(view) { // qual item vou reciclar
-        val itemProfile: TextView? = view.findViewById(R.id.item_name)
+//        val itemProfile: TextView? = view.findViewById(R.id.item_name)
 
     }
 
@@ -33,7 +33,7 @@ class ProfilesAdapter(var dataSet: List<UserProfile>) :
     // Vìnculo entre dataset x item (layout)
     // Substituir os itens do layout pelos itens do meu DATASET
     override fun onBindViewHolder(holder: ProfilesViewHolder, position: Int) {
-            holder.itemProfile?.text = dataSet[position].name
+//            holder.itemProfile?.text = dataSet[position].name
 //        holder.nome.text = dataSet[position].nome
 //        holder.telefone.text = dataSet[position].telefone
 //        holder.descricao.text = dataSet[position].referencia

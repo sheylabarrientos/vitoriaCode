@@ -9,7 +9,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
 
         <EditText
@@ -30,23 +30,49 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerViewProfiles"
-            android:layout_width="wrap_content"
-            android:layout_height="150dp"
+        <!--        <androidx.recyclerview.widget.RecyclerView-->
+<!--            android:id="@+id/recyclerViewProfiles"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="150dp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/name_profile_filho"-->
+<!--            tools:listitem="@layout/item_profile" />-->
+
+<!--        <androidx.recyclerview.widget.RecyclerView-->
+<!--            android:id="@+id/rcvProfiles"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="@+id/linearLayout"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/name_profile_filho"-->
+<!--            tools:listitem="@layout/item_profile_filho" />-->
+
+        <ImageView
+            android:id="@+id/selectImageProfile"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="@dimen/margin_24"
+            android:background="@drawable/ic_baseline_account_box_24"
+            android:backgroundTint="@color/greenPrimaryColor"
+            android:textColorHint="@color/greenPrimaryColor"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/name_profile_filho"
-            tools:listitem="@layout/item_profile" />
+            app:layout_constraintTop_toBottomOf="@+id/name_profile_filho" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rcvProfiles"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/linearLayout"
-            app:layout_constraintTop_toBottomOf="@+id/recyclerViewProfiles"
-            tools:listitem="@layout/item_profile_filho" />
+        <Button
+            android:id="@+id/bt_selecionar_foto"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@color/transparentColor"
+            android:text="Button"
+            app:layout_constraintBottom_toBottomOf="@+id/selectImageProfile"
+            app:layout_constraintEnd_toEndOf="@+id/selectImageProfile"
+            app:layout_constraintStart_toStartOf="@+id/selectImageProfile"
+            app:layout_constraintTop_toTopOf="@+id/selectImageProfile" />
+
+
+
 
         <LinearLayout
             android:id="@+id/linearLayout"

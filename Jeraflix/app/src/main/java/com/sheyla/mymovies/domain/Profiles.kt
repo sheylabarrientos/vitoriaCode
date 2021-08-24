@@ -6,4 +6,5 @@ import kotlinx.android.parcel.Parcelize
 @Parcelize
 data class Profiles (
     val nome: String = " ",
-    val uid: String = " " ) : Parcelable
+    val uid: String = " ",
+    val url: String = " " ) : Parcelable

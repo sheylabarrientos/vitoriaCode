@@ -6,29 +6,25 @@ import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.facebook.*
-import com.facebook.login.LoginManager
 import com.facebook.login.LoginResult
-import com.facebook.login.widget.LoginButton
 import com.google.firebase.FirebaseNetworkException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthUserCollisionException
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException
-import com.sheyla.mymovies.R
 import com.sheyla.mymovies.databinding.ActivityFormLoginBinding
-import com.sheyla.mymovies.ui.profile.AddProfilesActivity
-import kotlinx.android.synthetic.main.activity_form_login.*
+import com.sheyla.mymovies.ui.profile.ProfilesActivity
 
 class FormLogin : AppCompatActivity() {
 
     private lateinit var binding: ActivityFormLoginBinding
-    private var accessToken: AccessToken? = null
     private var callbackManager: CallbackManager? = null
-    private val EMAIL = "email"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityFormLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        AccessToken.expireCurrentAccessToken()
 
         configureButtonLoginFacebook()
 
@@ -59,26 +55,24 @@ class FormLogin : AppCompatActivity() {
     private fun configureButtonLoginFacebook() {
         configureCallBackManager()
 
+        binding.btnLoginFacebook.setPermissions("email")
 
-        btnLoginFacebook.setPermissions("email")
+        binding.btnLoginFacebook.registerCallback(callbackManager, object : FacebookCallback<LoginResult>{
+            override fun onSuccess(result: LoginResult?) {
+                goToAddProfile()
+            }
 
-        LoginManager.getInstance()
-            .registerCallback(callbackManager, object : FacebookCallback<LoginResult> {
+            override fun onCancel() {
+                Log.d("MainActivity", "Facebook onCancel.")
+                goToLogin()
+            }
 
-                override fun onSuccess(result: LoginResult) {
-                    println("Logado")
-                }
+            override fun onError(error: FacebookException?) {
+                Log.d("MainActivity", "Facebook onError.")
+            }
 
-                override fun onCancel() {
-                    Log.d("MainActivity", "Facebook onCancel.")
-                    goToLogin()
-                }
+        })
 
-                override fun onError(error: FacebookException) {
-                    Log.d("MainActivity", "Facebook onError.")
-
-                }
-            })
     }
 
     fun configureCallBackManager() {
@@ -88,11 +82,6 @@ class FormLogin : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         callbackManager?.onActivityResult(requestCode, resultCode, data)
-        val accessToken = data?.extras?.get("com.facebook.LoginFragment:Result")
-        val isLoggedIn = accessToken != null
-        if (isLoggedIn) {
-            goToAddProfile()
-        }
     }
 
     private fun userAuthentication() {
@@ -134,7 +123,7 @@ class FormLogin : AppCompatActivity() {
     }
 
     private fun goToAddProfile() {
-        val intent = Intent(this, AddProfilesActivity::class.java)
+        val intent = Intent(this, ProfilesActivity::class.java)
         startActivity(intent)
         finish()
     }

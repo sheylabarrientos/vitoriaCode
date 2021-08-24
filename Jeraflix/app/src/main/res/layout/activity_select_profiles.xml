@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.profile.SelectProfilesActivity">
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLytOptionsProfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tabIndicator="@drawable/tab_rectangle_3"
+        app:tabIndicatorColor="@color/greenPrimaryColor"
+        app:tabIndicatorFullWidth="false"
+        app:tabSelectedTextColor="@color/greenSecondaryColor"
+        app:tabTextAppearance="@style/CustomTabTextLayout"
+        app:tabTextColor="#2A12153D" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPagerProfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tabLytOptionsProfile" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

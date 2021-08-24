@@ -22,7 +22,6 @@ import com.google.firebase.auth.FirebaseAuth
 import com.sheyla.mymovies.R
 import com.sheyla.mymovies.databinding.ActivityLisfOfMoviesBinding
 import com.sheyla.mymovies.ui.adpater.ViewPagerAdapter
-import com.sheyla.mymovies.ui.model.MoviesViewModel
 import com.sheyla.mymovies.ui.adpater.ViewPagerAdapter.Companion.ALL_MOVIES_POSITION
 import com.sheyla.mymovies.ui.adpater.ViewPagerAdapter.Companion.FAVORITE_MOVIES_POSITION
 import com.sheyla.mymovies.ui.adpater.ViewPagerAdapter.Companion.MOVIES_WATCHED
